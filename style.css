@@ -9,6 +9,19 @@ header {
     text-align: center;
     background-color: #f0f0f0; /* Light grey background */
 }
+.navigation{
+    background-color: aqua;
+
+}
+
+.homeNev:hover, .projectNev:hover, .aboutNev:hover, .ContactNev:hover{
+    background-color: greenyellow;
+    padding: 20px;
+}
+.homeNev, .projectNev, .aboutNev, .ContactNev{
+    background-color: blue;
+    block-size: 50px;
+}
 
 nav ul {
     list-style: none;
@@ -49,10 +62,16 @@ section {
     padding: 10px;
     margin: 10px 0; /* Adds space between project items */
 }
+.project-item:hover{
+    padding: 20px;
+}
 
 #about, #contact {
     background-color: #e9e9e9;
     padding: 20px;
     margin: 20px auto; /* Centers these sections and adds space around them */
     width: 80%; /* Optional: Makes these sections narrower than the full page width */
+}
+#about:hover,#contact:hover{
+    padding: 30px;
 }
