@@ -1,44 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rek="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"></link>
 </head>
 <body>
 <header>
     <h1>Sam's Portfolio</h1>
     <nav class="navigation">
         <ul>
-            <li><a class = "homeNev" href="#home">Home</a></li>
-            <li><a class="projectNev" href="#projects">Projects</a></li>
-            <li><a class="aboutNev" href="#about">About Me</a></li>
-            <li><a class= "ContactNev" href="#contact">Contact</a></li>
+            <li><a class = "homeNev" href="#main">Home</a></li>
+            <li><a class="projectNev" href="#projects-page">Projects</a></li>
+            <li><a class="aboutNev" href="#about-page">About Me</a></li>
+            <li><a class= "ContactNev" href="#contact-page">Contact</a></li>
         </ul>
     </nav>
-    <div id="avatar"> <!-- Placeholder for your 3D avatar --> </div>
 </header>
-<section id="projects">
+<div id="main">
+    <div id="page">
+        <div id="avatar">
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.5.0/build/spline-viewer.js"></script>
+        <spline-viewer loading-anim-type="spinner-small-light" url="https://prod.spline.design/tyRi3qf-ZdNt05aD/scene.splinecode"></spline-viewer>
+        </div>
+    </div>
+    <div id="page2">
+    </div>
+    <div id="page3">
+
+    </div>
+<section id="about-page">
+    <h2>About Me</h2>
+    <p>This is a section about me. It will contain information on who I am, what I do, and my professional background. Add more text here to make it scrollable.</p>
+</section>
+<section id="projects-page">
     <h2>My Projects</h2>
     <div class="project-item">Project 1</div>
     <div class="project-item">Project 2</div>
     <div class="project-item">Project 3</div>
-    <!-- Add as many projects as you need -->
 </section>
-<section id="about">
-    <h2>About Me</h2>
-    <p>This is a section about me. It will contain information on who I am, what I do, and my professional background. Add more text here to make it scrollable.</p>
-</section>
-<section id="contact">
+<section id="contact-page">
     <h2>Contact</h2>
     <p>Here's how you can get in touch with me. Include your email, social media links, or a contact form here.</p>
 </section>
+</div>
 
 <!-- Additional sections for About Me and Contact -->
 <footer>
     <p>Contact Me: [Your Email]</p>
 </footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
