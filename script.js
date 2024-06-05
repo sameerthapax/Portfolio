@@ -1,13 +1,55 @@
-document.addEventListener("DOMContentLoaded", function() {
-    window.addEventListener('scroll', () => {
-        const scrollPosition = window.scrollY;
-        const maxHeight = document.body.scrollHeight - window.innerHeight;
-        const scrollPercentage = scrollPosition / maxHeight;
 
-        // Change background color from white (#ffffff) to blue (#0000ff) as an example
-        const red = 255 - Math.round(scrollPercentage * 255); // 255 to 0
-        const green = 255 - Math.round(scrollPercentage * 255); // 255 to 0
-        const blue = Math.round(scrollPercentage * 255); // 0 to 255
-        document.body.style.backgroundColor = `rgb(${red},${green},${blue})`;
-    });
-});
+gsap.registerPlugin(ScrollTrigger);
+gsap.to("header",{
+    scrollTrigger:{
+        trigger:'header',
+        start:'top top',
+        end: 'bottom top',
+        markers: true,
+        pin: true,
+        pinSpacing:false,
+    }
+})
+gsap.to("#avatar",{
+    scrollTrigger:{
+        trigger:'#avatar',
+        start:'top top',
+        endTrigger: 'about-page',
+        end: 'bottom 130%',
+        markers: true,
+        pin: true,
+        pinSpacing:false
+
+    }
+})
+gsap.to("#page2",{
+    scrollTrigger:{
+        trigger:'#page2',
+        start:'top top',
+        end: 'bottom top',
+        markers: true,
+        pin: "#page2",
+
+    }
+})
+gsap.to("#page3",{
+    scrollTrigger:{
+        trigger:'#page3',
+        start:'top top',
+        end: 'bottom top',
+        markers: true,
+        pin: "#page3",
+
+    }
+})
+gsap.to("#page4",{
+    scrollTrigger:{
+        trigger:'#page4',
+        start:'top top',
+        end: 'bottom 40%',
+        markers: true,
+        pin: "#page4",
+        pinSpacing:false,
+
+    }
+})
