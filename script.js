@@ -5,29 +5,33 @@ gsap.to("header",{
         trigger:'header',
         start:'top top',
         end: 'bottom top',
-        markers: true,
+        markers: false,
         pin: true,
         pinSpacing:false,
     }
 })
+
+
 gsap.to("#avatar",{
     scrollTrigger:{
         trigger:'#avatar',
         start:'top top',
         endTrigger: 'about-page',
         end: 'bottom 130%',
-        markers: true,
+        markers: false,
         pin: true,
-        pinSpacing:false
+        pinSpacing:false,
+        scrub: 3,
 
     }
 })
+
 gsap.to("#page2",{
     scrollTrigger:{
         trigger:'#page2',
         start:'top top',
         end: 'bottom top',
-        markers: true,
+        markers: false,
         pin: "#page2",
 
     }
@@ -37,7 +41,7 @@ gsap.to("#page3",{
         trigger:'#page3',
         start:'top top',
         end: 'bottom top',
-        markers: true,
+        markers: false,
         pin: "#page3",
 
     }
@@ -47,7 +51,7 @@ gsap.to("#page4",{
         trigger:'#page4',
         start:'top top',
         end: 'bottom 40%',
-        markers: true,
+        markers: false,
         pin: "#page4",
         pinSpacing:false,
 
