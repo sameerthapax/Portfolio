@@ -1,6 +1,6 @@
 body, html {
     margin: 0;
-    padding: 0px;
+    padding: 0;
     scroll-behavior: smooth;
     font-family: Arial, sans-serif; /* Example font */
 }
@@ -45,7 +45,7 @@ nav ul li a {
     height: 100vh;
     background-color: transparent;
     z-index: 1;
-    margin: 20px auto 20px -50px;
+    margin: auto;
 }
 
 /* Styling for sections */
@@ -81,7 +81,7 @@ section {
 #page{
     height: 100vh;
     width: 100vw;
-    background-color: white;
+    background-color: black;
 }
 #page2{
     height: 100vh;
