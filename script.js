@@ -2,9 +2,11 @@
 gsap.registerPlugin(ScrollTrigger);
 
 const loader = document.getElementById("preLoader");
-window.addEventListener("load", function (){
-    loader.style.display="none";
+window.addEventListener("load", async function () {
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    loader.style.display = "none"
 })
+
 gsap.to("header",{
     scrollTrigger:{
         trigger:'header',
