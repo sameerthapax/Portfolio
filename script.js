@@ -4,17 +4,15 @@ gsap.registerPlugin(ScrollTrigger);
 
 startLoader();
 function startLoader() {
-    let currentValue = 0;
     function updateCounter() {
 
-        if (currentValue==100) {
+        if (currentValue='100') {
             window.addEventListener("load", function () {
                 document.getElementById("counter").textContent="100";
                 document.getElementById("counter").style.margin="60vh 37vw";
                 removeLoader();
             })
         }
-        currentValue += Math.floor(Math.random() * 10) + 1;
         if (currentValue > 100) {
             currentValue = 99;
         }
@@ -24,6 +22,7 @@ function startLoader() {
         }else if(currentValue <100 && currentValue>=10){
             document.getElementById("counter").style.margin="60vh 40vw";
         }
+        currentValue += Math.floor(Math.random() * 10) + 1;
         let delay = Math.floor(Math.random() * 200) + 50;
         setTimeout(updateCounter, delay)
     }
