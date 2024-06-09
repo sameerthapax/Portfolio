@@ -1,11 +1,39 @@
 
 gsap.registerPlugin(ScrollTrigger);
 
-const loader = document.getElementById("preLoader");
-window.addEventListener("load", async function () {
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    loader.style.display = "none"
-})
+
+startLoader();
+function startLoader() {
+    let currentValue = 0;
+    function updateCounter() {
+        window.addEventListener("load", function () {
+            document.getElementById("counter").style.margin="60vh 25vw";
+            document.getElementById("counter").textContent="100";
+            removeLoader();
+        })
+        if (currentValue === 100) {
+            return
+        }
+        currentValue += Math.floor(Math.random() * 10) + 1;
+        if (currentValue > 100) {
+            currentValue = 99;
+        }
+        document.getElementById("counter").textContent=currentValue;
+        if(currentValue <10 && currentValue>=0){
+            document.getElementById("counter").style.margin="60vh 43vw";
+        }else if(currentValue <100 && currentValue>=10){
+            document.getElementById("counter").style.margin="60vh 35vw";
+        }
+        let delay = Math.floor(Math.random() * 200) + 50;
+        setTimeout(updateCounter, delay)
+    }
+    updateCounter();
+}
+function removeLoader(){
+    gsap.to("#preLoader",0.25, {delay:0.3, zIndex:-5,opacity:0,})
+
+}
+
 
 gsap.to("header",{
     scrollTrigger:{
