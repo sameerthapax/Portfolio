@@ -68,6 +68,13 @@ header {
     margin: auto;
 
 }
+nav{
+    z-index: 3;
+}
+#titleid{
+    font-size: 5vh;
+    font-family: Thasadith, sans-serif;
+}
 
 .homeNev:hover, .projectNev:hover, .aboutNev:hover, .ContactNev:hover{
     background-color: greenyellow;
@@ -139,7 +146,7 @@ section {
     height: 70vh;
     width: 99vw;
     border-radius: 40vh 40vh 40vh 40vh;
-    background-color: black;
+    background-color: #111111;
     z-index: -2;
     margin: 1vw auto
 
@@ -148,7 +155,8 @@ section {
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
     height: 100vh;
-    background-color: black;
+    background-color: #111111;
+    z-index: 2;
 
 }
 #page3{

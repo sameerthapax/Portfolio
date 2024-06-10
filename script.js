@@ -59,27 +59,36 @@ function removeLoader(){
 gsap.to("#avatar",{
     scrollTrigger:{
         trigger:'#avatar',
-        start:'top top',
+        start:'bottom top',
         endTrigger: '#page4',
         end: 'bottom top',
         markers: false,
         pin: true,
         pinSpacing:false,
-        scrub: 3,
-
+        scrub: 1,
     }
 })
-gsap.to("header",{
+gsap.to("nav",{
     scrollTrigger:{
-        trigger:'header',
+        trigger:'nav',
         start:'top top',
+        endTrigger:"body",
         end: 'bottom top',
-        markers: false,
-        pin: true,
+        markers: true,
+        pin: "nav",
         pinSpacing:false,
     }
 })
+gsap.to("#main",{
+    scrollTrigger:{
+        trigger:'#page',
+        start:'top top',
+        end: 'bottom top',
+        markers: false,
+        snap: 1,
+        scrub:1,},
 
+})
 gsap.to("#page2",{
     scrollTrigger:{
         trigger:'#page2',
