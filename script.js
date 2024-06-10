@@ -30,15 +30,8 @@ function startLoader() {
     let currentValue = 0;
     function updateCounter() {
 
-        if ((currentValue = 100)) {
-            window.addEventListener("load", function () {
-                document.getElementById("counter").textContent = "100";
-                document.getElementById("counter").style.margin = "60vh 37vw";
-                removeLoader();
-            })
-        }
         if (currentValue > 100) {
-            currentValue = 99;
+            currentValue = 100;
         }
         document.getElementById("counter").textContent=currentValue;
         if(currentValue <10 && currentValue>=0){
@@ -49,6 +42,12 @@ function startLoader() {
         currentValue += Math.floor(Math.random() * 10) + 1;
         let delay = Math.floor(Math.random() * 200) + 50;
         setTimeout(updateCounter, delay)
+    }
+    if ((currentValue = 100)) {
+        window.addEventListener("load", function () {
+            document.getElementById("counter").style.margin = "60vh 37vw";
+            removeLoader();
+        })
     }
     updateCounter();
 }
