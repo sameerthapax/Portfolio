@@ -2,22 +2,70 @@
     body {
         background-color: lightblue;
     }
+    html.lenis, html.lenis body {
+        height: auto;
+    }
 
+    .lenis.lenis-smooth {
+        scroll-behavior: auto !important;
+    }
+
+    .lenis.lenis-smooth [data-lenis-prevent] {
+        overscroll-behavior: contain;
+    }
+
+    .lenis.lenis-stopped {
+        overflow: hidden;
+    }
+
+    .lenis.lenis-smooth spline-viewer {
+        pointer-events: none;
+    }
+
+}
+html.lenis, html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+    pointer-events: none;
 }
 body, html {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
     font-family: Arial, sans-serif; /* Example font */
+    color: #f0f0f0;
 }
 
 header {
     text-align: center;
-    background-color: #f0f0f0; /* Light grey background */
+    background-color: #111111; /* Light grey background */
     z-index: 5;
+    border-radius: 40vh 40vh 40vh 40vh;
+    padding: 3vh;
+    width: 90vw;
+    margin: auto;
+
+
 }
 .navigation{
-    background-color: aqua;
+    background-color: #ced4da;
+    border-radius: 40vh 40vh 40vh 40vh;
+    width: 50%;
+    margin: auto;
 
 }
 
@@ -25,7 +73,6 @@ header {
     background-color: greenyellow;
     padding: 20px;
 }
-
 
 nav ul {
     list-style: none;
@@ -36,12 +83,12 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 15px; /* Spacing between menu items */
+    margin: 0 3vh; /* Spacing between menu items */
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #f0f0f0; /* Dark grey text */
+    color: white; /* Dark grey text */
     font-size: 1.2em; /* Slightly larger font size */
 }
 
@@ -74,8 +121,8 @@ section {
 
 #about-page, #contact-page {
     background-color: #e9e9e9;
-    padding: 20px;
-    margin: 20px auto; /* Centers these sections and adds space around them */
+    padding: 5vh;
+    margin: 5vh auto; /* Centers these sections and adds space around them */
     width: 80%; /* Optional: Makes these sections narrower than the full page width */
     height: 100vh;
     position: relative;
@@ -90,9 +137,12 @@ section {
 }
 #page{
     height: 70vh;
-    border-radius: 40px 40px 40px 40px;
+    width: 99vw;
+    border-radius: 40vh 40vh 40vh 40vh;
     background-color: black;
     z-index: -2;
+    margin: 1vw auto
+
 }
 #page2{
     border-top-left-radius: 40px;

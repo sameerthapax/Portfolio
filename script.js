@@ -1,4 +1,27 @@
+const lenis = new Lenis()
 
+lenis.on('scroll', (e) => {
+    console.log(e)
+})
+
+function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+}
+lenis.on('scroll', (e) => {
+    console.log(e)
+})
+
+lenis.on('scroll', ScrollTrigger.update)
+
+gsap.ticker.add((time)=>{
+    lenis.raf(time * 1000)
+})
+
+gsap.ticker.lagSmoothing(10)
+
+
+requestAnimationFrame(raf)
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -38,7 +61,7 @@ gsap.to("#avatar",{
         trigger:'#avatar',
         start:'top top',
         endTrigger: '#page4',
-        end: 'bottom 50%',
+        end: 'bottom top',
         markers: false,
         pin: true,
         pinSpacing:false,
