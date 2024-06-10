@@ -74,7 +74,7 @@ gsap.to("nav",{
         start:'top top',
         endTrigger:"body",
         end: 'bottom top',
-        markers: true,
+        markers: false,
         pin: "nav",
         pinSpacing:false,
     }
@@ -86,7 +86,7 @@ gsap.to("#main",{
         end: 'bottom top',
         markers: false,
         snap: 1,
-        scrub:1,},
+        scrub:1,}
 
 })
 gsap.to("#page2",{
