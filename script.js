@@ -6,10 +6,10 @@ startLoader();
 function startLoader() {
     function updateCounter() {
 
-        if (currentValue='100') {
+        if ((currentValue = 100)) {
             window.addEventListener("load", function () {
-                document.getElementById("counter").textContent="100";
-                document.getElementById("counter").style.margin="60vh 37vw";
+                document.getElementById("counter").textContent = "100";
+                document.getElementById("counter").style.margin = "60vh 37vw";
                 removeLoader();
             })
         }
