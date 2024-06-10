@@ -4,6 +4,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 startLoader();
 function startLoader() {
+    let currentValue = 0;
     function updateCounter() {
 
         if ((currentValue = 100)) {
@@ -32,8 +33,19 @@ function removeLoader(){
     gsap.to("#preLoader",0.25, { zIndex:-5,opacity:0,})
 
 }
+gsap.to("#avatar",{
+    scrollTrigger:{
+        trigger:'#avatar',
+        start:'top top',
+        endTrigger: '#page4',
+        end: 'bottom 50%',
+        markers: false,
+        pin: true,
+        pinSpacing:false,
+        scrub: 3,
 
-
+    }
+})
 gsap.to("header",{
     scrollTrigger:{
         trigger:'header',
@@ -42,21 +54,6 @@ gsap.to("header",{
         markers: false,
         pin: true,
         pinSpacing:false,
-    }
-})
-
-
-gsap.to("#avatar",{
-    scrollTrigger:{
-        trigger:'#avatar',
-        start:'top top',
-        endTrigger: 'about-page',
-        end: 'bottom 130%',
-        markers: false,
-        pin: true,
-        pinSpacing:false,
-        scrub: 3,
-
     }
 })
 

@@ -14,6 +14,7 @@ body, html {
 header {
     text-align: center;
     background-color: #f0f0f0; /* Light grey background */
+    z-index: 5;
 }
 .navigation{
     background-color: aqua;
@@ -40,7 +41,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #333; /* Dark grey text */
+    color: #f0f0f0; /* Dark grey text */
     font-size: 1.2em; /* Slightly larger font size */
 }
 
@@ -78,33 +79,38 @@ section {
     width: 80%; /* Optional: Makes these sections narrower than the full page width */
     height: 100vh;
     position: relative;
-    z-index: 2;
 }
 #main{
     position: relative;
     overflow: hidden;
 }
-#page{
+.page{
     height: 100vh;
     width: 100vw;
+}
+#page{
+    height: 70vh;
+    border-radius: 40px 40px 40px 40px;
     background-color: black;
+    z-index: -2;
 }
 #page2{
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
     height: 100vh;
-    width: 100vw;
-    background-color: blue;
+    background-color: black;
+
 }
 #page3{
-    height: 100vh;
-    width: 100vw;
+
     background-color: green;
+    z-index: 3;
 }
 #page4{
-    height: 100vh;
-    width: 100vw;
+
     background-color: black;
 }
-#about:hover,#contact:hover{
+#about-page:hover,#contact-page:hover{
     padding: 30px;
 }
 h2{
