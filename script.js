@@ -25,32 +25,11 @@ requestAnimationFrame(raf)
 gsap.registerPlugin(ScrollTrigger);
 
 
-startLoader();
-function startLoader() {
-    let currentValue = 0;
-    function updateCounter() {
+window.addEventListener("load", function () {
+    removeLoader();
+})
 
-        if (currentValue > 100) {
-            currentValue = 100;
-        }
-        document.getElementById("counter").textContent=currentValue;
-        if(currentValue <10 && currentValue>=0){
-            document.getElementById("counter").style.margin="60vh 43vw";
-        }else if(currentValue <100 && currentValue>=10){
-            document.getElementById("counter").style.margin="60vh 40vw";
-        }
-        currentValue += Math.floor(Math.random() * 10) + 1;
-        let delay = Math.floor(Math.random() * 200) + 50;
-        setTimeout(updateCounter, delay)
-    }
-    if ((currentValue = 100)) {
-        window.addEventListener("load", function () {
-            document.getElementById("counter").style.margin = "60vh 37vw";
-            removeLoader();
-        })
-    }
-    updateCounter();
-}
+
 function removeLoader(){
     gsap.to("#preLoader",0.25, { zIndex:-5,opacity:0,})
 
