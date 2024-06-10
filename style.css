@@ -62,9 +62,10 @@ header {
 
 }
 .navigation{
-    background-color: #ced4da;
+    background-color: #e3e3e3;
     border-radius: 40vh 40vh 40vh 40vh;
-    width: 50%;
+    height: 5vh;
+    width: 60%;
     margin: auto;
 
 }
@@ -77,7 +78,7 @@ nav{
 }
 
 .homeNev:hover, .projectNev:hover, .aboutNev:hover, .ContactNev:hover{
-    background-color: greenyellow;
+    background-color: #e3e3e3;
     padding: 20px;
 }
 
@@ -95,7 +96,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: white; /* Dark grey text */
+    color: black; /* Dark grey text */
     font-size: 1.2em; /* Slightly larger font size */
 }
 
@@ -152,21 +153,20 @@ section {
 
 }
 #page2{
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
+    border-radius: 20vh;
     height: 100vh;
     background-color: #111111;
     z-index: 2;
 
 }
 #page3{
-
-    background-color: green;
+    border-radius: 15vh;
+    background-color: #424242;
     z-index: 3;
 }
 #page4{
-
-    background-color: black;
+    border-radius: 10vh;
+    background-color: #202020;
 }
 #about-page:hover,#contact-page:hover{
     padding: 30px;

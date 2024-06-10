@@ -82,11 +82,11 @@ gsap.to("nav",{
 gsap.to("#main",{
     scrollTrigger:{
         trigger:'#page',
-        start:'top top',
+        start:'top 20%',
         end: 'bottom top',
         markers: false,
         snap: 1,
-        scrub:1,}
+    scrub:false}
 
 })
 gsap.to("#page2",{
