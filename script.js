@@ -2,7 +2,29 @@
 const scroll = new LocomotiveScroll();
 gsap.registerPlugin(ScrollTrigger);
 
+const lenis = new Lenis()
 
+lenis.on('scroll', (e) => {
+    console.log(e)
+})
+
+function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+}
+
+requestAnimationFrame(raf)
+lenis.on('scroll', (e) => {
+    console.log(e)
+})
+
+lenis.on('scroll', ScrollTrigger.update)
+
+gsap.ticker.add((time)=>{
+    lenis.raf(time * 1000)
+})
+
+gsap.ticker.lagSmoothing(0)
 window.addEventListener("load", function () {
     removeLoader();
 })
@@ -21,12 +43,12 @@ gsap.to("#avatar",{
         pin: true,
         pinSpacing:false,
         scrub:1,
-    } ,
+    }, scale:0.5,
 })
 gsap.to("nav",{
     scrollTrigger:{
         trigger:'nav',
-        start:'top top',
+        start:'top 1%',
         endTrigger:"body",
         end: 'bottom top',
         markers: false,

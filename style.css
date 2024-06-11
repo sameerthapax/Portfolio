@@ -19,7 +19,7 @@
     }
 
     .lenis.lenis-smooth spline-viewer {
-        pointer-events: none;
+        pointer-events: visible;
     }
 
 }
