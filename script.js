@@ -7,16 +7,13 @@ const lenis = new Lenis()
 lenis.on('scroll', (e) => {
     console.log(e)
 })
-
 function raf(time) {
     lenis.raf(time)
     requestAnimationFrame(raf)
 }
 
 requestAnimationFrame(raf)
-lenis.on('scroll', (e) => {
-    console.log(e)
-})
+
 
 lenis.on('scroll', ScrollTrigger.update)
 
@@ -25,8 +22,20 @@ gsap.ticker.add((time)=>{
 })
 
 gsap.ticker.lagSmoothing(0)
+var slideUp1 = {
+    distance: '150%',
+    origin: 'bottom',
+    opacity: false,
+    delay: 100,
+};
 window.addEventListener("load", function () {
     removeLoader();
+    ScrollReveal().reveal('header', slideUp1 );
+    ScrollReveal().reveal('.page', slideUp1 );
+    ScrollReveal().reveal('#about-page', slideUp1 );
+    ScrollReveal().reveal('#project-page', slideUp1 );
+    ScrollReveal().reveal('.project-item', slideUp1 );
+    ScrollReveal().reveal('#contact-page', slideUp1 );
 })
 
 function removeLoader(){

@@ -21,6 +21,9 @@
     .lenis.lenis-smooth spline-viewer {
         pointer-events: visible;
     }
+    .lenis.lenis-smooth body  {
+        pointer-events: visible;
+    }
 
 }
 html.lenis, html.lenis body {
@@ -70,7 +73,7 @@ header {
 
 }
 nav{
-    z-index: 3;
+    z-index: 4;
 }
 #titleid{
     font-size: 5vh;
@@ -91,7 +94,7 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 3vh; /* Spacing between menu items */
+    margin: 1% 3vh; /* Spacing between menu items */
 }
 
 nav ul li a {
@@ -104,7 +107,7 @@ nav ul li a {
 #avatar {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
     background-color: transparent;
     z-index: 1;
     margin: auto;
@@ -135,16 +138,18 @@ section {
     height: 100vh;
     position: relative;
 }
+
 #main{
     position: relative;
     overflow: hidden;
+    scroll-behavior: smooth;
 }
 .page{
     height: 100vh;
     width: 100vw;
 }
 #page{
-    height: 70vh;
+    height: 60vh;
     width: 99vw;
     border-radius: 40vh 40vh 40vh 40vh;
     background-color: #111111;
