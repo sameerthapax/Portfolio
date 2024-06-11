@@ -17,7 +17,7 @@ gsap.to("#avatar",{
         start:'top top',
         endTrigger: '#page2',
         end: 'bottom 80',
-        markers: true,
+        markers: false,
         pin: true,
         pinSpacing:false,
         scrub:1,
