@@ -22,20 +22,37 @@ gsap.ticker.add((time)=>{
 })
 
 gsap.ticker.lagSmoothing(0)
-var slideUp1 = {
+const slideUp1 = {
     distance: '150%',
     origin: 'bottom',
     opacity: false,
     delay: 100,
 };
+const slideUp2 = {
+    distance: '150%',
+    origin: 'bottom',
+    opacity: false,
+
+};
+const slideUp3 = {
+    distance: '150%',
+    origin: 'bottom',
+    opacity: false,
+    delay: 300,
+};
 window.addEventListener("load", function () {
     removeLoader();
     ScrollReveal().reveal('header', slideUp1 );
-    ScrollReveal().reveal('.page', slideUp1 );
+    ScrollReveal().reveal('.navigation', slideUp2 );
+    ScrollReveal().reveal('#page', slideUp3 );
+    ScrollReveal().reveal('#page2', slideUp3 );
+    ScrollReveal().reveal('#page3', slideUp2 );
+    ScrollReveal().reveal('#page4', slideUp2 );
     ScrollReveal().reveal('#about-page', slideUp1 );
     ScrollReveal().reveal('#project-page', slideUp1 );
     ScrollReveal().reveal('.project-item', slideUp1 );
     ScrollReveal().reveal('#contact-page', slideUp1 );
+
 })
 
 function removeLoader(){
@@ -68,7 +85,7 @@ gsap.to("nav",{
 gsap.to("#main",{
     scrollTrigger:{
         trigger:'#page',
-        start:'top 20%',
+        start:'top 14%',
         end: 'bottom top',
         markers: false,
         snap: 1,
@@ -106,3 +123,43 @@ gsap.to("#page4",{
 
     }
 })
+const tl=new gsap.timeline({scrollTrigger:{
+    trigger:'#page-title',
+    start:'top top',
+    end: 'bottom top',
+    scrub:4,
+    markers:false,
+    }
+});
+const tl3=new gsap.timeline({scrollTrigger:{
+        trigger:'#page-title',
+        start:'top top',
+        end: '60% top',
+        scrub:2,
+        markers:false,
+    }
+});
+const tl2=new gsap.timeline({scrollTrigger:{
+    trigger:'#page-title',
+    start:'175% top',
+    endTrigger: '#page3',
+    end: 'top top',
+    scrub:2,
+    markers:false}
+})
+const tl4=new gsap.timeline({scrollTrigger:{
+        trigger:'#page-title',
+        start:'175% top',
+        endTrigger: '#page3',
+        end: 'top top',
+        scrub:1,
+        markers:false}
+})
+
+tl.from("#page-title",{y: -700, duration:3,
+})
+tl3.from("#title-background",{y: 700, duration:3
+})
+tl2.to("#page-title",{y: 700, duration:3})
+tl4.to("#title-background",{y: -700, duration:1})
+
