@@ -1,6 +1,6 @@
 
 const scroll = new LocomotiveScroll();
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 const lenis = new Lenis()
 
@@ -59,6 +59,34 @@ function removeLoader(){
     gsap.to("#preLoader",0.25, {display:"none"})
 
 }
+const words2= ["Hello there! I'm originally from the stunning city of Pokhara, Nepal, but these days you'll find me navigating the halls of Murray State University in Kentucky, where I'm wrapping up my Bachelor's degree in Computer Science. My journey has been fueled by a fascination with new technologies and an insatiable curiosity about how things tick.\n" +
+"\n" +
+"            As a senior, I've tackled a variety of projects, from developing a fully functional car dealership service management system (yes, it's as complicated as it sounds) to crafting a library management system using Java. I've even dabbled in the art of creating a lexer and parser for a programming language called \"Xcite\" in C++. Oh, and this very portfolio? Built with HTML, CSS, and JavaScript, sprinkled with some APIs and plugins for good measure. Currently, I'm diving headfirst into Swift development – because why not?\n" +
+"\n" +
+"            Before diving into the tech world, I managed a Ford dealership in Nepal for a year. Picture this: a fresh graduate running a car dealership. It was like a live-action episode of \"The Apprentice,\" only with more cars and fewer boardroom showdowns. This adventure sharpened my leadership and organizational skills, prepping me for the next big step – studying in the USA.\n" +
+"\n" +
+"            When I'm not buried in code, you can catch me on the basketball court or at the gym, attempting to maintain some semblance of a balanced lifestyle. My professional mantra? \"There is a solution. One just has to figure out how.\" It's a philosophy that keeps me tackling challenges with a smile (and sometimes a groan), always on the lookout for innovative solutions in the ever-evolving world of technology."];
+
+const words = ["Sameer","a Software Dev", "a Student", "a Senior year"];
+gsap.to("#cursor", {opacity: 0, repeat: -1, yoyo: true, duration: 0.5, ease: "power2.inOut"}) ;
+gsap.to("#content-text2", {opacity: 0, repeat: -1, yoyo: true, duration: 0.5, ease: "power2.inOut"})
+let tiMaster = gsap.timeline({ repeat: -1 });
+let tiMaster2 = gsap.timeline({scrollTrigger:{
+        trigger:'#page-title',
+        start:'50% top',
+        end: '175% top',
+        toggleActions:'play reverse play reverse',
+        scrub:true,
+        markers:true,
+    }, });
+words.forEach( (word) => {
+    let tlText = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 1 });
+    tlText.to("#animated-text", { duration: 1, text: word });
+    tiMaster.add (tlText)});
+words2.forEach( (word) => {
+    let tlText = gsap.timeline({ repeat: 0,yoyo: true, repeatDelay: 0 });
+    tlText.to("#content-text", { duration: 15, text: word });
+    tiMaster2.add (tlText)});
 gsap.to("#avatar",{
     scrollTrigger:{
         trigger:'#avatar',

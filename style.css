@@ -61,25 +61,33 @@ header {
     border-radius: 40vh 40vh 40vh 40vh;
     width: 90vw;
     height: 8vh;
-    margin: auto;
+    margin: 2vh auto auto;
 }
 .navigation{
     background-color: #e3e3e3;
     border-radius: 40vh 40vh 40vh 40vh;
-    border: solid #111111 1px;
+    border: solid #e3e3e3 4px;
     height: 6vh;
     width: 60%;
     margin: 0 auto auto;
     z-index: 4;
 }
 
-#titleid{
-    margin-top: -2vh;
-    margin-bottom: 0.3%;
+.title-text{
     font-size: 8vh;
     font-family: "Silkscreen", sans-serif;
-    color: red;
+    color: #e3e3e3;
+    display: inline;
 }
+#cursor{
+        color: #777676;
+}
+#animated-text{
+
+    color: #f65f5f;
+
+}
+
 .homeNev:hover, .projectNev:hover, .aboutNev:hover, .ContactNev:hover{
     background-color: #e3e3e3;
     padding: 20px;
@@ -152,7 +160,7 @@ section {
     height: 70vh;
     width: 99vw;
     border-radius: 40vh 40vh 40vh 40vh;
-    border: solid red 1px;
+    border: solid #e3e3e3 6px;
     background-color: #111111;
     z-index: -2;
     margin: 1vw auto;
@@ -169,6 +177,30 @@ section {
     z-index: 2;
     overflow: hidden;
     visibility: hidden;
+}
+#content{
+    position: fixed;
+    height: 75vh;
+    width: 70vw;
+    overflow: hidden;
+    left: 22vw;
+    top: 15vh;
+
+}
+#content-text{
+    font-size: 3vh;
+    font-family: "Poiret One", sans-serif;
+    height: 70vh;
+    overflow: hidden;
+    display: inline;
+}
+#content-text2{
+    font-size: 1.5vh;
+    font-family: sans-serif;
+    height: 70vh;
+    overflow: hidden;
+    color: #838282;
+    display: inline;
 }
 #title-background{
     background-color: #777676;

@@ -14,7 +14,10 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
     <script>
         ScrollReveal({ reset: true });
     </script>
@@ -23,7 +26,10 @@
 <div id="preLoader">
 </div>
 <header>
-    <h1 id="titleid">Hi! I am Sameer.</h1>
+    <p id="titleid" class="title-text"> Hi! </p>
+    <p id="text1" class="title-text">I am </p>
+    <p id="animated-text" class="title-text"></p>
+    <p id="cursor" class="title-text">_</p>
     <nav class="navigation">
         <ul>
             <li><a class = "homeNev">Home</a></li>
@@ -43,6 +49,11 @@
     <div id="page2" class="page" data-scroll data-scroll-speed="5">
         <p id="page-title">ABOUT ME</p>
         <div id="title-background"></div>
+        <div id="content">
+            <p id="content-text"></p>
+            <p id="content-text2">⇣Scroll</p>
+        </div>
+
     </div>
     <div id="page3" class="page" data-scroll data-scroll-speed="5">
         <h2>Thapa</h2>
@@ -72,8 +83,8 @@
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
 <script src="https://unpkg.com/lenis@1.1.2/dist/lenis.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
 <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 <script src="script.js"></script>
 </body>
