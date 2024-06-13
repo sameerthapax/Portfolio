@@ -54,14 +54,9 @@ body, html {
     background-color: #e3e3e3;
 }
 
-header {
+#Header{
     text-align: center;
-    background-color: #111111; /* Light grey background */
-    z-index: 5;
-    border-radius: 40vh 40vh 40vh 40vh;
-    width: 90vw;
-    height: 8vh;
-    margin: 2vh auto auto;
+
 }
 .navigation{
     background-color: #e3e3e3;
@@ -76,7 +71,7 @@ header {
 .title-text{
     font-size: 8vh;
     font-family: "Silkscreen", sans-serif;
-    color: #e3e3e3;
+    color: #111111;
     display: inline;
 }
 #cursor{
@@ -123,10 +118,7 @@ nav ul li a {
 
 }
 
-/* Styling for sections */
-header, section, footer {
-    padding: 20px;
-}
+
 section {
     margin-bottom: 20px; /* Adds space between sections */
 }
@@ -164,7 +156,6 @@ section {
     background-color: #111111;
     z-index: -2;
     margin: 1vw auto;
-    visibility: hidden;
 
 }
 #page2{
@@ -254,8 +245,8 @@ h2:last-child{
     background:
             #080948 url(Images/loading.gif) no-repeat center center;
     background-size: 40%;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     position: fixed;
     z-index: 100;
     color: #f0f0f0;

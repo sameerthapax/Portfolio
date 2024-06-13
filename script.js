@@ -113,7 +113,7 @@ gsap.to("nav",{
 gsap.to("#main",{
     scrollTrigger:{
         trigger:'#page',
-        start:'top 14%',
+        start:'top 6%',
         end: 'bottom top',
         markers: false,
         snap: 1,
