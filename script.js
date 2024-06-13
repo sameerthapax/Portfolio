@@ -77,7 +77,7 @@ let tiMaster2 = gsap.timeline({scrollTrigger:{
         end: '175% top',
         toggleActions:'play reverse play reverse',
         scrub:true,
-        markers:true,
+        markers:false,
     }, });
 words.forEach( (word) => {
     let tlText = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 1 });
