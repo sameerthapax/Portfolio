@@ -59,8 +59,7 @@ body, html {
 
 }
 .navigation{
-    background-color: #e3e3e3;
-    border-radius: 40vh 40vh 40vh 40vh;
+    background-color: #dedede;
     border: solid #e3e3e3 4px;
     height: 6vh;
     width: 60%;
@@ -78,15 +77,10 @@ body, html {
         color: #777676;
 }
 #animated-text{
-
     color: #ff0000;
-
 }
 
-#homeNev:hover, #projectNev:hover, #aboutNev:hover, #ContactNev:hover{
-    background-color: #e3e3e3;
-    padding: 20px;
-}
+
 
 nav ul {
     list-style: none;
@@ -98,14 +92,15 @@ nav ul {
 }
 
 nav ul li {
-    margin: 1.5% 3vh; /* Spacing between menu items */
+    margin: 1.5% 5vh; /* Spacing between menu items */
 }
 
 nav ul li a {
     text-decoration: none;
     color: black; /* Dark grey text */
-    font-size: 1.2em; /* Slightly larger font size */
+    font-size: 1.7vw; /* Slightly larger font size */
 }
+
 
 /* Add some styling for the avatar placeholder */
 #avatar {
@@ -146,7 +141,6 @@ section {
     align-content: center;
     overflow: hidden;
     scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
 }
 
 #page{
@@ -219,6 +213,7 @@ section {
 
 
 }
+
 #page3{
     margin: 0;
     height: 100vh;

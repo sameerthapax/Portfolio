@@ -56,7 +56,7 @@ document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
-        gsap.to(window, {duration: 2, scrollTo: {y: target}, ease: "bounce.inOut"});
+        gsap.to(window, {duration: 2, scrollTo: {y: target}, ease: "power4.inOut"});
     });
 });
 
@@ -139,7 +139,7 @@ gsap.to("#page3",{
         trigger:'#page3',
         start:'top top',
         end: 'bottom 40%',
-        markers: true,
+        markers: false,
         pin: "#page3",
         scrub:2,
     },ease:"power4.inOut"
@@ -149,7 +149,7 @@ gsap.to("#page4",{
         trigger:'#page4',
         start:'top top',
         end: 'bottom 40%',
-        markers: true,
+        markers: false,
         pin: "#page4",
         scrub:2,
     },ease:"power4.inOut"
