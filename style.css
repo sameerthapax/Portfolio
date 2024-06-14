@@ -79,11 +79,11 @@ body, html {
 }
 #animated-text{
 
-    color: #f65f5f;
+    color: #ff0000;
 
 }
 
-.homeNev:hover, .projectNev:hover, .aboutNev:hover, .ContactNev:hover{
+#homeNev:hover, #projectNev:hover, #aboutNev:hover, #ContactNev:hover{
     background-color: #e3e3e3;
     padding: 20px;
 }
@@ -146,6 +146,7 @@ section {
     align-content: center;
     overflow: hidden;
     scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
 }
 
 #page{
@@ -153,7 +154,7 @@ section {
     width: 99vw;
     border-radius: 40vh 40vh 40vh 40vh;
     border: solid #e3e3e3 6px;
-    background-color: #111111;
+    background-color: black;
     z-index: -2;
     margin: 1vw auto;
 
@@ -184,6 +185,7 @@ section {
     height: 70vh;
     overflow: hidden;
     display: inline;
+    color: white;
 }
 #content-text2{
     font-size: 1.5vh;
@@ -218,14 +220,23 @@ section {
 
 }
 #page3{
+    margin: 0;
+    height: 100vh;
+    width:99vw;
+    z-index: 2;
+    overflow: hidden;
     border-radius: 15vh;
     background-color: #424242;
     border: solid #e9e9e9 6px;
-    height: 100vh;
-    width:99vw;
-    z-index: 3;
 }
 #page4{
+    margin: 0;
+    height: 100vh;
+    width:99vw;
+    z-index: 2;
+    overflow: hidden;
+    border: solid #e9e9e9 6px;
+
     border-radius: 10vh;
     background-color: #202020;
 }

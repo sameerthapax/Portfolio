@@ -32,10 +32,10 @@
     <p id="cursor" class="title-text">_</p>
     <nav class="navigation">
         <ul>
-            <li><a class = "homeNev">Home</a></li>
-            <li><a class="projectNev" >Projects</a></li>
-            <li><a class="aboutNev">About Me</a></li>
-            <li><a class= "ContactNev">Contact</a></li>
+            <li><a href="#Header" id = "homeNev">Home</a></li>
+            <li><a href="#page3" id="projectNev" >Projects</a></li>
+            <li><a href="#page2" id="aboutNev" >About Me</a></li>
+            <li><a href="#page4" id= "ContactNev">Contact</a></li>
         </ul>
     </nav>
 </div>
@@ -46,7 +46,7 @@
             <spline-viewer id="splineContent" loading-anim-type="spinner-small-light" url="https://prod.spline.design/tyRi3qf-ZdNt05aD/scene.splinecode" loading="eager"></spline-viewer>
         </div>
     </div>
-    <div id="page2" class="page" data-scroll data-scroll-speed="5">
+    <section id="page2" class="page" data-scroll data-scroll-speed="5" >
         <p id="page-title">ABOUT ME</p>
         <div id="title-background"></div>
         <div id="content">
@@ -54,13 +54,13 @@
             <p id="content-text2">⇣Scroll</p>
         </div>
 
-    </div>
-    <div id="page3" class="page" data-scroll data-scroll-speed="5">
+    </section>
+    <section id="page3" class="page" data-scroll data-scroll-speed="5" >
         <h2>Thapa</h2>
-    </div>
-    <div id="page4" class="page" data-scroll data-scroll-speed="5">
+    </section>
+    <section id="page4" class="page" data-scroll data-scroll-speed="5" >
         <h2>Hero</h2>
-    </div>
+    </section>
 </div>
 <section id="about-page">
     <h2>About Me</h2>
@@ -84,6 +84,7 @@
 <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
 <script src="https://unpkg.com/lenis@1.1.2/dist/lenis.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
 <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 <script src="script.js"></script>

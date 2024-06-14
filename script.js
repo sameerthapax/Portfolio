@@ -1,6 +1,6 @@
 
 const scroll = new LocomotiveScroll();
-gsap.registerPlugin(ScrollTrigger, TextPlugin);
+gsap.registerPlugin(ScrollTrigger, TextPlugin, ScrollToPlugin);
 
 const lenis = new Lenis()
 
@@ -23,42 +23,44 @@ gsap.ticker.add((time)=>{
 
 gsap.ticker.lagSmoothing(0)
 const slideUp1 = {
-    distance: '150%',
     origin: 'bottom',
-    opacity: false,
-    delay: 100,
+    distance: '100px',
+    duration: 1000,
+    easing: 'ease-in-out',
+};const slideUp2 = {
+    origin: 'right',
+    duration: 1000,
+    easing: 'ease-in-out',
 };
-const slideUp2 = {
-    distance: '150%',
-    origin: 'bottom',
-    opacity: false,
 
-};
-const slideUp3 = {
-    distance: '150%',
-    origin: 'bottom',
-    opacity: false,
-    delay: 300,
-};
+
 window.addEventListener("load", function () {
     removeLoader();
     ScrollReveal().reveal('header', slideUp1 );
-    ScrollReveal().reveal('.navigation', slideUp2 );
-    ScrollReveal().reveal('#page', slideUp3 );
-    ScrollReveal().reveal('#page2', slideUp3 );
-    ScrollReveal().reveal('#page3', slideUp2 );
-    ScrollReveal().reveal('#page4', slideUp2 );
-    ScrollReveal().reveal('#about-page', slideUp1 );
-    ScrollReveal().reveal('#project-page', slideUp1 );
-    ScrollReveal().reveal('.project-item', slideUp1 );
-    ScrollReveal().reveal('#contact-page', slideUp1 );
+    ScrollReveal().reveal('.navigation', slideUp1 );
+    ScrollReveal().reveal('#page', slideUp1 );
+    ScrollReveal().reveal('#page2', slideUp1 );
+
+
+
 
 })
+ScrollReveal().reveal('#page3', slideUp2);
+ScrollReveal().reveal('#page4', slideUp2);
 
 function removeLoader(){
     gsap.to("#preLoader",0.25, {display:"none"})
 
 }
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        gsap.to(window, {duration: 2, scrollTo: {y: target}, ease: "bounce.inOut"});
+    });
+});
+
+
 const words2= ["Hello there! I'm originally from the stunning city of Pokhara, Nepal, but these days you'll find me navigating the halls of Murray State University in Kentucky, where I'm wrapping up my Bachelor's degree in Computer Science. My journey has been fueled by a fascination with new technologies and an insatiable curiosity about how things tick.\n" +
 "\n" +
 "            As a senior, I've tackled a variety of projects, from developing a fully functional car dealership service management system (yes, it's as complicated as it sounds) to crafting a library management system using Java. I've even dabbled in the art of creating a lexer and parser for a programming language called \"Xcite\" in C++. Oh, and this very portfolio? Built with HTML, CSS, and JavaScript, sprinkled with some APIs and plugins for good measure. Currently, I'm diving headfirst into Swift development – because why not?\n" +
@@ -69,7 +71,7 @@ const words2= ["Hello there! I'm originally from the stunning city of Pokhara, N
 
 const words = ["Sameer","a Software Dev", "a Student", "a Senior year"];
 gsap.to("#cursor", {opacity: 0, repeat: -1, yoyo: true, duration: 0.5, ease: "power2.inOut"}) ;
-gsap.to("#content-text2", {opacity: 0, repeat: -1, yoyo: true, duration: 0.5, ease: "power2.inOut"})
+gsap.to("#content-text2", {opacity: 0, repeat: -1, yoyo: true, duration: 0.5, ease: "power1.Out"})
 let tiMaster = gsap.timeline({ repeat: -1 });
 let tiMaster2 = gsap.timeline({scrollTrigger:{
         trigger:'#page-title',
@@ -78,14 +80,14 @@ let tiMaster2 = gsap.timeline({scrollTrigger:{
         toggleActions:'play reverse play reverse',
         scrub:true,
         markers:false,
-    }, });
+    } });
 words.forEach( (word) => {
     let tlText = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 1 });
-    tlText.to("#animated-text", { duration: 1, text: word });
+    tlText.to("#animated-text", { duration: 1, text: word});
     tiMaster.add (tlText)});
 words2.forEach( (word) => {
     let tlText = gsap.timeline({ repeat: 0,yoyo: true, repeatDelay: 0 });
-    tlText.to("#content-text", { duration: 15, text: word });
+    tlText.to("#content-text",{ duration: 15, text: word, color:"white" });
     tiMaster2.add (tlText)});
 gsap.to("#avatar",{
     scrollTrigger:{
@@ -99,6 +101,7 @@ gsap.to("#avatar",{
         scrub:1,
     }, scale:0.5,
 })
+
 gsap.to("nav",{
     scrollTrigger:{
         trigger:'nav',
@@ -117,7 +120,7 @@ gsap.to("#main",{
         end: 'bottom top',
         markers: false,
         snap: 1,
-    scrub:false}
+    scrub:false}, ease: "power4.inOut"
 
 })
 gsap.to("#page2",{
@@ -127,29 +130,29 @@ gsap.to("#page2",{
         end: 'bottom top',
         markers: false,
         pin: "#page2",
+        scrub:2,
 
-    }
+    },ease:"power4.inOut"
 })
 gsap.to("#page3",{
     scrollTrigger:{
         trigger:'#page3',
         start:'top top',
-        end: 'bottom top',
-        markers: false,
+        end: 'bottom 40%',
+        markers: true,
         pin: "#page3",
-
-    }
+        scrub:2,
+    },ease:"power4.inOut"
 })
 gsap.to("#page4",{
     scrollTrigger:{
         trigger:'#page4',
         start:'top top',
         end: 'bottom 40%',
-        markers: false,
+        markers: true,
         pin: "#page4",
-        pinSpacing:false,
-
-    }
+        scrub:2,
+    },ease:"power4.inOut"
 })
 const tl=new gsap.timeline({scrollTrigger:{
     trigger:'#page-title',
