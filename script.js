@@ -73,7 +73,7 @@ const words2= ["Hello there! I'm originally from the stunning city of Pokhara, N
 "            When I'm not buried in code, you can catch me on the basketball court or at the gym, attempting to maintain some semblance of a balanced lifestyle. My professional mantra? \"There is a solution. One just has to figure out how.\" It's a philosophy that keeps me tackling challenges with a smile (and sometimes a groan), always on the lookout for innovative solutions in the ever-evolving world of technology."];
 
 const words = ["Sameer","a Software Dev", "a Student", "a Senior year"];
-gsap.to("#cursor", {opacity: 0, repeat: -1, yoyo: true, duration: 0.5, ease: "power2.inOut"}) ;
+gsap.to("#cursor", {opacity: 0, repeat: -1, yoyo: true, duration: 0.5, ease: "power1.inOut"}) ;
 gsap.to("#content-text2", {opacity: 0, repeat: -1, yoyo: true, duration: 0.5, ease: "power1.Out"})
 let tiMaster = gsap.timeline({ repeat: -1 });
 let tiMaster2 = gsap.timeline({scrollTrigger:{
