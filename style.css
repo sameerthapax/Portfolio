@@ -101,6 +101,12 @@ nav ul li a {
     font-size: 1.7vw; /* Slightly larger font size */
 }
 
+nav ul li a:hover{
+    color: red;
+}
+nav ul li a:active{
+    color: blue;
+}
 
 /* Add some styling for the avatar placeholder */
 #avatar {
