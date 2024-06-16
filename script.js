@@ -72,7 +72,7 @@ const words2= ["Hello there! I'm originally from the stunning city of Pokhara, N
 "\n" +
 "            When I'm not buried in code, you can catch me on the basketball court or at the gym, attempting to maintain some semblance of a balanced lifestyle. My professional mantra? \"There is a solution. One just has to figure out how.\" It's a philosophy that keeps me tackling challenges with a smile (and sometimes a groan), always on the lookout for innovative solutions in the ever-evolving world of technology."];
 
-const words = ["Sameer","a Software Dev", "a Student", "a Senior year"];
+const words = ["Sameer","A Developer", "A Student", "A Senior Year"];
 gsap.to("#cursor", {opacity: 0, repeat: -1, yoyo: true, duration: 0.5, ease: "power1.inOut"}) ;
 gsap.to("#content-text2", {opacity: 0, repeat: -1, yoyo: true, duration: 0.5, ease: "power1.Out"})
 let tiMaster = gsap.timeline({ repeat: -1 });
@@ -90,7 +90,7 @@ words.forEach( (word) => {
     tiMaster.add (tlText)});
 words2.forEach( (word) => {
     let tlText = gsap.timeline({ repeat: 0,yoyo: true, repeatDelay: 0 });
-    tlText.to("#content-text",{ duration: 15, text: word, color:"white" });
+    tlText.to("#content-text",{ duration: 15, text: word, color:"black" });
     tiMaster2.add (tlText)});
 gsap.to("#avatar",{
     scrollTrigger:{
@@ -102,7 +102,7 @@ gsap.to("#avatar",{
         pin: true,
         pinSpacing:false,
         scrub:1,
-    }, scale:0.5,
+    },
 })
 
 gsap.to("nav",{
