@@ -169,10 +169,10 @@ section {
 
 }
 #page2{
-    background: rgba(255, 255, 255, 0.38);
+    background: rgba(220, 219, 219, 0.38);
     box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(2vh);
+    -webkit-backdrop-filter: blur(2vh);
 
     border-radius: 20vh;
     margin: 0;
@@ -195,18 +195,18 @@ section {
 #content-text{
     font-size: 2.8vh;
     font-family: "Space Grotesk", sans-serif;
-    font-weight: 100;
+    font-weight: 400;
     height: 70vh;
     overflow: hidden;
     display: inline;
-    color: black;
+    color: #050000;
 }
 #content-text2{
     font-size: 1.5vh;
     font-family: sans-serif;
     height: 70vh;
     overflow: hidden;
-    color: black;
+    color: #dc0000;
     display: inline;
 }
 #title-background{

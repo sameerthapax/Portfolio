@@ -90,7 +90,7 @@ words.forEach( (word) => {
     tiMaster.add (tlText)});
 words2.forEach( (word) => {
     let tlText = gsap.timeline({ repeat: 0,yoyo: true, repeatDelay: 0 });
-    tlText.to("#content-text",{ duration: 15, text: word, color:"black" });
+    tlText.to("#content-text",{ duration: 15, text: word});
     tiMaster2.add (tlText)});
 gsap.to("#avatar",{
     scrollTrigger:{
