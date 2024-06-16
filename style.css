@@ -51,7 +51,7 @@ body, html {
     scroll-behavior: smooth;
     font-family: Arial, sans-serif; /* Example font */
     color: #e3e3e3;
-    background-color: #e3e3e3;
+    background: url(Images/background.jpg);
 }
 
 #Header{
@@ -59,8 +59,13 @@ body, html {
 
 }
 .navigation{
-    background-color: #dedede;
-    border: solid #e3e3e3 4px;
+    background: rgba( 255, 255, 255, 0.45 );
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
     height: 6vh;
     width: 60%;
     margin: 0 auto auto;
@@ -150,11 +155,14 @@ section {
 }
 
 #page{
+
     height: 70vh;
     width: 99vw;
     border-radius: 40vh 40vh 40vh 40vh;
     border: solid #e3e3e3 6px;
-    background-color: black;
+    background: rgba( 0, 0, 0, 0.7 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.1 );
+    -webkit-backdrop-filter: blur( 4px );
     z-index: -2;
     margin: 1vw auto;
 

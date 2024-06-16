@@ -85,7 +85,7 @@ let tiMaster2 = gsap.timeline({scrollTrigger:{
         markers:false,
     } });
 words.forEach( (word) => {
-    let tlText = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 1 });
+    let tlText = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 2 });
     tlText.to("#animated-text", { duration: 1, text: word});
     tiMaster.add (tlText)});
 words2.forEach( (word) => {
