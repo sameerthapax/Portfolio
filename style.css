@@ -59,7 +59,7 @@ body, html {
 
 }
 .navigation{
-    background: rgba(100, 100, 100, 0.45);
+    background: rgba(255, 195, 195, 0.45);
     box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.1);
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
