@@ -59,7 +59,7 @@ body, html {
 
 }
 .navigation{
-    background: rgba(255, 195, 195, 0.45);
+    background: rgba(105, 153, 253, 0.12);
     box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.1);
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
@@ -81,7 +81,7 @@ body, html {
     display: inline;
 }
 .title-text2{
-    font-size: 8vw;
+    font-size: 10vw;
     font-family: "Space Grotesk", sans-serif;
     font-weight: 400;
     color: #111111;
@@ -106,7 +106,7 @@ body, html {
         color: #777676;
 }
 #animated-text{
-    color: #ff0000;
+    color: #6999fd;
 
 }
 
@@ -151,7 +151,7 @@ nav ul li a:active{
 #title{
     position: absolute;
     margin-top: 25vh;
-    width: 60vw;
+    width: 70vw;
     left: 5vw;
 
 }
@@ -198,7 +198,7 @@ section {
 
 }
 #page2{
-    background: rgba(220, 219, 219, 0.38);
+    background: rgba(238, 239, 252, 0.38);
     box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(2vh);
     -webkit-backdrop-filter: blur(2vh);
@@ -235,11 +235,11 @@ section {
     font-family: sans-serif;
     height: 70vh;
     overflow: hidden;
-    color: #dc0000;
+    color: #6999fd;
     display: inline;
 }
 #title-background{
-    background-color: #ff0000;
+    background-color: #6999fd;
     position: fixed;
 
     width: 10vw;
