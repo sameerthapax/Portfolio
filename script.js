@@ -38,6 +38,8 @@ window.addEventListener("load", function () {
     removeLoader();
     ScrollReveal().reveal('header', slideUp1 );
     ScrollReveal().reveal('.navigation', slideUp1 );
+    ScrollReveal().reveal('.title-text', slideUp1 );
+    ScrollReveal().reveal('.title-text2', slideUp1 );
     ScrollReveal().reveal('#page', slideUp1 );
     ScrollReveal().reveal('#page2', slideUp1 );
 
@@ -169,7 +171,7 @@ const tl3=new gsap.timeline({scrollTrigger:{
         trigger:'#page-title',
         start:'top top',
         end: '60% top',
-        scrub:2,
+        scrub:0,
         markers:false,
     }
 });
@@ -178,7 +180,7 @@ const tl2=new gsap.timeline({scrollTrigger:{
     start:'175% top',
     endTrigger: '#page3',
     end: 'top top',
-    scrub:2,
+    scrub:0,
     markers:false}
 })
 const tl4=new gsap.timeline({scrollTrigger:{
@@ -186,14 +188,14 @@ const tl4=new gsap.timeline({scrollTrigger:{
         start:'175% top',
         endTrigger: '#page3',
         end: 'top top',
-        scrub:1,
+        scrub:0,
         markers:false}
 })
 
-tl.from("#page-title",{y: -700, duration:3,
+tl.from("#page-title",{y: -700, duration:1,
 })
-tl3.from("#title-background",{y: 700, duration:3
+tl3.from("#title-background",{y: 700, duration:1
 })
-tl2.to("#page-title",{y: 700, duration:3})
+tl2.to("#page-title",{y: 700, duration:1})
 tl4.to("#title-background",{y: -700, duration:1})
 

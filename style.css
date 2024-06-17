@@ -74,17 +74,40 @@ body, html {
 }
 
 .title-text{
-    font-size: 8vh;
+    font-size: 4vw;
     font-family: "Space Grotesk", sans-serif;
-    font-weight: 900;
-    color: #111111;
+    font-weight: 100;
+    color: #7a7a7a;
     display: inline;
 }
+.title-text2{
+    font-size: 8vw;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 400;
+    color: #111111;
+    display: inline;
+    position: relative;
+
+}
+#title2{
+    margin-top: -4vh;
+    margin-left: -1vw;
+}
+#title3{
+    color: #444444;
+    font-family: "Roboto Light", sans-serif;
+    font-weight: 50;
+    font-style: italic;
+}
+
+
+
 #cursor{
         color: #777676;
 }
 #animated-text{
     color: #ff0000;
+
 }
 
 
@@ -122,10 +145,16 @@ nav ul li a:active{
     height: 90vh;
     background-color: transparent;
     z-index: 1;
-    margin: auto;
+    margin-left: 20vw;
 
 }
+#title{
+    position: absolute;
+    margin-top: 25vh;
+    width: 60vw;
+    left: 5vw;
 
+}
 
 section {
     margin-bottom: 20px; /* Adds space between sections */
@@ -158,11 +187,11 @@ section {
 
 #page{
 
-    height: 70vh;
+    height: 80vh;
     width: 99vw;
-    border-radius: 40vh 40vh 40vh 40vh;
+    border-radius: 15vw;
     border: solid #ffffff 1px;
-    background: rgba(171, 171, 171, 0.5);
+    background: rgba(222, 222, 222, 0.5);
     box-shadow: 0 8px 32px 0 rgba(171, 171, 171, 0.1);
     z-index: -2;
     margin: 1vw auto;
@@ -210,7 +239,7 @@ section {
     display: inline;
 }
 #title-background{
-    background-color: #777676;
+    background-color: #ff0000;
     position: fixed;
 
     width: 10vw;
@@ -276,11 +305,4 @@ h2:last-child{
     position: fixed;
     z-index: 100;
     color: #f0f0f0;
-}
-#counter{
-    height: 100%;
-    width: 100%;
-    font-size: 15vw;
-    position: relative;
-    margin: 60vh 43vw;
 }
