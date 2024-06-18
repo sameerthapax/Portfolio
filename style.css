@@ -60,7 +60,7 @@ body, html {
 }
 .navigation{
     background: rgba(122, 124, 250, 0.12);
-    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(5, 5, 5, 0.1);
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
     border-radius: 10px;
@@ -71,6 +71,7 @@ body, html {
     margin: 0 auto auto;
     z-index: 4;
     font-family: "Space Grotesk", sans-serif;
+    overflow: hidden;
 }
 
 .title-text{
@@ -122,25 +123,34 @@ nav ul {
     margin: 0 auto;
     display: flex;
     justify-content: center; /* Center the navigation items horizontally */
-    width: 80%;
+    width: 99%;
+    align-content: center;
 }
 
-nav ul li {
-    margin: 1.5% 5vh; /* Spacing between menu items */
+.navButton{
+    width: 10.7em;
+    height: 6vh;
+    text-decoration: none;
+    background-color: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(30px);
+    color: rgba(255,255,255,0.8);
+    font-size: 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    text-transform: uppercase;
 }
-
-nav ul li a {
+.navButton:hover{
+    background-color: rgba(192, 191, 191, 0.34);
+}
+nav ul .navButton {
     text-decoration: none;
     color: black; /* Dark grey text */
-    font-size: 1.5vw; /* Slightly larger font size */
+    font-size: 1.4vw; /* Slightly larger font size */
 }
 
-nav ul li a:hover{
-    color: red;
-}
-nav ul li a:active{
-    color: blue;
-}
+
+
 
 /* Add some styling for the avatar placeholder */
 #avatar {

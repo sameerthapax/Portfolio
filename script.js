@@ -173,8 +173,8 @@ function removeLoader(){
 
 document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', function(e) {
-        document.querySelectorAll('nav a').forEach(link=>link.style.color="black");
-        this.style.color="blue";
+        document.querySelectorAll('nav a').forEach(link=>link.style.backgroundColor="rgba(255,255,255,0.1)");
+        this.style.backgroundColor="rgba(192, 191, 191, 0.34)";
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         gsap.to(window, {duration: 2, scrollTo: {y: target}, ease: "power4.inOut"});
