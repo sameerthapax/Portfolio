@@ -27,7 +27,7 @@ const slideUp = {
     distance: '100px',
     duration: 800,
     easing: 'cubic-bezier(.56,-3.04,.42,3.06)',
-    delay: 600,
+    delay: 200,
 };
 const slideUp1 = {
     origin: 'bottom',
@@ -39,10 +39,10 @@ const slideUp1 = {
     duration: 1000,
     easing: 'ease-in-out',
 };const slideUp3 = {
-    origin: 'right',
+    origin: 'bottom',
     duration: 1000,
     easing: 'ease-in-out',
-    delay:1000,
+    delay:500,
 };
 gsap.to("#avatar",{
     scrollTrigger:{
