@@ -21,7 +21,7 @@ gsap.ticker.add((time)=>{
     lenis.raf(time * 1000)
 })
 
-gsap.ticker.lagSmoothing(0)
+gsap.ticker.lagSmoothing(100)
 const slideUp1 = {
     origin: 'bottom',
     distance: '100px',
@@ -79,7 +79,7 @@ gsap.to("#page2",{
         end: 'bottom top',
         markers: false,
         pin: "#page2",
-        scrub:2,
+        scrub:0,
 
     },ease:"power4.inOut"
 })
@@ -107,7 +107,7 @@ const tl=new gsap.timeline({scrollTrigger:{
         trigger:'#page-title',
         start:'top top',
         end: 'bottom top',
-        scrub:4,
+        scrub:2,
         markers:false,
     }
 });
@@ -115,7 +115,7 @@ const tl3=new gsap.timeline({scrollTrigger:{
         trigger:'#page-title',
         start:'top top',
         end: '60% top',
-        scrub:0,
+        scrub:2,
         markers:false,
     }
 });
@@ -124,7 +124,7 @@ const tl2=new gsap.timeline({scrollTrigger:{
         start:'175% top',
         endTrigger: '#page3',
         end: 'top top',
-        scrub:0,
+        scrub:2,
         markers:false}
 })
 const tl4=new gsap.timeline({scrollTrigger:{
@@ -132,7 +132,7 @@ const tl4=new gsap.timeline({scrollTrigger:{
         start:'175% top',
         endTrigger: '#page3',
         end: 'top top',
-        scrub:0,
+        scrub:2,
         markers:false}
 })
 

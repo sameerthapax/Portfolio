@@ -267,7 +267,7 @@ section {
 }
 
 #page3{
-    margin: 0;
+    margin: 1vh auto;
     height: 100vh;
     width:99vw;
     z-index: 2;
