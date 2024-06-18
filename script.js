@@ -31,28 +31,140 @@ const slideUp1 = {
     origin: 'right',
     duration: 1000,
     easing: 'ease-in-out',
+};const slideUp3 = {
+    origin: 'right',
+    duration: 1000,
+    easing: 'ease-in-out',
+    delay:1000,
 };
+gsap.to("#avatar",{
+    scrollTrigger:{
+        trigger:'#avatar',
+        start:'top top',
+        endTrigger: '#page2',
+        end: 'bottom 80',
+        markers: false,
+        pin: true,
+        pinSpacing:false,
+        scrub:1,
+    },
+})
+
+gsap.to("nav",{
+    scrollTrigger:{
+
+        trigger:'nav',
+        start:'top 1%',
+        endTrigger:"body",
+        end: 'bottom top',
+        markers: false,
+        pin: "nav",
+        pinSpacing:false,
+    }
+})
+gsap.to("#main",{
+    scrollTrigger:{
+        trigger:'#page',
+        start:'top 6%',
+        end: 'bottom top',
+        markers: false,
+        snap: 1,
+        scrub:false}, ease: "power4.inOut"
+
+})
+gsap.to("#page2",{
+    scrollTrigger:{
+        trigger:'#page2',
+        start:'top top',
+        end: 'bottom top',
+        markers: false,
+        pin: "#page2",
+        scrub:2,
+
+    },ease:"power4.inOut"
+})
+gsap.to("#page3",{
+    scrollTrigger:{
+        trigger:'#page3',
+        start:'top top',
+        end: 'bottom 40%',
+        markers: false,
+        pin: "#page3",
+        scrub:2,
+    },ease:"power4.inOut"
+})
+gsap.to("#page4",{
+    scrollTrigger:{
+        trigger:'#page4',
+        start:'top top',
+        end: 'bottom 40%',
+        markers: false,
+        pin: "#page4",
+        scrub:2,
+    },ease:"power4.inOut"
+})
+const tl=new gsap.timeline({scrollTrigger:{
+        trigger:'#page-title',
+        start:'top top',
+        end: 'bottom top',
+        scrub:4,
+        markers:false,
+    }
+});
+const tl3=new gsap.timeline({scrollTrigger:{
+        trigger:'#page-title',
+        start:'top top',
+        end: '60% top',
+        scrub:0,
+        markers:false,
+    }
+});
+const tl2=new gsap.timeline({scrollTrigger:{
+        trigger:'#page-title',
+        start:'175% top',
+        endTrigger: '#page3',
+        end: 'top top',
+        scrub:0,
+        markers:false}
+})
+const tl4=new gsap.timeline({scrollTrigger:{
+        trigger:'#page-title',
+        start:'175% top',
+        endTrigger: '#page3',
+        end: 'top top',
+        scrub:0,
+        markers:false}
+})
+
+tl.from("#page-title",{y: -700, duration:1,
+})
+tl3.from("#title-background",{y: 700, duration:1
+})
+tl2.to("#page-title",{y: 700, duration:1})
+tl4.to("#title-background",{y: -700, duration:1})
+
 
 
 window.addEventListener("load", function () {
     removeLoader();
+    introAimation();
     ScrollReveal().reveal('header', slideUp1 );
     ScrollReveal().reveal('.navigation', slideUp1 );
-    ScrollReveal().reveal('.title-text', slideUp1 );
-    ScrollReveal().reveal('.title-text2', slideUp1 );
-    ScrollReveal().reveal('#page', slideUp1 );
+
     ScrollReveal().reveal('#page2', slideUp1 );
-
-
-
-
 })
 ScrollReveal().reveal('#page3', slideUp2);
 ScrollReveal().reveal('#page4', slideUp2);
 
 function removeLoader(){
-    gsap.to("#preLoader",0.25, {display:"none"})
+    gsap.to("#preLoader",0.85, {height: "80vh", width: "99vw",borderRadius: "15vw", border: "solid #ffffff 1px", background: "rgba(222, 222, 222, 0.7)", boxShadow: "0 8px 32px 0 rgba(171, 171, 171, 0.1)",
+     margin: "1vw auto",y:50, display:"none"});
 
+
+}
+
+function introAimation(){
+    gsap.from("#page",1.5, { height:500, width:500, ease:"elastic.inOut"},ScrollReveal().reveal('#title', slideUp3 ), ScrollReveal().reveal('#avatar', slideUp3 ) )
 }
 document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', function(e) {
@@ -94,108 +206,3 @@ words2.forEach( (word) => {
     let tlText = gsap.timeline({ repeat: 0,yoyo: true, repeatDelay: 0 });
     tlText.to("#content-text",{ duration: 15, text: word});
     tiMaster2.add (tlText)});
-gsap.to("#avatar",{
-    scrollTrigger:{
-        trigger:'#avatar',
-        start:'top top',
-        endTrigger: '#page2',
-        end: 'bottom 80',
-        markers: false,
-        pin: true,
-        pinSpacing:false,
-        scrub:1,
-    },
-})
-
-gsap.to("nav",{
-    scrollTrigger:{
-        trigger:'nav',
-        start:'top 1%',
-        endTrigger:"body",
-        end: 'bottom top',
-        markers: false,
-        pin: "nav",
-        pinSpacing:false,
-    }
-})
-gsap.to("#main",{
-    scrollTrigger:{
-        trigger:'#page',
-        start:'top 6%',
-        end: 'bottom top',
-        markers: false,
-        snap: 1,
-    scrub:false}, ease: "power4.inOut"
-
-})
-gsap.to("#page2",{
-    scrollTrigger:{
-        trigger:'#page2',
-        start:'top top',
-        end: 'bottom top',
-        markers: false,
-        pin: "#page2",
-        scrub:2,
-
-    },ease:"power4.inOut"
-})
-gsap.to("#page3",{
-    scrollTrigger:{
-        trigger:'#page3',
-        start:'top top',
-        end: 'bottom 40%',
-        markers: false,
-        pin: "#page3",
-        scrub:2,
-    },ease:"power4.inOut"
-})
-gsap.to("#page4",{
-    scrollTrigger:{
-        trigger:'#page4',
-        start:'top top',
-        end: 'bottom 40%',
-        markers: false,
-        pin: "#page4",
-        scrub:2,
-    },ease:"power4.inOut"
-})
-const tl=new gsap.timeline({scrollTrigger:{
-    trigger:'#page-title',
-    start:'top top',
-    end: 'bottom top',
-    scrub:4,
-    markers:false,
-    }
-});
-const tl3=new gsap.timeline({scrollTrigger:{
-        trigger:'#page-title',
-        start:'top top',
-        end: '60% top',
-        scrub:0,
-        markers:false,
-    }
-});
-const tl2=new gsap.timeline({scrollTrigger:{
-    trigger:'#page-title',
-    start:'175% top',
-    endTrigger: '#page3',
-    end: 'top top',
-    scrub:0,
-    markers:false}
-})
-const tl4=new gsap.timeline({scrollTrigger:{
-        trigger:'#page-title',
-        start:'175% top',
-        endTrigger: '#page3',
-        end: 'top top',
-        scrub:0,
-        markers:false}
-})
-
-tl.from("#page-title",{y: -700, duration:1,
-})
-tl3.from("#title-background",{y: 700, duration:1
-})
-tl2.to("#page-title",{y: 700, duration:1})
-tl4.to("#title-background",{y: -700, duration:1})
-
