@@ -22,6 +22,13 @@ gsap.ticker.add((time)=>{
 })
 
 gsap.ticker.lagSmoothing(100)
+const slideUp = {
+    origin: 'bottom',
+    distance: '100px',
+    duration: 800,
+    easing: 'cubic-bezier(.56,-3.04,.42,3.06)',
+    delay: 600,
+};
 const slideUp1 = {
     origin: 'bottom',
     distance: '100px',
@@ -164,7 +171,7 @@ function removeLoader(){
 }
 
 function introAimation(){
-    gsap.from("#page",1.5, { height:500, width:500, ease:"elastic.inOut"},ScrollReveal().reveal('#title', slideUp3 ), ScrollReveal().reveal('#avatar', slideUp3 ) )
+    gsap.from("#page",1.5, { height:500, width:500, ease:"elastic.inOut"},ScrollReveal().reveal('#title', slideUp3 ), ScrollReveal().reveal('#avatar', slideUp ) )
 }
 document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', function(e) {
