@@ -155,7 +155,6 @@ tl4.to("#title-background",{y: -700, duration:1})
 window.addEventListener("load", function () {
     removeLoader();
     ScrollReveal().reveal('header', slideUp1 );
-    ScrollReveal().reveal('.navigation', slideUp1 );
     ScrollReveal().reveal('#page2', slideUp1 );
 })
 ScrollReveal().reveal('#page3', slideUp2);
@@ -164,9 +163,10 @@ ScrollReveal().reveal('#page4', slideUp2);
 function removeLoader(){
     gsap.to("#preLoader",0.5, {height: "75vh", width: "94vw",borderRadius: "15vw", border: "solid #ffffff 1px", background: "rgba(222, 222, 222, 0.7)", boxShadow: "0 8px 32px 0 rgba(171, 171, 171, 0.1)",
      margin: "1vw auto",y:47,x:50, display:"none", ease:"power.inOut"});
-    gsap.from("#page",1.1, { height:500, width:500, ease:"elastic.inOut", backgroundColor:"transparent"} );
-    ScrollReveal().reveal('#avatar', slideUp);
-    ScrollReveal().reveal('#title', slideUp3);
+    gsap.from("#page",1.1, { height:500, width:500, ease:"elastic.inOut", backgroundColor:"transparent",},ScrollReveal().reveal('#avatar', slideUp),
+    ScrollReveal().reveal('#title', slideUp3) );
+    gsap.from("#navigation",1, { height:0, width:0,x:"32vw",y:"2vh", ease:"power4.inOut", backgroundColor:"transparent"} );
+
 }
 
 
