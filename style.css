@@ -154,7 +154,7 @@ nav ul .navButton {
 
 /* Add some styling for the avatar placeholder */
 #avatar {
-    position: relative;
+    position: absolute;
     width: 100vw;
     height: 90vh;
     background-color: transparent;
@@ -165,7 +165,7 @@ nav ul .navButton {
 
 }
 #title{
-    position: relative;
+    position: absolute;
     margin-top: 25vh;
     width: 70vw;
     left: 4.7vw;

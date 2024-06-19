@@ -24,10 +24,10 @@ gsap.ticker.add((time)=>{
 gsap.ticker.lagSmoothing(100)
 const slideUp = {
     origin: 'bottom',
-    distance: '100px',
+    distance: '90px',
     duration: 800,
-    easing: 'cubic-bezier(.56,-3.04,.42,3.06)',
-    delay: 800,
+    easing: 'ease-in-out',
+    delay: 1000,
 };
 const slideUp1 = {
     origin: 'bottom',
@@ -163,8 +163,8 @@ ScrollReveal().reveal('#page4', slideUp2);
 
 function removeLoader(){
     gsap.to("#preLoader",0.5, {height: "75vh", width: "94vw",borderRadius: "15vw", border: "solid #ffffff 1px", background: "rgba(222, 222, 222, 0.7)", boxShadow: "0 8px 32px 0 rgba(171, 171, 171, 0.1)",
-     margin: "1vw auto",y:60,x:50, display:"none", ease:"power.inOut"});
-    gsap.from("#page",1.2, { height:500, width:500, ease:"elastic.inOut"} );
+     margin: "1vw auto",y:47,x:50, display:"none", ease:"power.inOut"});
+    gsap.from("#page",1.1, { height:500, width:500, ease:"elastic.inOut", backgroundColor:"transparent"} );
     ScrollReveal().reveal('#avatar', slideUp);
     ScrollReveal().reveal('#title', slideUp3);
 }
