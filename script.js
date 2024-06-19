@@ -27,7 +27,7 @@ const slideUp = {
     distance: '100px',
     duration: 800,
     easing: 'cubic-bezier(.56,-3.04,.42,3.06)',
-    delay: 200,
+    delay: 800,
 };
 const slideUp1 = {
     origin: 'bottom',
@@ -165,6 +165,8 @@ function removeLoader(){
     gsap.to("#preLoader",0.5, {height: "75vh", width: "94vw",borderRadius: "15vw", border: "solid #ffffff 1px", background: "rgba(222, 222, 222, 0.7)", boxShadow: "0 8px 32px 0 rgba(171, 171, 171, 0.1)",
      margin: "1vw auto",y:60,x:50, display:"none", ease:"power.inOut"});
     gsap.from("#page",1.2, { height:500, width:500, ease:"elastic.inOut"} );
+    ScrollReveal().reveal('#avatar', slideUp);
+    ScrollReveal().reveal('#title', slideUp3);
 }
 
 

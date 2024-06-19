@@ -154,16 +154,17 @@ nav ul .navButton {
 
 /* Add some styling for the avatar placeholder */
 #avatar {
-    position: absolute;
+    position: relative;
     width: 100vw;
     height: 90vh;
     background-color: transparent;
     z-index: 1;
-    margin-left: 20vw;
+    left: 20vw;
+    top:-50vh;
 
 }
 #title{
-    position: absolute;
+    position: relative;
     margin-top: 25vh;
     width: 70vw;
     left: 4.7vw;
