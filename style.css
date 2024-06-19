@@ -161,6 +161,7 @@ nav ul .navButton {
     z-index: 1;
     left: 20vw;
     top:-50vh;
+    visibility: hidden;
 
 }
 #title{
