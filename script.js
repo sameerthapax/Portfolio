@@ -62,21 +62,60 @@ gsap.to("nav",{
 
         trigger:'nav',
         start:'top 1%',
-        endTrigger:"body",
-        end: 'bottom top',
+        endTrigger:document.body,
+        end: '115% top',
         markers: false,
         pin: "nav",
         pinSpacing:false,
     }
-})
+},)
+gsap.to("#homeNevButton",{
+    scrollTrigger:{
+        trigger:'#page',
+        start:'top 20%',
+        endTrigger:"#page",
+        end: 'bottom center',
+        markers: false,
+        toggleActions: "play reverse play reverse",
+        },backgroundColor:"rgba(192, 191, 191, 0.34)",duration:0
+});
+gsap.to("#aboutNevButton",{
+    scrollTrigger:{
+        trigger:'#page2',
+        start:'-50% top',
+        endTrigger:"#page2",
+        end: '150% top',
+        markers: false,
+        toggleActions: "play reverse play reverse",
+    },backgroundColor:"rgba(192, 191, 191, 0.34)"
+});
+gsap.to("#projectNevButton",{
+    scrollTrigger:{
+        trigger:'#page4',
+        start:'-50% top',
+        endTrigger:"#page4",
+        end: 'bottom top',
+        markers: false,
+        toggleActions: "play reverse play reverse",
+    },backgroundColor:"rgba(192, 191, 191, 0.34)"
+});gsap.to("#ContactNevButton",{
+    scrollTrigger:{
+        trigger:'#page4',
+        start:'100% top',
+        endTrigger:"#page4",
+        end: '300% top',
+        markers: false,
+        toggleActions: "play reverse play reverse",
+    },backgroundColor:"rgba(192,191,191,0.73)"
+});
 gsap.to("#main",{
     scrollTrigger:{
         trigger:'#page',
         start:'top 6%',
         end: 'bottom top',
         markers: false,
-        snap: 1,
-        scrub:false}, ease: "power4.inOut"
+        snap:1,
+        scrub:false}, ease: "sine"
 
 })
 gsap.to("#page2",{
@@ -110,6 +149,7 @@ gsap.to("#page4",{
         scrub:2,
     },ease:"power4.inOut"
 })
+
 const tl=new gsap.timeline({scrollTrigger:{
         trigger:'#page-title',
         start:'top top',
@@ -172,8 +212,8 @@ function removeLoader(){
 
 document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', function(e) {
-        document.querySelectorAll('nav a').forEach(link=>link.style.backgroundColor="rgba(255,255,255,0.1)");
-        this.style.backgroundColor="rgba(192, 191, 191, 0.34)";
+        // document.querySelectorAll('nav a').forEach(link=>link.style.backgroundColor="rgba(255,255,255,0.1)");
+        // this.style.backgroundColor="rgba(192, 191, 191, 0.34)";
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         gsap.to(window, {duration: 2, scrollTo: {y: target}, ease: "power4.inOut"});
