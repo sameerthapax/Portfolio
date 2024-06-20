@@ -77,7 +77,7 @@ gsap.to("#homeNevButton",{
         end: 'bottom center',
         markers: false,
         toggleActions: "play reverse play reverse",
-        },backgroundColor:"rgba(192, 191, 191, 0.34)",duration:0
+        },backgroundColor:"rgba(196,195,195,0.55)",
 });
 gsap.to("#aboutNevButton",{
     scrollTrigger:{
@@ -87,7 +87,7 @@ gsap.to("#aboutNevButton",{
         end: '150% top',
         markers: false,
         toggleActions: "play reverse play reverse",
-    },backgroundColor:"rgba(192, 191, 191, 0.34)"
+    },backgroundColor:"rgba(196,195,195,0.55)",
 });
 gsap.to("#projectNevButton",{
     scrollTrigger:{
@@ -97,7 +97,7 @@ gsap.to("#projectNevButton",{
         end: 'bottom top',
         markers: false,
         toggleActions: "play reverse play reverse",
-    },backgroundColor:"rgba(192, 191, 191, 0.34)"
+    },backgroundColor:"rgba(196,195,195,0.55)",
 });gsap.to("#ContactNevButton",{
     scrollTrigger:{
         trigger:'#page4',
@@ -106,7 +106,7 @@ gsap.to("#projectNevButton",{
         end: '300% top',
         markers: false,
         toggleActions: "play reverse play reverse",
-    },backgroundColor:"rgba(192,191,191,0.73)"
+    },backgroundColor:"rgba(196,195,195,0.55)",
 });
 gsap.to("#main",{
     scrollTrigger:{
