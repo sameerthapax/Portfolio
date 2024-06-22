@@ -108,27 +108,77 @@ gsap.to("#projectNevButton",{
         toggleActions: "play reverse play reverse",
     },backgroundColor:"rgba(196,195,195,0.55)",
 });
-gsap.to("#main",{
-    scrollTrigger:{
-        trigger:'#page',
-        start:'top 6%',
-        end: 'bottom top',
-        markers: false,
-        snap:1,
-        scrub:false}, ease: "sine"
-
-})
+// gsap.to("#main",{
+//     scrollTrigger:{
+//         trigger:'#page',
+//         start:'top 6%',
+//         end: 'bottom top',
+//         markers: false,
+//         snap:1,
+//         scrub:false}, ease: "sine"
+//
+// })
 gsap.to("#page2",{
+    scrollTrigger:{
+        trigger:'#page2',
+        start:'top top',
+        end: 'bottom center',
+        markers: false,
+        pin: "#page2",
+        pinSpacing:true,
+        scrub:0,
+
+    },ease:"power4.inOut"
+})
+gsap.to("#about-content",{
     scrollTrigger:{
         trigger:'#page2',
         start:'top top',
         end: 'bottom top',
         markers: false,
-        pin: "#page2",
-        scrub:0,
+        pin: false,
+        pinSpacing:false,
+        scrub:2,
 
     },ease:"power4.inOut"
 })
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+
+
+    // Reveal timeline items on scroll
+    gsap.utils.toArray('.timeline-item').forEach(item => {
+        gsap.fromTo(item, {
+            opacity: 0,
+            y: 50
+        }, {
+            opacity: 1,
+            y: -50,
+            scrollTrigger: {
+                trigger: item,
+                start: "top 80%",
+                end: "top 60%",
+                scrub: 1,
+                markers:false
+            }
+        });
+        gsap.to(item, {
+            borderRadius:360,
+            scaleY:0,
+            scale:0,
+            scrollTrigger: {
+                trigger: item,
+                start: "top 20%",
+                end: "top 10%",
+                scrub: 1,
+                markers:false
+            }
+        });
+    });
+});
 gsap.to("#page3",{
     scrollTrigger:{
         trigger:'#page3',
@@ -216,7 +266,7 @@ document.querySelectorAll('nav a').forEach(link => {
         // this.style.backgroundColor="rgba(192, 191, 191, 0.34)";
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
-        gsap.to(window, {duration: 2, scrollTo: {y: target}, ease: "power4.inOut"});
+        gsap.to(window, {duration: 2, scrollTo: target, ease: "power4.inOut"});
     });
 
 });
@@ -238,7 +288,6 @@ let tiMaster2 = gsap.timeline({scrollTrigger:{
         trigger:'#page-title',
         start:'50% top',
         end: '175% top',
-        toggleActions:'play reverse play reverse',
         scrub:true,
         markers:false,
     } });
