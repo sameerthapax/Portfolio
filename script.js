@@ -199,10 +199,19 @@ gsap.to("#page3",{
         trigger:'#page3',
         start:'top top',
         end: 'bottom 40%',
-        markers: true,
+        markers: false,
         pin: "#page3",
         scrub:2,
-    },ease:"power4.inOut"
+    },ease:"power4.inOut",
+});
+gsap.to("#page3",{
+    scrollTrigger:{
+        trigger:'#page3',
+        start:'-10% top',
+        end: 'top top',
+        markers: false,
+        scrub:2,
+    },ease:"power4.inOut", borderRadius:"0", backgroundColor:"black"
 })
 gsap.to("#page4",{
     scrollTrigger:{
