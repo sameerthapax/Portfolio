@@ -199,7 +199,7 @@ gsap.to("#page3",{
         trigger:'#page3',
         start:'top top',
         end: 'bottom 40%',
-        markers: false,
+        markers: true,
         pin: "#page3",
         scrub:2,
     },ease:"power4.inOut"
