@@ -202,7 +202,7 @@ gsap.to("#page3",{
         markers: false,
         pin: "#page3",
         scrub:2,
-    },ease:"power4.inOut",
+    },ease:"power4.inOut", backgroundColor:"black"
 });
 gsap.to("#page3",{
     scrollTrigger:{
@@ -211,7 +211,7 @@ gsap.to("#page3",{
         end: 'top top',
         markers: false,
         scrub:true,
-    },ease:"power4.inOut", borderRadius:"0", backgroundColor:"black"
+    },ease:"power4.inOut", borderRadius:"0"
 })
 gsap.to("#page4",{
     scrollTrigger:{
