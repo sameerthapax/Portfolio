@@ -168,10 +168,10 @@ document.addEventListener('DOMContentLoaded', function() {
     gsap.utils.toArray('.timeline-item').forEach(item => {
         gsap.fromTo(item, {
             opacity: 0,
-            y: 50
+            y: "05vh"
         }, {
             opacity: 1,
-            y: -50,
+            y: "-1vh",
             scrollTrigger: {
                 trigger: item,
                 start: "top 80%",
@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 end: "top 10%",
                 scrub: 1,
                 markers:false
-            }
+            },ease:"sine.inOut"
         });
     });
 });
@@ -219,7 +219,7 @@ const tl=new gsap.timeline({scrollTrigger:{
         trigger:'#page-title',
         start:'top top',
         end: 'bottom top',
-        scrub:2,
+        scrub:true,
         markers:false,
     }
 });
@@ -227,7 +227,7 @@ const tl3=new gsap.timeline({scrollTrigger:{
         trigger:'#page-title',
         start:'top top',
         end: '60% top',
-        scrub:2,
+        scrub:true,
         markers:false,
     }
 });
@@ -236,7 +236,7 @@ const tl2=new gsap.timeline({scrollTrigger:{
         start:'175% top',
         endTrigger: '#page3',
         end: 'top top',
-        scrub:2,
+        scrub:true,
         markers:false}
 })
 const tl4=new gsap.timeline({scrollTrigger:{
@@ -244,16 +244,16 @@ const tl4=new gsap.timeline({scrollTrigger:{
         start:'175% top',
         endTrigger: '#page3',
         end: 'top top',
-        scrub:2,
+        scrub:true,
         markers:false}
 })
 
-tl.from("#page-title",{y: -700, duration:1,
+tl.from("#page-title",{y: -700, duration:2,
 })
-tl3.from("#title-background",{y: 700, duration:1
+tl3.from("#title-background",{y: 700, duration:2
 })
-tl2.to("#page-title",{y: 700, duration:1})
-tl4.to("#title-background",{y: -700, duration:1})
+tl2.to("#page-title",{y: 700, duration:2})
+tl4.to("#title-background",{y: -700, duration:2})
 
 
 
