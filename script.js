@@ -210,7 +210,7 @@ gsap.to("#page3",{
         start:'-10% top',
         end: 'top top',
         markers: false,
-        scrub:2,
+        scrub:true,
     },ease:"power4.inOut", borderRadius:"0", backgroundColor:"black"
 })
 gsap.to("#page4",{
