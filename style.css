@@ -183,6 +183,7 @@ nav ul .navButton {
     background-color: #000000;
     border: solid #e9e9e9 6px;
     text-align: center;
+    visibility: hidden;
 }
 #page3 h2{
     display: inline-block;

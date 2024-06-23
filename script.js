@@ -201,6 +201,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+let page3Animation = new gsap.timeline({scrollTrigger: {
+    trigger: '#page3',
+        start: '-90% top',
+        end: '-60% top',
+        markers: false,
+        scrub: 2,}})
+page3Animation
+    .set("#page3",{scale:0.5, yPercent:50,visibility:"visible"})
+    .to("#page3", {
+    ease: "power2.inOut", scale:1, yPercent:0
+});
 
 gsap.to("#page3", {
     scrollTrigger: {
@@ -212,19 +223,15 @@ gsap.to("#page3", {
         pinSpacing:false,
         scrub: 2,
     },
-    ease: "power4.inOut",
 });
-
 gsap.to("#page3", {
     scrollTrigger: {
         trigger: '#page3',
-        start: '-10% top',
+        start: '-20 top',
         end: 'top top',
         markers: false,
         scrub: 2,
-    },
-    ease: "power4.inOut",
-    borderRadius: "0",
+    },borderRadius:0
 });
 
 // gsap.to("#page4", {
@@ -292,7 +299,6 @@ window.addEventListener("load", function() {
     ScrollReveal().reveal('#page2', slideUp1);
 });
 
-ScrollReveal().reveal('#page3', slideUp2);
 ScrollReveal().reveal('#page4', slideUp2);
 
 function removeLoader() {
