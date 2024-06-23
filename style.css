@@ -88,7 +88,6 @@ body, html {
     font-weight: 400;
     color: #111111;
     display: inline;
-    position: relative;
 
 }
 #title2{
@@ -170,6 +169,7 @@ nav ul .navButton {
     margin-top: 20vh;
     width: 70vw;
     left: 4.7vw;
+    z-index: 1;
 
 }
 
@@ -273,9 +273,8 @@ section {
     height: 100vh;
     writing-mode: vertical-lr;
     margin-left: 9vh;
-    z-index: 1;
+    z-index: 2;
     text-shadow: -1vh 2vh #494949;
-    display: block;
 
 
 }
