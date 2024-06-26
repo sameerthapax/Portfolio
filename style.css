@@ -191,6 +191,14 @@ nav ul .navButton {
     margin-top: 40vh;
     font-size: 18vw;
 }
+#macbook{
+    height: 80vh;
+    width: 80vw;
+    position: absolute;
+    top:20vh;
+    left: 045vw;
+
+}
 
 #page4 {
     margin: 0;
