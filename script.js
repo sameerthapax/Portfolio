@@ -1,5 +1,5 @@
 // Initialize LocomotiveScroll and GSAP plugins
-const scroll = new LocomotiveScroll();
+
 gsap.registerPlugin(ScrollTrigger, TextPlugin, ScrollToPlugin);
 
 // Initialize Lenis for smooth scrolling
