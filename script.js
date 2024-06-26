@@ -53,7 +53,7 @@ const slideUp3 = {
     delay: 500,
 };
 
-// GSAP animations for elements
+// // GSAP animations for elements
 gsap.to("#avatar", {
     scrollTrigger: {
         trigger: '#avatar',
@@ -66,6 +66,7 @@ gsap.to("#avatar", {
         scrub: 1,
     },
 });
+
 
 gsap.to("#animated-text", {
     scrollTrigger: {
@@ -87,8 +88,8 @@ gsap.to("nav", {
     scrollTrigger: {
         trigger: 'nav',
         start: 'top 1%',
-        endTrigger: document.body,
-        end: '115% top',
+        endTrigger: "#page3",
+        end: '40% top',
         markers: false,
         pin: "nav",
         pinSpacing: false,
@@ -201,17 +202,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-let page3Animation = new gsap.timeline({scrollTrigger: {
+let page3Animationin  = new gsap.timeline({scrollTrigger: {
     trigger: '#page3',
         start: '-90% top',
         end: '-60% top',
         markers: false,
-        scrub: 2,}})
-page3Animation
-    .set("#page3",{scale:0.5, yPercent:50,visibility:"visible"})
+        scrub: 1,}})
+page3Animationin
+    .set("#page3",{scale:0.5, yPercent:50,visibility:"visible", background: "rgba(238, 239, 252, 0.38)",
+        boxShadow: "0 4px 30px rgba(255, 255, 255, 0.1)", backdropFilter: "blur(2vh)", webkitBackdropFilter: "blur(2vh)"})
     .to("#page3", {
-    ease: "power2.inOut", scale:1, yPercent:0
+    ease: "power2.inOut", scale:1, yPercent:0,
 });
+let page3Animationout  = new gsap.timeline({scrollTrigger: {
+        trigger: '#page3',
+        start: '300% top',
+        end: '330% top',
+        markers: false,
+        scrub: 1,}})
+page3Animationout
+    .to("#page3",{ scale:1, borderRadius:"25vh"  })
+
 
 gsap.to("#page3", {
     scrollTrigger: {
@@ -220,19 +231,38 @@ gsap.to("#page3", {
         end: '300% top',
         markers: false,
         pin: "#page3",
-        pinSpacing:false,
-        scrub: 2,
+        pinSpacing:true,
     },
 });
 gsap.to("#page3", {
     scrollTrigger: {
         trigger: '#page3',
-        start: '-20 top',
+        start: '-50 top',
         end: 'top top',
         markers: false,
-        scrub: 2,
-    },borderRadius:0
+        scrub: 1,
+    },borderRadius:0, backgroundColor: "black"
 });
+const text=new SplitType("#page3Heading", {types: "chars"});
+gsap.set("#page3Heading", {autoAlpha: 1});
+gsap.set(text.chars,{yPercent:0});
+
+
+
+gsap.to(text.chars,{
+        yPercent: -490,
+        stagger:{from: "center", amount:1},
+        scrollTrigger:{
+            trigger:"#page3Heading",
+            start:'-80% top',
+            end:()=> `+=${document. querySelector ("#page3Heading").offsetHeight *0.25}`,
+            scrub:1,
+            markers: false
+        },
+        fontSize:"8vw"
+})
+
+
 
 // gsap.to("#page4", {
 //     scrollTrigger: {
@@ -321,6 +351,7 @@ function removeLoader() {
             width: 500,
             ease: "elastic.inOut",
             backgroundColor: "transparent",
+        opacity: 0
         }, ScrollReveal().reveal('#avatar', slideUp),
         ScrollReveal().reveal('#title', slideUp3));
 

@@ -127,17 +127,7 @@ nav ul .navButton {
     color: #6999fb;
 }
 
-/* Avatar */
-/*#avatar {*/
-/*    position: absolute;*/
-/*    width: 100vw;*/
-/*    height: 110vh;*/
-/*    background-color: transparent;*/
-/*    z-index: 1;*/
-/*    top: -20vh;*/
-/*    left: 23vw;*/
-/*    overflow: hidden;*/
-/*}*/
+
 #avatar {
     position: absolute;
     width: 100vw;
@@ -197,6 +187,9 @@ nav ul .navButton {
 }
 #page3 h2{
     display: inline-block;
+    text-align: center;
+    margin-top: 40vh;
+    font-size: 18vw;
 }
 
 #page4 {
