@@ -348,33 +348,7 @@ section {
 }
 
 /* Media Queries */
-@media only screen and (max-width: 600px) {
-    body {
-        background-color: lightblue;
-    }
-    html.lenis, html.lenis body {
-        height: auto;
-    }
 
-    .lenis.lenis-smooth {
-        scroll-behavior: auto !important;
-    }
-
-    .lenis.lenis-smooth [data-lenis-prevent] {
-        overscroll-behavior: contain;
-    }
-
-    .lenis.lenis-stopped {
-        overflow: hidden;
-    }
-
-    .lenis.lenis-smooth spline-viewer {
-        pointer-events: visible;
-    }
-    .lenis.lenis-smooth body {
-        pointer-events: visible;
-    }
-}
 
 /* Lenis Smooth Scroll */
 html.lenis, html.lenis body {
