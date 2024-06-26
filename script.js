@@ -3,7 +3,13 @@
 gsap.registerPlugin(ScrollTrigger, TextPlugin, ScrollToPlugin);
 
 // Initialize Lenis for smooth scrolling
-const lenis = new Lenis();
+// Initialize Lenis for smooth scrolling
+const lenis = new Lenis({
+  smoothWheel: true,
+  smoothTouch: true, // Enable smooth touch for mobile
+  touchMultiplier: 2, // Increase touch scroll sensitivity
+  gestureSupport: true // Enable gesture support
+});
 
 lenis.on('scroll', (e) => {
     console.log(e);
