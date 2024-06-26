@@ -27,7 +27,7 @@ gsap.ticker.lagSmoothing(100);
 // Scroll reveal animations
 const slideUp = {
     origin: 'bottom',
-    distance: '90px',
+    distance: '10px',
     duration: 800,
     easing: 'ease-in-out',
     delay: 1000,
@@ -307,7 +307,7 @@ function removeLoader() {
         width: "94vw",
         borderRadius: "15vw",
         border: "solid #ffffff 1px",
-        background: "rgba(222, 222, 222, 0.7)",
+        background: "linear-gradient(180deg, rgba(255,255,255,0.7581626400560224) 0%, rgba(255,255,255,0.8534007352941176) 39%, rgba(175,200,251,0.8618040966386554) 100%)",
         boxShadow: "0 8px 32px 0 rgba(171, 171, 171, 0.1)",
         margin: "1vw auto",
         y: 47,
