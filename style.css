@@ -359,12 +359,16 @@ section {
 }
 
 /* Media Queries */
+
 @media only screen and (max-width: 600px) {
     body {
         background-color: lightblue;
+        overflow: auto; /* Allow scrolling */
     }
+
     html.lenis, html.lenis body {
         height: auto;
+        overflow: auto; /* Ensure scrolling is enabled */
     }
 
     .lenis.lenis-smooth {
@@ -379,10 +383,7 @@ section {
         overflow: hidden;
     }
 
-    .lenis.lenis-smooth spline-viewer {
-        pointer-events: visible;
-    }
-    .lenis.lenis-smooth body {
+    .lenis.lenis-smooth spline-viewer, .lenis.lenis-smooth body {
         pointer-events: visible;
     }
 }
