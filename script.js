@@ -1,6 +1,6 @@
 // Initialize LocomotiveScroll and GSAP plugins
 const scroll = new LocomotiveScroll();
-gsap.registerPlugin(ScrollTrigger, TextPlugin, ScrollToPlugin);
+gsap.registerPlugin(ScrollTrigger, TextPlugin, ScrollToPlugin, SlowMo);
 
 // Initialize Lenis for smooth scrolling
 const lenis = new Lenis();
@@ -262,6 +262,16 @@ gsap.to(text.chars,{
         fontSize:"8vw"
 })
 
+gsap.fromTo("#macbook",{xPercent:-80, rotate:180, scale:0.2},{xPercent:0,ease:"slow(0.6,1.1)", rotate:0, scale:1, duration:1.5,
+
+    scrollTrigger:{
+        trigger:"#page3",
+        start:'top top',
+        end: '300% top',
+        markers: true,
+        toggleActions:'play reverse play reverse'
+    },
+})
 
 
 // gsap.to("#page4", {

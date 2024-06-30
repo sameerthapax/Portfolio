@@ -195,9 +195,20 @@ nav ul .navButton {
     height: 80vh;
     width: 80vw;
     position: absolute;
-    top:20vh;
+    top:15vh;
     left: 045vw;
 
+}
+#circle{
+    background-color: transparent;
+    border: 6px dotted white;
+    border-right-color: transparent;
+    height: 80vh;
+    width: 50vw;
+    border-radius: 50%;
+    position: absolute;
+    top:15vh;
+    left:65vw
 }
 
 #page4 {
