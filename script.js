@@ -247,7 +247,7 @@ gsap.to("#page3", {
         end: 'top top',
         markers: false,
         scrub: 1,
-    },borderRadius:0, backgroundColor: "black"
+    },borderRadius:0, backgroundColor: "black",border:2,
 });
 const text=new SplitType("#page3Heading", {types: "chars"});
 gsap.set("#page3Heading", {autoAlpha: 1});
@@ -256,7 +256,7 @@ gsap.set(text.chars,{yPercent:0});
 
 
 gsap.to(text.chars,{
-        y: '-80vh',
+        y: '-65vh',
         stagger:{from: "center", amount:1},
         scrollTrigger:{
             trigger:"#page3Heading",
