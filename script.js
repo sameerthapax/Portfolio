@@ -256,7 +256,7 @@ gsap.set(text.chars,{yPercent:0});
 
 
 gsap.to(text.chars,{
-        yPercent: -480,
+        y: '-80vh',
         stagger:{from: "center", amount:1},
         scrollTrigger:{
             trigger:"#page3Heading",
