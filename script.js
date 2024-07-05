@@ -33,7 +33,7 @@ gsap.ticker.lagSmoothing(100);
 // Scroll reveal animations
 const slideUp = {
     origin: 'bottom',
-    distance: '10px',
+    distance:'4px',
     duration: 800,
     easing: 'ease-in-out',
     delay: 1000,
@@ -63,13 +63,13 @@ const slideUp3 = {
 gsap.to("#avatar", {
     scrollTrigger: {
         trigger: '#avatar',
-        start: 'top top',
-        endTrigger: '#page2',
-        end: 'bottom 60%',
+        start: '10% top',
+        endTrigger: '#sub-hero-section',
+        end: 'bottom 30%',
         markers: false,
         pin: true,
         pinSpacing: false,
-        scrub: 1,
+        scrub: 10,
     },
 });
 
@@ -341,18 +341,18 @@ function removeLoader() {
     gsap.to("#preLoader", 0.5, {
         height: "75vh",
         width: "94vw",
-        borderRadius: "15vw",
-        border: "solid #ffffff 1px",
-        background: "linear-gradient(180deg, rgba(255,255,255,0.7581626400560224) 0%, rgba(255,255,255,0.8534007352941176) 39%, rgba(175,200,251,0.8618040966386554) 100%)",
+        borderRadius: "3vw",
+        border: "solid black 1px",
+        background: "transparent",
         boxShadow: "0 8px 32px 0 rgba(171, 171, 171, 0.1)",
         margin: "1vw auto",
-        y: 47,
+        y: '13vh',
         x: 50,
         display: "none",
         ease: "power.inOut"
     });
 
-    gsap.from("#page", 1.1, {
+    gsap.from("#hero-section", 1.1, {
             height: 500,
             width: 500,
             ease: "elastic.inOut",
