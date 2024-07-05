@@ -5,10 +5,10 @@ gsap.registerPlugin(ScrollTrigger, TextPlugin, ScrollToPlugin);
 // Initialize Lenis for smooth scrolling
 // Initialize Lenis for smooth scrolling
 const lenis = new Lenis({
-  smoothWheel: true,
-  smoothTouch: true, // Enable smooth touch for mobile
-  touchMultiplier: 2, // Increase touch scroll sensitivity
-  gestureSupport: true // Enable gesture support
+    smoothWheel: true,
+    smoothTouch: true, // Enable smooth touch for mobile
+    touchMultiplier: 2, // Increase touch scroll sensitivity
+    gestureSupport: true // Enable gesture support
 });
 
 lenis.on('scroll', (e) => {
@@ -33,7 +33,7 @@ gsap.ticker.lagSmoothing(100);
 // Scroll reveal animations
 const slideUp = {
     origin: 'bottom',
-    distance:'4px',
+    distance: '4px',
     duration: 800,
     easing: 'ease-in-out',
     delay: 1000,
@@ -176,7 +176,7 @@ gsap.to("#about-content", {
     ease: "power4.inOut",
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Reveal timeline items on scroll
     gsap.utils.toArray('.timeline-item').forEach(item => {
         gsap.fromTo(item, {
@@ -208,26 +208,34 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-let page3Animationin  = new gsap.timeline({scrollTrigger: {
-    trigger: '#page3',
+let page3Animationin = new gsap.timeline({
+    scrollTrigger: {
+        trigger: '#page3',
         start: '-90% top',
         end: '-60% top',
         markers: false,
-        scrub: 1,}})
+        scrub: 1,
+    }
+})
 page3Animationin
-    .set("#page3",{scale:0.5, yPercent:50,visibility:"visible", background: "rgba(238, 239, 252, 0.38)",
-        boxShadow: "0 4px 30px rgba(255, 255, 255, 0.1)", backdropFilter: "blur(2vh)", webkitBackdropFilter: "blur(2vh)"})
+    .set("#page3", {
+        scale: 0.5, yPercent: 50, visibility: "visible", background: "rgba(238, 239, 252, 0.38)",
+        boxShadow: "0 4px 30px rgba(255, 255, 255, 0.1)", backdropFilter: "blur(2vh)", webkitBackdropFilter: "blur(2vh)"
+    })
     .to("#page3", {
-    ease: "power2.inOut", scale:1, yPercent:0,
-});
-let page3Animationout  = new gsap.timeline({scrollTrigger: {
+        ease: "power2.inOut", scale: 1, yPercent: 0,
+    });
+let page3Animationout = new gsap.timeline({
+    scrollTrigger: {
         trigger: '#page3',
         start: '300% top',
         end: '330% top',
         markers: false,
-        scrub: 1,}})
+        scrub: 1,
+    }
+})
 page3Animationout
-    .to("#page3",{ scale:1, borderRadius:"25vh"  })
+    .to("#page3", {scale: 1, borderRadius: "25vh"})
 
 
 gsap.to("#page3", {
@@ -237,7 +245,7 @@ gsap.to("#page3", {
         end: '300% top',
         markers: false,
         pin: "#page3",
-        pinSpacing:true,
+        pinSpacing: true,
     },
 });
 gsap.to("#page3", {
@@ -247,27 +255,25 @@ gsap.to("#page3", {
         end: 'top top',
         markers: false,
         scrub: 1,
-    },borderRadius:0, backgroundColor: "black",border:2,
+    }, borderRadius: 0, backgroundColor: "black", border: 2,
 });
-const text=new SplitType("#page3Heading", {types: "chars"});
+const text = new SplitType("#page3Heading", {types: "chars"});
 gsap.set("#page3Heading", {autoAlpha: 1});
-gsap.set(text.chars,{yPercent:0});
+gsap.set(text.chars, {yPercent: 0});
 
 
-
-gsap.to(text.chars,{
-        y: '-65vh',
-        stagger:{from: "center", amount:1},
-        scrollTrigger:{
-            trigger:"#page3Heading",
-            start:'-80% top',
-            end:()=> `+=${document. querySelector ("#page3Heading").offsetHeight *0.25}`,
-            scrub:1,
-            markers: false
-        },
-        fontSize:"8vw"
+gsap.to(text.chars, {
+    y: '-65vh',
+    stagger: {from: "center", amount: 1},
+    scrollTrigger: {
+        trigger: "#page3Heading",
+        start: '-80% top',
+        end: () => `+=${document.querySelector("#page3Heading").offsetHeight * 0.25}`,
+        scrub: 1,
+        markers: false
+    },
+    fontSize: "8vw"
 })
-
 
 
 // gsap.to("#page4", {
@@ -324,12 +330,12 @@ const tl4 = new gsap.timeline({
     }
 });
 
-tl.from("#page-title", { y: -700, duration: 2 });
-tl3.from("#title-background", { y: 700, duration: 2 });
-tl2.to("#page-title", { y: 700, duration: 2 });
-tl4.to("#title-background", { y: -700, duration: 2 });
+tl.from("#page-title", {y: -700, duration: 2});
+tl3.from("#title-background", {y: 700, duration: 2});
+tl2.to("#page-title", {y: 700, duration: 2});
+tl4.to("#title-background", {y: -700, duration: 2});
 
-window.addEventListener("load", function() {
+window.addEventListener("load", function () {
     removeLoader();
     ScrollReveal().reveal('header', slideUp1);
     ScrollReveal().reveal('#page2', slideUp1);
@@ -357,7 +363,7 @@ function removeLoader() {
             width: 500,
             ease: "elastic.inOut",
             backgroundColor: "transparent",
-        opacity: 0
+            opacity: 0
         }, ScrollReveal().reveal('#avatar', slideUp),
         ScrollReveal().reveal('#title', slideUp3));
 
@@ -372,10 +378,10 @@ function removeLoader() {
 }
 
 document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', function(e) {
+    link.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
-        gsap.to(window, { duration: 2, scrollTo: target, ease: "power4.inOut" });
+        gsap.to(window, {duration: 2, scrollTo: target, ease: "power4.inOut"});
     });
 });
 
@@ -389,10 +395,10 @@ const words2 = ["Hello there! I'm originally from the stunning city of Pokhara, 
 
 const words = ["Sameer", 'A Developer', "A Student", "A Senior Year"];
 
-gsap.to("#cursor", { opacity: 0, repeat: -1, yoyo: true, duration: 0.5, ease: "power1.inOut" });
-gsap.to("#content-text2", { opacity: 0, repeat: -1, yoyo: true, duration: 0.5, ease: "power1.Out" });
+gsap.to("#cursor", {opacity: 0, repeat: -1, yoyo: true, duration: 0.5, ease: "power1.inOut"});
+gsap.to("#content-text2", {opacity: 0, repeat: -1, yoyo: true, duration: 0.5, ease: "power1.Out"});
 
-let tiMaster = gsap.timeline({ repeat: -1 });
+let tiMaster = gsap.timeline({repeat: -1});
 let tiMaster2 = gsap.timeline({
     scrollTrigger: {
         trigger: '#page-title',
@@ -403,14 +409,33 @@ let tiMaster2 = gsap.timeline({
     }
 });
 
+
+    let typeSplit = new SplitType('#sub-hero-section-content', {
+    types: 'chars',
+    tagName: 'span'
+})
+
+    gsap.from('#sub-hero-section-content .char', {
+    opacity: 0.3,
+    duration: 1,
+    ease: 'elastic.out',
+    stagger: 0.1,
+
+    scrollTrigger: {
+    trigger: '#sub-hero-section-content',
+    start: 'top center',
+    scrub: true
+}
+})
+
 words.forEach((word) => {
-    let tlText = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 2 });
-    tlText.to("#animated-text", { duration: 1, text: word });
+    let tlText = gsap.timeline({repeat: 1, yoyo: true, repeatDelay: 2});
+    tlText.to("#animated-text", {duration: 1, text: word});
     tiMaster.add(tlText);
 });
 
 words2.forEach((word) => {
-    let tlText = gsap.timeline({ repeat: 0, yoyo: true, repeatDelay: 0 });
-    tlText.to("#content-text", { duration: 15, text: word });
+    let tlText = gsap.timeline({repeat: 0, yoyo: true, repeatDelay: 0});
+    tlText.to("#content-text", {duration: 15, text: word});
     tiMaster2.add(tlText);
 });

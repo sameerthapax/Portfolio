@@ -46,6 +46,11 @@ h2:last-child {
     font-weight: 400;
     font-style: normal;
 }
+.alfa-slab-one-regular {
+    font-family: "Alfa Slab One", serif;
+    font-weight: 600;
+    font-style: normal;
+}
 /* Header */
 #Header {
     text-align: center;
@@ -192,6 +197,14 @@ nav ul .navButton {
     border:solid rgba(0, 0, 0, 0.69) 1px ;
     margin: -5vh auto 8vh;
 
+}
+#sub-hero-section-content{
+    height: 80vh;
+    width: 50vw;
+    font-size: 8em;
+    color: black;
+    margin-left: 2vw;
+    margin-top: 2vh;
 }
 #page2 {
     background: rgba(238, 239, 252, 0.38);
