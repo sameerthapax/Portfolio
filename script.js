@@ -416,15 +416,18 @@ let tiMaster2 = gsap.timeline({
 })
 
     gsap.from('#sub-hero-section-content .char', {
-    opacity: 0.3,
-    duration: 1,
-    ease: 'elastic.out',
-    stagger: 0.1,
+        opacity: 0,
+        duration: 0.5,
+        yPercent:-10,
+        ease: 'elastic.out',
+        stagger: 0.1,
 
     scrollTrigger: {
-    trigger: '#sub-hero-section-content',
-    start: 'top center',
-    scrub: true
+        trigger: '#sub-hero-section-content',
+        start: 'top 90%',
+        end:'bottom 80%',
+        markers: false,
+        scrub: 2,
 }
 })
 
