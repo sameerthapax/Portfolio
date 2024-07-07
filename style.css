@@ -169,6 +169,7 @@ nav ul .navButton {
     margin-top: 2vh;
     line-height: 12vh;
     z-index: 1;
+    overflow: hidden;
 }
 #page2 {
     background: rgba(80, 80, 80, 0.38);
