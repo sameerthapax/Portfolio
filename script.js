@@ -427,7 +427,7 @@ gsap.from('#page2',{xPercent:-60,scrollTrigger:{
         trigger:'#sub-hero-section-content',
         start: '-25% top',
         end:'90% top',
-        markers:true,
+        markers:false,
         scrub:true
 }
 })
