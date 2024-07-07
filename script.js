@@ -324,7 +324,6 @@ tl4.to("#title-background", {y: -700, duration: 2});
 window.addEventListener("load", function () {
     removeLoader();
     ScrollReveal().reveal('header', slideUp1);
-    ScrollReveal().reveal('#page2', slideUp1);
 });
 
 ScrollReveal().reveal('#page4', slideUp2);
@@ -414,12 +413,21 @@ heroSectionOut.to('#hero-section',{
     scaleX:0,
     scaleY:0
 })
+
 gsap.to('#avatar', {xPercent:100, scrollTrigger:{
         trigger:'#sub-hero-section-content',
         start: 'top top',
         end:'90% top',
         markers:false,
-        scrub:1
+        scrub:true
 
     },ease:'power1.inOut'})
 
+gsap.from('#page2',{xPercent:-60,scrollTrigger:{
+        trigger:'#sub-hero-section-content',
+        start: '-25% top',
+        end:'90% top',
+        markers:true,
+        scrub:true
+}
+})
