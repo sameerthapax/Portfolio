@@ -73,23 +73,7 @@ gsap.to("#avatar", {
     },
 });
 
-
-gsap.to("#animated-text", {
-    scrollTrigger: {
-        trigger: '#animated-text',
-        start: 'top top',
-        end: 'bottom top',
-        markers: {
-            startColor: "transparent",
-            endColor: "transparent",
-        },
-        pin: false,
-        pinSpacing: false,
-        scrub: true,
-    },
-    opacity: 0,
-});
-
+//Navigation
 gsap.to("nav", {
     scrollTrigger: {
         trigger: 'nav',
@@ -104,14 +88,14 @@ gsap.to("nav", {
 
 gsap.to("#homeNevButton", {
     scrollTrigger: {
-        trigger: '#page',
+        trigger: '#hero-section',
         start: 'top 20%',
-        endTrigger: "#page",
+        endTrigger: "#hero-section",
         end: 'bottom center',
         markers: false,
         toggleActions: "play reverse play reverse",
     },
-    backgroundColor: "rgba(196,195,195,0.55)",
+    backgroundColor: "rgba(173, 216, 230, 0.84)",
 });
 
 gsap.to("#aboutNevButton", {
@@ -123,7 +107,7 @@ gsap.to("#aboutNevButton", {
         markers: false,
         toggleActions: "play reverse play reverse",
     },
-    backgroundColor: "rgba(196,195,195,0.55)",
+    backgroundColor: "rgba(173, 216, 230, 0.84)",
 });
 
 gsap.to("#projectNevButton", {
@@ -135,7 +119,7 @@ gsap.to("#projectNevButton", {
         markers: false,
         toggleActions: "play reverse play reverse",
     },
-    backgroundColor: "rgba(196,195,195,0.55)",
+    backgroundColor: "rgba(173, 216, 230, 0.84)",
 });
 
 gsap.to("#ContactNevButton", {
@@ -147,8 +131,9 @@ gsap.to("#ContactNevButton", {
         markers: false,
         toggleActions: "play reverse play reverse",
     },
-    backgroundColor: "rgba(196,195,195,0.55)",
+    backgroundColor: "rgba(173, 216, 230, 0.84)",
 });
+//navigation-end
 
 gsap.to("#page2", {
     scrollTrigger: {
@@ -208,6 +193,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+ScrollTrigger.refresh();
 let page3Animationin = new gsap.timeline({
     scrollTrigger: {
         trigger: '#page3',
@@ -385,37 +371,15 @@ document.querySelectorAll('nav a').forEach(link => {
     });
 });
 
-const words2 = ["Hello there! I'm originally from the stunning city of Pokhara, Nepal, but these days you'll find me navigating the halls of Murray State University in Kentucky, where I'm wrapping up my Bachelor's degree in Computer Science. My journey has been fueled by a fascination with new technologies and an insatiable curiosity about how things tick.\n" +
-"\n" +
-"            As a senior, I've tackled a variety of projects, from developing a fully functional car dealership service management system (yes, it's as complicated as it sounds) to crafting a library management system using Java. I've even dabbled in the art of creating a lexer and parser for a programming language called \"Xcite\" in C++. Oh, and this very portfolio? Built with HTML, CSS, and JavaScript, sprinkled with some APIs and plugins for good measure. Currently, I'm diving headfirst into Swift development – because why not?\n" +
-"\n" +
-"            Before diving into the tech world, I managed a Ford dealership in Nepal for a year. Picture this: a fresh graduate running a car dealership. It was like a live-action episode of \"The Apprentice,\" only with more cars and fewer boardroom showdowns. This adventure sharpened my leadership and organizational skills, prepping me for the next big step – studying in the USA.\n" +
-"\n" +
-"            When I'm not buried in code, you can catch me on the basketball court or at the gym, attempting to maintain some semblance of a balanced lifestyle. My professional mantra? \"There is a solution. One just has to figure out how.\" It's a philosophy that keeps me tackling challenges with a smile (and sometimes a groan), always on the lookout for innovative solutions in the ever-evolving world of technology."];
 
-const words = ["Sameer", 'A Developer', "A Student", "A Senior Year"];
-
-gsap.to("#cursor", {opacity: 0, repeat: -1, yoyo: true, duration: 0.5, ease: "power1.inOut"});
-gsap.to("#content-text2", {opacity: 0, repeat: -1, yoyo: true, duration: 0.5, ease: "power1.Out"});
-
-let tiMaster = gsap.timeline({repeat: -1});
-let tiMaster2 = gsap.timeline({
-    scrollTrigger: {
-        trigger: '#page-title',
-        start: '50% top',
-        end: '175% top',
-        scrub: true,
-        markers: false,
-    }
-});
 
 
     let typeSplit = new SplitType('#sub-hero-section-content', {
-    types: 'chars',
+    types: 'words',
     tagName: 'span'
 })
 
-    gsap.from('#sub-hero-section-content .char', {
+    gsap.from(typeSplit.words, {
         opacity: 0,
         duration: 0.5,
         yPercent:-10,
@@ -430,15 +394,32 @@ let tiMaster2 = gsap.timeline({
         scrub: 2,
 }
 })
+const heroSectionOut= new gsap.timeline({scrollTrigger:{
+    trigger:'#hero-section',
+        start:'top top',
+        end:'50% top',
+        scrub: 2,
+        markers: false,
+},})
 
-words.forEach((word) => {
-    let tlText = gsap.timeline({repeat: 1, yoyo: true, repeatDelay: 2});
-    tlText.to("#animated-text", {duration: 1, text: word});
-    tiMaster.add(tlText);
-});
+heroSectionOut.to('#title-2',{
+    opacity:0,
 
-words2.forEach((word) => {
-    let tlText = gsap.timeline({repeat: 0, yoyo: true, repeatDelay: 0});
-    tlText.to("#content-text", {duration: 15, text: word});
-    tiMaster2.add(tlText);
-});
+})
+heroSectionOut.to('#title-1',{
+    opacity:0,
+
+})
+heroSectionOut.to('#hero-section',{
+    scaleX:0,
+    scaleY:0
+})
+gsap.to('#avatar', {xPercent:100, scrollTrigger:{
+        trigger:'#sub-hero-section-content',
+        start: 'top top',
+        end:'90% top',
+        markers:false,
+        scrub:1
+
+    },ease:'power1.inOut'})
+
