@@ -39,12 +39,7 @@ const slideUp = {
     delay: 1000,
 };
 
-const slideUp1 = {
-    origin: 'bottom',
-    distance: '100px',
-    duration: 1000,
-    easing: 'ease-in-out',
-};
+
 
 const slideUp2 = {
     origin: 'right',
@@ -322,10 +317,12 @@ tl2.to("#page-title", {y: 700, duration: 2});
 tl4.to("#title-background", {y: -700, duration: 2});
 
 window.addEventListener("load", function () {
+    lenis.stop();
     removeLoader();
-    ScrollReveal().reveal('header', slideUp1);
+    setTimeout(function() {
+        lenis.start();
+    }, 2000);
 });
-
 ScrollReveal().reveal('#page4', slideUp2);
 
 function removeLoader() {
@@ -348,7 +345,7 @@ function removeLoader() {
             width: 500,
             ease: "elastic.inOut",
             backgroundColor: "transparent",
-            opacity: 0
+            opacity: 0,
         }, ScrollReveal().reveal('#avatar', slideUp),
         ScrollReveal().reveal('#title', slideUp3));
 
@@ -360,6 +357,7 @@ function removeLoader() {
         ease: "power4.inOut",
         backgroundColor: "transparent"
     });
+
 }
 
 document.querySelectorAll('nav a').forEach(link => {
@@ -431,3 +429,4 @@ gsap.from('#page2',{xPercent:-60,scrollTrigger:{
         scrub:true
 }
 })
+
