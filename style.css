@@ -135,6 +135,7 @@ nav ul .navButton {
     color: #000000;
     position: absolute;
     text-align: center;
+
 }
 #title-2{
     position: absolute;
@@ -150,6 +151,8 @@ nav ul .navButton {
     top: -10vh;
     left: 19vw;
     z-index: 2;
+    image-rendering: smooth;
+
 
 }
 #sub-hero-section{
