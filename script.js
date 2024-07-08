@@ -200,8 +200,7 @@ let page3Animationin = new gsap.timeline({
 })
 page3Animationin
     .set("#page3", {
-        scale: 0.5, yPercent: 50, visibility: "visible", background: "rgba(238, 239, 252, 0.38)",
-        boxShadow: "0 4px 30px rgba(255, 255, 255, 0.1)", backdropFilter: "blur(2vh)", webkitBackdropFilter: "blur(2vh)"
+        scale: 0.5, yPercent: 50, visibility: "visible"
     })
     .to("#page3", {
         ease: "power2.inOut", scale: 1, yPercent: 0,
@@ -236,15 +235,14 @@ gsap.to("#page3", {
         end: 'top top',
         markers: false,
         scrub: 1,
-    }, borderRadius: 0, backgroundColor: "black", border: 2,
+    }, borderRadius: 0, backgroundColor: "black", border: 0, margin:0, width:'100vw'
 });
 const text = new SplitType("#page3Heading", {types: "chars"});
 gsap.set("#page3Heading", {autoAlpha: 1});
 gsap.set(text.chars, {yPercent: 0});
 
-
 gsap.to(text.chars, {
-    y: '-65vh',
+    y: '7vh', color: "rgba(255,255,255,0.87)",
     stagger: {from: "center", amount: 1},
     scrollTrigger: {
         trigger: "#page3Heading",
@@ -253,7 +251,7 @@ gsap.to(text.chars, {
         scrub: 1,
         markers: false
     },
-    fontSize: "8vw"
+    fontSize: "18vw"
 })
 
 

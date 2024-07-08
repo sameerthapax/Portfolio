@@ -132,7 +132,8 @@ nav ul .navButton {
 #title-1{
     font-size: 24vw;
     margin: 38vh auto 38vh auto;
-    color: #000000;
+    color: rgba(0, 0, 0, 0.79);
+
     position: absolute;
     text-align: center;
 
@@ -142,7 +143,7 @@ nav ul .navButton {
 
     font-size: 5vw;
     margin: 18vh auto 18vh 15vw;
-    color: black;
+    color: rgba(0, 0, 0, 0.79);
 }
 #avatar {
     position: absolute;
@@ -175,7 +176,7 @@ nav ul .navButton {
     overflow: hidden;
 }
 #page2 {
-    background: rgba(80, 80, 80, 0.38);
+    background: rgba(0, 0, 0, 0.38);
     box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(2vh);
     -webkit-backdrop-filter: blur(2vh);
@@ -209,14 +210,16 @@ nav ul .navButton {
 }
 
 #page3 {
-    margin: 1vh auto;
+    margin: 0 auto;
     height: 100vh;
-    width: 99vw;
+    width: 100vw;
     z-index: 3;
     overflow: hidden;
     border-radius: 25px;
-    background-color: #000000;
-    border: solid #e9e9e9 6px;
+    background: rgba(0,0,0,0.38);
+    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(2vh);
+    -webkit-backdrop-filter: blur(2vh);
     text-align: center;
     visibility: hidden;
 }
@@ -224,7 +227,9 @@ nav ul .navButton {
     display: inline-block;
     text-align: center;
     margin-top: 40vh;
-    font-size: 18vw;
+    font-size: 15vw;
+    color: transparent;
+    -webkit-text-stroke: 1px lightblue;
 }
 
 
