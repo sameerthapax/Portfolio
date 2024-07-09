@@ -436,6 +436,13 @@ nav ul .navButton {
     justify-content: center;
     align-items: center;
     perspective: 600px;
+
+}
+#filter{
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(10vh);
+    position: absolute;
 }
 
 :root {
@@ -450,9 +457,10 @@ nav ul .navButton {
     top: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(#E91e63, #FF0);
+    background: linear-gradient(#add8e6, #b4acac);
     clip-path: circle(22% at 30% 22%);
     z-index: -1;
+
 }
 #body::after {
     content: '';
@@ -461,7 +469,7 @@ nav ul .navButton {
     top: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(#FFF, #DA00FF);
+    background: linear-gradient(#FFF, rgba(173, 216, 230, 0.57));
     clip-path: circle(25% at 70% 80%);
     z-index: -1;
 }
