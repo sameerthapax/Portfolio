@@ -74,8 +74,8 @@ gsap.to("nav", {
         trigger: 'nav',
         start: 'top 1%',
         endTrigger: '#page4',
-        end: '400% top',
-        markers: true,
+        end: '800% top',
+        markers: false,
         pin: "nav",
         pinSpacing: false,
     }
@@ -110,7 +110,7 @@ gsap.to("#projectNevButton", {
         trigger: '#page4',
         start: '-50% top',
         endTrigger: "#page4",
-        end: 'bottom top',
+        end: '180% top',
         markers: false,
         toggleActions: "play reverse play reverse",
     },
@@ -120,7 +120,7 @@ gsap.to("#projectNevButton", {
 gsap.to("#ContactNevButton", {
     scrollTrigger: {
         trigger: '#page4',
-        start: '100% top',
+        start: '200% top',
         endTrigger: "#page4",
         end: '300% top',
         markers: false,
@@ -208,21 +208,17 @@ page3Animationin
 let page3Animationout = new gsap.timeline({
     scrollTrigger: {
         trigger: '#page3',
-        start: '300% top',
-        end: '330% top',
+        start: '500% top',
+        end: '530% top',
         markers: false,
         scrub: 1,
     }
 })
-page3Animationout
-    .to("#page3", {scale: 1, borderRadius: "25vh"})
-
-
 gsap.to("#page3", {
     scrollTrigger: {
         trigger: '#page3',
         start: 'top top',
-        end: '300% top',
+        end: '200% top',
         markers: false,
         pin: "#page3",
         pinSpacing: true,
@@ -253,7 +249,18 @@ gsap.to(text.chars, {
     },
     fontSize: "18vw"
 })
+const card2 = new gsap.timeline({smoothChildTiming:true , scrollTrigger:{
+        trigger:'#page3',
+        start:'top top',
+        end:'200% top',
+        scrub:true,
+        markers:false
 
+    }});
+document.querySelectorAll('.card').forEach(card=> {
+    card2.to(card, {yPercent: -130, opacity: 100, ease: 'power1.inOut', scale: 1, duration: 1})
+    card2.to(card, {yPercent: -400, zIndex: -1, opacity: 0, ease: 'power1.inOut', duration: 1, delay:3})
+})
 
 // gsap.to("#page4", {
 //     scrollTrigger: {
