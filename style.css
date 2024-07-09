@@ -129,10 +129,21 @@ nav ul .navButton {
     margin: 3vh auto 8vh;
 
 }
+canvas {
+    position: absolute;
+    background: transparent;
+
+
+    width: 99vw;
+    height: 80vh;
+    align-content: center;
+    overflow: hidden;
+
+}
 #title-1{
     font-size: 24vw;
     margin: 38vh auto 38vh auto;
-    color: rgba(0, 0, 0, 0.79);
+    color: rgba(0, 0, 0, 0.92);
 
     position: absolute;
     text-align: center;
