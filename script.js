@@ -73,9 +73,9 @@ gsap.to("nav", {
     scrollTrigger: {
         trigger: 'nav',
         start: 'top 1%',
-        endTrigger: "#page3",
-        end: '40% top',
-        markers: false,
+        endTrigger: '#page4',
+        end: '400% top',
+        markers: true,
         pin: "nav",
         pinSpacing: false,
     }
