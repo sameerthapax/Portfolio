@@ -114,7 +114,7 @@ gsap.to("nav", {
         trigger: 'nav',
         start: 'top 1%',
         endTrigger: '#page4',
-        end: '800% top',
+        end: '900% top',
         markers: false,
         pin: "nav",
         pinSpacing: false,
@@ -150,7 +150,7 @@ gsap.to("#projectNevButton", {
         trigger: '#page4',
         start: '-50% top',
         endTrigger: "#page4",
-        end: '180% top',
+        end: '780% top',
         markers: false,
         toggleActions: "play reverse play reverse",
     },
@@ -160,9 +160,9 @@ gsap.to("#projectNevButton", {
 gsap.to("#ContactNevButton", {
     scrollTrigger: {
         trigger: '#page4',
-        start: '200% top',
+        start: '800% top',
         endTrigger: "#page4",
-        end: '300% top',
+        end: '900% top',
         markers: false,
         toggleActions: "play reverse play reverse",
     },
@@ -250,7 +250,7 @@ gsap.to("#page3", {
     scrollTrigger: {
         trigger: '#page3',
         start: 'top top',
-        end: '200% top',
+        end: '800% top',
         markers: false,
         pin: "#page3",
         pinSpacing: true,
@@ -281,17 +281,25 @@ gsap.to(text.chars, {
     },
     fontSize: "18vw"
 })
-const card2 = new gsap.timeline({smoothChildTiming:true , scrollTrigger:{
+
+gsap.fromTo('#projects-container',{xPercent:-100},{xPercent:0,opacity:100,ease:'bounce.inOut', scrollTrigger:{
+    trigger:'#page3',
+        start:'top top',
+        end:'800% top',
+        toggleActions:'play reverse play reverse',
+        markers:true,
+    }})
+const projectCard = new gsap.timeline({smoothChildTiming:true , scrollTrigger:{
         trigger:'#page3',
         start:'top top',
-        end:'200% top',
+        end:'800% top',
         scrub:true,
         markers:false
 
     }});
 document.querySelectorAll('.card').forEach(card=> {
-    card2.to(card, {yPercent: -130, opacity: 100, ease: 'power1.inOut', scale: 1, duration: 1})
-    card2.to(card, {yPercent: -400, zIndex: -1, opacity: 0, ease: 'power1.inOut', duration: 1, delay:3})
+    projectCard.to(card, {xPercent: 100, yPercent:-50, opacity: 100, ease: 'power1.inOut', scale: 1, duration: 1, zIndex:1})
+    projectCard.to(card, {xPercent: 200, ease: 'power1.inOut', duration: 1, delay:3, scale:0.12, top:'30vh'})
 })
 
 // gsap.to("#page4", {
@@ -521,7 +529,7 @@ document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
-        gsap.to(window, {duration: 2, scrollTo: target, ease: "power4.inOut"});
+        gsap.to(window, {duration: 2, ease: "power4.inOut"},lenis.scrollTo(target));
     });
 });
 

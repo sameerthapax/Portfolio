@@ -309,19 +309,30 @@ canvas {
     height: 10vh;
     width: 40vw;
     position: absolute;
-    left: 30vw;
-    top: 90vh;
+    left:-10vw;
+    top: 40vh;
+    opacity: 0;
 
-
+}
+#card1{
+    z-index: 1;
+    left:-1vw
+}
+#card2{
+    z-index: 0;
+    left:-2vw
+}
+#card3{
+    z-index: -1;
+    left:-3vw
 }
 .card {
     position: absolute;
-    opacity: 0;
     height: 400px;
     width: 100%;
     margin: 0;
     perspective: 1200px;
-    scale: 0;
+    scale: 0.12;
     border-radius: 2vh;
 }
 .card:hover .cover {
