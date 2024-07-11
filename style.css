@@ -309,22 +309,22 @@ canvas {
     height: 10vh;
     width: 40vw;
     position: absolute;
-    left:-10vw;
-    top: 40vh;
+    left:0;
+    top: 0;
     opacity: 0;
 
 }
 #card1{
     z-index: 1;
-    left:-1vw
+    left:-1%
 }
 #card2{
     z-index: 0;
-    left:-2vw
+    left:-2%
 }
 #card3{
     z-index: -1;
-    left:-3vw
+    left:-3%
 }
 .card {
     position: absolute;
@@ -440,10 +440,11 @@ canvas {
     transform: translateZ(-1px) rotatey(-180deg);
     background: transparent;
     border: 1px solid white;
+    width: 7vw;
     font-weight: 200;
-    font-size: 1.3em;
+    font-size: 2vw;
     color: white;
-    padding: 14px 32px;
+    padding: 5% 7%;
     outline: none;
     text-decoration: none;
 }

@@ -11,9 +11,9 @@ const lenis = new Lenis({
     gestureSupport: true // Enable gesture support
 });
 
-lenis.on('scroll', (e) => {
-    console.log(e);
-});
+// lenis.on('scroll', (e) => {
+//     console.log(e);
+// });
 
 function raf(time) {
     lenis.raf(time);
@@ -282,13 +282,13 @@ gsap.to(text.chars, {
     fontSize: "18vw"
 })
 
-gsap.fromTo('#projects-container',{xPercent:-100},{xPercent:0,opacity:100,ease:'bounce.inOut', scrollTrigger:{
+gsap.fromTo('#projects-container',{xPercent:-100},{xPercent:0,opacity:100,ease:'power4.inOut', scrollTrigger:{
     trigger:'#page3',
         start:'top top',
         end:'800% top',
         toggleActions:'play reverse play reverse',
-        markers:true,
-    }})
+        markers:false,
+    },scrollBehavior:'smooth'})
 const projectCard = new gsap.timeline({smoothChildTiming:true , scrollTrigger:{
         trigger:'#page3',
         start:'top top',
@@ -297,9 +297,12 @@ const projectCard = new gsap.timeline({smoothChildTiming:true , scrollTrigger:{
         markers:false
 
     }});
-document.querySelectorAll('.card').forEach(card=> {
-    projectCard.to(card, {xPercent: 100, yPercent:-50, opacity: 100, ease: 'power1.inOut', scale: 1, duration: 1, zIndex:1})
-    projectCard.to(card, {xPercent: 200, ease: 'power1.inOut', duration: 1, delay:3, scale:0.12, top:'30vh'})
+
+document.querySelectorAll('.card').forEach((card,index)=> {
+    // let i =(window.innerWidth)/2
+    projectCard.to(card, {left: 75.5+"%",transform: "translate(-0%, -50%)", opacity: 100, ease: 'power1.inOut', scale: 1, duration: 1, zIndex:1})
+    projectCard.to(card, {left: 150+"%", ease: 'power1.inOut', duration: 1, delay:3, scale:0.12, top:'30vh'})
+    console.log(index)
 })
 
 // gsap.to("#page4", {
