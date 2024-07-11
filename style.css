@@ -310,7 +310,7 @@ canvas {
     width: 40vw;
     position: absolute;
     left:0;
-    top: 0;
+    top: 40%;
     opacity: 0;
 
 }
