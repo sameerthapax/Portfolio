@@ -198,15 +198,12 @@ canvas {
     overflow: hidden;
 }
 #page2 {
-    background: rgba(0, 0, 0, 0.38);
-    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(2vh);
-    -webkit-backdrop-filter: blur(2vh);
-    border-radius: 2vw;
+    background: black;
+    border-radius: 0;
     margin: -3vh auto;
-    border: solid #e9e9e9 1px;
+    border: 0;
     height: 100vh;
-    width: 99vw;
+    width: 100vw;
     z-index: 2;
     overflow: hidden;
 }
@@ -265,7 +262,7 @@ canvas {
 }
 
 .timeline-item h2 {
-    color: #424242;
+    color: #000000;
     font-size: 1.5rem;
     font-weight: 300;
     margin-top: -9rem;

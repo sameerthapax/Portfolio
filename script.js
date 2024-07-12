@@ -583,7 +583,10 @@ gsap.to('#avatar', {xPercent:100, scrollTrigger:{
 
     },ease:'power1.inOut'})
 
-gsap.from('#page2',{xPercent:-60,scrollTrigger:{
+gsap.from('#page2',{xPercent:-60,borderRadius:'2vh',background: "rgba(0, 0, 0, 0.38)",
+    boxShadow: "0 4px 30px rgba(255, 255, 255, 0.1)",
+backdropFilter: "blur(2vh)",
+webkitBackdropFilter: "blur(2vh)",width:"99vw",border: "solid #e9e9e9 1px", scrollTrigger:{
         trigger:'#sub-hero-section-content',
         start: '-25% top',
         end:'90% top',
