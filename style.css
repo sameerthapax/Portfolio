@@ -131,7 +131,7 @@ nav ul .navButton {
 }
 
 #hero-section {
-    height: 80vh;
+    height: 85vh;
     width: 99vw;
     border-radius: 0;
     border: solid rgba(0, 0, 0, 0.69) 1px;
@@ -153,7 +153,7 @@ canvas {
 }
 #title-1{
     font-size: 24vw;
-    margin: 37.5vh auto 37.5vh auto;
+    margin: 45vh auto 45vh auto;
     color: rgba(0, 0, 0, 0.92);
 
     position: absolute;
@@ -164,7 +164,7 @@ canvas {
     position: absolute;
 
     font-size: 5vw;
-    margin: 18vh auto 18vh 15vw;
+    margin: 25vh auto 25vh 15vw;
     color: rgba(0, 0, 0, 0.79);
 }
 #avatar {
@@ -182,7 +182,6 @@ canvas {
     height: 80vh;
     width: 99vw;
     background: transparent;
-    border:solid black 1px ;
     margin: -5vh auto 8vh;
 
 }

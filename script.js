@@ -299,64 +299,7 @@ document.querySelectorAll('.card').forEach((card,index)=> {
 })
 projectCard.to('#projects-container',{xPercent:100,opacity:100,ease:'power4.inOut',duration:1})
 
-// gsap.to("#page4", {
-//     scrollTrigger: {
-//         trigger: '#page4',
-//         start: 'top top',
-//         end: 'bottom 40%',
-//         markers: false,
-//         pin: "#page4",
-//         scrub: 2,
-//     },
-//     ease: "power4.inOut",
-// });
-//
-// const tl = new gsap.timeline({
-//     scrollTrigger: {
-//         trigger: '#page-title',
-//         start: 'top top',
-//         end: 'bottom top',
-//         scrub: true,
-//         markers: false,
-//     }
-// });
-//
-// const tl3 = new gsap.timeline({
-//     scrollTrigger: {
-//         trigger: '#page-title',
-//         start: 'top top',
-//         end: '60% top',
-//         scrub: true,
-//         markers: false,
-//     }
-// });
-//
-// const tl2 = new gsap.timeline({
-//     scrollTrigger: {
-//         trigger: '#page-title',
-//         start: '175% top',
-//         endTrigger: '#page3',
-//         end: 'top top',
-//         scrub: true,
-//         markers: false,
-//     }
-// });
-//
-// const tl4 = new gsap.timeline({
-//     scrollTrigger: {
-//         trigger: '#page-title',
-//         start: '175% top',
-//         endTrigger: '#page3',
-//         end: 'top top',
-//         scrub: true,
-//         markers: false,
-//     }
-// });
-//
-// tl.from("#page-title", {y: -700, duration: 2});
-// tl3.from("#title-background", {y: 700, duration: 2});
-// tl2.to("#page-title", {y: 700, duration: 2});
-// tl4.to("#title-background", {y: -700, duration: 2});
+
 
 
 const page2TitleIntro = new gsap.timeline({scrollTrigger:{
@@ -364,10 +307,10 @@ const page2TitleIntro = new gsap.timeline({scrollTrigger:{
         start: '50% top',
         endTrigger: '#page3',
         end: 'top top',
-        scrub: true,
+        scrub: 1,
         markers: false,
     }});
-page2TitleIntro.from("#page-title",{y:-700, duration:2,ease:'power4.inOut'})
+page2TitleIntro.from("#page-title",{y:-700, duration:2,ease:'power1.inOut'})
 page2TitleIntro.to("#page-title", {y: 700, duration: 2,delay:2, ease: 'power4.inOut'});
 
 const page2TitleBackgroundIntro = new gsap.timeline({scrollTrigger:{
@@ -375,18 +318,18 @@ const page2TitleBackgroundIntro = new gsap.timeline({scrollTrigger:{
         start: '50% top',
         endTrigger: '#page3',
         end: 'top top',
-        scrub: true,
+        scrub: 1,
         markers: false,
     }});
-page2TitleBackgroundIntro.from("#title-background",{y:700, duration:2,ease:'power4.inOut'})
+page2TitleBackgroundIntro.from("#title-background",{y:700, duration:2,ease:'power1.inOut'})
 page2TitleBackgroundIntro.to("#title-background", {y: -700, duration: 2,delay:2, ease: 'power4.inOut'});
 
 window.addEventListener("load", function () {
     lenis.stop();
     removeLoader();
     setTimeout(function() {
-        lenis.start();
-    }, 2000);
+        lenis.scrollTo('#sub-hero-section-content', {offset:-60, duration:4,easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)), onComplete:lenis.start()})
+    }, 3000);
 });
 ScrollReveal().reveal('#page4', slideUp2);
 
@@ -453,7 +396,7 @@ document.querySelectorAll('nav a').forEach(link => {
         start: 'top 90%',
         end:'bottom 80%',
         markers: false,
-        scrub: 2,
+        scrub: 0.5,
 }
 })
 const heroSectionOut= new gsap.timeline({scrollTrigger:{
@@ -473,11 +416,10 @@ heroSectionOut.to('#title-1',{
 
 })
 heroSectionOut.to('#hero-section',{
-    scaleX:0,
-    scaleY:0
+    rotateZ:'180deg', scale:0,backgroundColor:'black', duration:3
 })
 
-gsap.to('#avatar', {xPercent:100, scrollTrigger:{
+gsap.to('#avatar', {xPercent:100,rotateZ:'90deg',duration:5, scrollTrigger:{
         trigger:'#sub-hero-section-content',
         start: 'top top',
         end:'90% top',
