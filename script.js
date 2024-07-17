@@ -365,7 +365,7 @@ const page2TitleIntro = new gsap.timeline({scrollTrigger:{
         endTrigger: '#page3',
         end: 'top top',
         scrub: true,
-        markers: true,
+        markers: false,
     }});
 page2TitleIntro.from("#page-title",{y:-700, duration:2,ease:'power4.inOut'})
 page2TitleIntro.to("#page-title", {y: 700, duration: 2,delay:2, ease: 'power4.inOut'});
@@ -376,7 +376,7 @@ const page2TitleBackgroundIntro = new gsap.timeline({scrollTrigger:{
         endTrigger: '#page3',
         end: 'top top',
         scrub: true,
-        markers: true,
+        markers: false,
     }});
 page2TitleBackgroundIntro.from("#title-background",{y:700, duration:2,ease:'power4.inOut'})
 page2TitleBackgroundIntro.to("#title-background", {y: -700, duration: 2,delay:2, ease: 'power4.inOut'});
