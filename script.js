@@ -417,7 +417,7 @@ heroSectionOut.to('#title-1',{
 
 })
 heroSectionOut.to('#hero-section',{
-    rotateZ:'180deg', scale:0,backgroundColor:'black', duration:3
+    rotateZ:'180deg', scale:0,backgroundColor:'black', duration:3, ease:'sine.inOut'
 })
 
 gsap.to('#avatar', {xPercent:100,rotateZ:'90deg',duration:5, scrollTrigger:{
@@ -441,3 +441,11 @@ webkitBackdropFilter: "blur(2vh)",width:"99vw",border: "solid #e9e9e9 1px", scro
 }
 })
 
+$(function() {
+    $('.navButton').hover(function() {
+        $('.circle').css('opacity','0');
+    }, function() {
+        // on mouseout, reset the background colour
+        $('.circle').css('opacity', '100');
+    });
+})

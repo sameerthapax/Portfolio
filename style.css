@@ -6,6 +6,7 @@ body, html {
     font-family: Arial, sans-serif;
     color: #e3e3e3;
     background: white;
+    cursor: none;
 
 
 
@@ -18,7 +19,7 @@ body, html {
     height: 24px;
     width: 24px;
     border-radius: 24px;
-    background-color: black;
+    background-color: lightblue;
     position: fixed;
     top: 0;
     left: 0;
@@ -32,6 +33,7 @@ h2 {
     font-size: 80px;
     margin: 20px auto;
     padding-top: 150px;
+
 }
 
 h2:last-child {
@@ -47,6 +49,7 @@ h2:last-child {
     position: fixed;
     z-index: 100;
     color: #f0f0f0;
+    cursor: progress;
 }
 .limelight-regular {
     font-family: "Limelight", sans-serif;
@@ -109,13 +112,15 @@ nav ul {
     color: rgba(255, 255, 255, 0.8);
     font-size: 14px;
     letter-spacing: 2px;
-    cursor: pointer;
+    cursor: none;
     text-transform: uppercase;
+
 }
 
 .navButton:hover {
     background-color: rgba(173, 216, 230, 0.84);
 }
+
 
 nav ul .navButton {
     text-decoration: none;
@@ -130,6 +135,7 @@ nav ul .navButton {
     align-content: center;
     overflow: hidden;
     scroll-behavior: smooth;
+    cursor: none;
 }
 
 #hero-section {
@@ -140,6 +146,8 @@ nav ul .navButton {
     background: transparent;
     z-index: -2;
     margin: 3vh auto 8vh;
+    cursor: none;
+
 
 }
 canvas {
@@ -177,6 +185,8 @@ canvas {
     left: 19vw;
     z-index: 2;
     image-rendering: smooth;
+    cursor: none;
+
 
 
 }
@@ -238,6 +248,8 @@ canvas {
     margin-left: 20%;
     margin-bottom: 0;
     background-color: transparent;
+    cursor: none;
+
 }
 
 .timeline-container {
@@ -291,6 +303,8 @@ canvas {
     -webkit-backdrop-filter: blur(2vh);
     text-align: center;
     visibility: hidden;
+    cursor: none;
+
 }
 #page3 h2{
     display: inline-block;
@@ -310,6 +324,8 @@ canvas {
     left:0;
     top: 40%;
     opacity: 0;
+    cursor: none;
+
 
 }
 #card1{
@@ -332,6 +348,8 @@ canvas {
     perspective: 1200px;
     scale: 0.12;
     border-radius: 2vh;
+    cursor: none;
+
 }
 .card:hover .cover {
     transform: rotateX(0deg) rotateY(-180deg);
@@ -431,6 +449,8 @@ canvas {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: none;
+
 }
 .card .card-back a {
     transform-style: preserve-3d;
@@ -445,6 +465,8 @@ canvas {
     padding: 5% 7%;
     outline: none;
     text-decoration: none;
+    cursor: none;
+
 }
 .card .card-back a:hover {
     background-color: white;
