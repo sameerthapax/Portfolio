@@ -8,7 +8,8 @@ const lenis = new Lenis({
     smoothWheel: true,
     smoothTouch: true, // Enable smooth touch for mobile
     touchMultiplier: 2, // Increase touch scroll sensitivity
-    gestureSupport: true // Enable gesture support
+    gestureSupport: true, // Enable gesture support
+    duration:3
 });
 
 // lenis.on('scroll', (e) => {
@@ -29,7 +30,7 @@ gsap.ticker.add((time) => {
     lenis.raf(time * 1000);
 });
 
-gsap.ticker.lagSmoothing(100);
+gsap.ticker.lagSmoothing(0);
 //mouse
 const coords = { x: 0, y: 0 };
 const circles = document.querySelectorAll(".circle");
@@ -329,10 +330,15 @@ window.addEventListener("load", function () {
     lenis.stop();
     removeLoader();
     setTimeout(function() {
-        lenis.scrollTo('#sub-hero-section-content', {offset:-60, duration:4,easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)), onComplete:lenis.start()})
-    }, 3000);
+        lenis.start();
+    }, 2000);
 });
 ScrollReveal().reveal('#page4', slideUp2);
+
+$(window).on('beforeunload', function() {
+    $('body').hide();
+    $(window).scrollTop(0);
+});
 
 function removeLoader() {
     gsap.to("#preLoader", 0.5, {
@@ -364,16 +370,16 @@ function removeLoader() {
         x: "32vw",
         y: "2vh",
         ease: "power4.inOut",
-        backgroundColor: "transparent"
+        backgroundColor: "transparent",
+        delay:0.5
     });
-
 }
 
 document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
-        gsap.to(window, {duration: 2, ease: "power4.inOut"},lenis.scrollTo(target));
+        gsap.to(window, {duration: 2, ease: "power4.inOut"},lenis.scrollTo(target,{duration:2}));
     });
 });
 
@@ -449,3 +455,4 @@ $(function() {
         $('.circle').css('opacity', '100');
     });
 })
+

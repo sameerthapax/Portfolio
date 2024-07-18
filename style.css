@@ -823,6 +823,7 @@ section {
 /* Lenis Smooth Scroll */
 html.lenis, html.lenis body {
     height: auto;
+    scroll-behavior: auto;
 }
 
 .lenis.lenis-smooth {
