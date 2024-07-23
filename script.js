@@ -428,12 +428,12 @@ gsap.to("#title-1",{rotateZ:'-180deg',ease:"expo.inOut",transformOrigin:"bottom 
 
 
 
-gsap.to('#avatar', {xPercent:100,rotateZ:'90deg',transformOrigin:'bottom left',duration:5, scrollTrigger:{
+gsap.to('#avatar', {xPercent:100,rotateZ:'90deg',transformOrigin:'bottom left',duration:2, scrollTrigger:{
         trigger:'#sub-hero-section-content',
-        start: '-30% top',
+        start: '-40% top',
         end:'90% top',
         markers:false,
-        scrub:false
+        scrub:true
 
     },ease:'power1.inOut'})
 
@@ -442,7 +442,7 @@ gsap.from('#page2',{xPercent:-60,borderRadius:'2vh',background: "rgba(0, 0, 0, 0
 backdropFilter: "blur(2vh)",
 webkitBackdropFilter: "blur(2vh)",width:"99vw",border: "solid #e9e9e9 1px", ease:"expo.inOut", scrollTrigger:{
         trigger:'#sub-hero-section-content',
-        start: '-75% top',
+        start: '-85% top',
         end:'90% top',
         markers:false,
         scrub:true
