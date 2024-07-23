@@ -289,14 +289,13 @@ const projectCard = new gsap.timeline({smoothChildTiming:true , scrollTrigger:{
         start:'top top',
         end:'800% top',
         scrub:true,
-        markers:false
-
+        markers:false,
     }});
 projectCard.fromTo('#projects-container',{xPercent:-100},{xPercent:0,opacity:100,duration:1, ease:'power1.inOut'})
 document.querySelectorAll('.card').forEach((card,index)=> {
     // let i =(window.innerWidth)/2
-    projectCard.to(card, {left: 75.5+"%",transform: "translate(0, -50%)", opacity: 100, ease: 'expo.inOut', scale: 1, duration: 2, zIndex:1})
-    projectCard.to(card, {left: 150+(index)+"%", ease: 'expo.inOut', duration: 1, delay:3, scale:0.12, top:275+"%"})
+    projectCard.to(card, {left: 75.5+"%",transform: "translate(0, -50%)", opacity: 100, ease: 'expo.inOut', scale: 1, duration: 0.5, zIndex:1})
+    projectCard.to(card, {left: 150+(index)+"%", ease: 'expo.inOut', duration: 0.5, delay:3, scale:0.12, top:275+"%"})
 })
 projectCard.to('#projects-container',{xPercent:100,opacity:100,ease:'power4.inOut',duration:1})
 
