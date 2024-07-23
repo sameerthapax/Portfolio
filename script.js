@@ -34,11 +34,11 @@ gsap.ticker.lagSmoothing(0);
 //mouse
 const coords = { x: 0, y: 0 };
 const circles = document.querySelectorAll(".circle");
-
-
-circles.forEach(function (circle) {
+const colors= ["#88e1eb", "#7bcddb", "#6fb9ca", "#64a6b9", "#5993a7", "#4f8196", "#456f84", "#3c5e72", "#324d60", "#293d4e", "#1f2d3d", "#151f2c"]
+circles.forEach(function (circle, index) {
     circle.x = 0;
     circle.y = 0;
+    circle.style.backgroundColor= colors[index % colors.length];
 });
 
 window.addEventListener("mousemove", function(e){
@@ -409,38 +409,40 @@ document.querySelectorAll('nav a').forEach(link => {
 const heroSectionOut= new gsap.timeline({scrollTrigger:{
     trigger:'#hero-section',
         start:'top top',
-        end:'50% top',
-        scrub: 2,
+        end:'40% top',
+        scrub: true,
         markers: false,
 },})
 
 heroSectionOut.to('#title-2',{
-    opacity:0,
+    yPercent:-100, scale:0, ease:"sine.inOut", duration:5
 
 })
-heroSectionOut.to('#title-1',{
-    opacity:0,
+gsap.to("#title-1",{rotateZ:'-180deg',ease:"expo.inOut",transformOrigin:"bottom left", scrollTrigger:{
+    trigger:"#title-1",
+        start:'-30% top',
+        end:'bottom top',
+        markers: false,
+        scrub: true
+    }})
 
-})
-heroSectionOut.to('#hero-section',{
-    rotateZ:'180deg', scale:0,backgroundColor:'black', duration:3, ease:'sine.inOut'
-})
 
-gsap.to('#avatar', {xPercent:100,rotateZ:'90deg',duration:5, scrollTrigger:{
+
+gsap.to('#avatar', {xPercent:100,rotateZ:'90deg',transformOrigin:'bottom left',duration:5, scrollTrigger:{
         trigger:'#sub-hero-section-content',
-        start: 'top top',
+        start: '-30% top',
         end:'90% top',
         markers:false,
-        scrub:true
+        scrub:false
 
     },ease:'power1.inOut'})
 
 gsap.from('#page2',{xPercent:-60,borderRadius:'2vh',background: "rgba(0, 0, 0, 0.38)",
     boxShadow: "0 4px 30px rgba(255, 255, 255, 0.1)",
 backdropFilter: "blur(2vh)",
-webkitBackdropFilter: "blur(2vh)",width:"99vw",border: "solid #e9e9e9 1px", scrollTrigger:{
+webkitBackdropFilter: "blur(2vh)",width:"99vw",border: "solid #e9e9e9 1px", ease:"expo.inOut", scrollTrigger:{
         trigger:'#sub-hero-section-content',
-        start: '-25% top',
+        start: '-75% top',
         end:'90% top',
         markers:false,
         scrub:true

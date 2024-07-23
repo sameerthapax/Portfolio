@@ -5,7 +5,7 @@ body, html {
     scroll-behavior: smooth;
     font-family: Arial, sans-serif;
     color: #e3e3e3;
-    background: white;
+    background: #f5f5f7;
     cursor: none;
 
 
@@ -24,8 +24,8 @@ body, html {
     top: 0;
     left: 0;
     pointer-events: none;
-    z-index: 99999999; /* so that it stays on top of all other elements */
 
+    z-index: 99999999; /* so that it stays on top of all other elements */
 }
 
 h2 {
@@ -51,12 +51,17 @@ h2:last-child {
     color: #f0f0f0;
     cursor: progress;
 }
-.limelight-regular {
-    font-family: "Limelight", sans-serif;
+.pacifico-regular {
+    font-family: "Pacifico", cursive;
     font-weight: 400;
     font-style: normal;
-    font-size: 10vw;
 }
+.pacifico-regular-2 {
+    font-family: "Pacifico", cursive;
+    font-weight: 200;
+    font-style: normal;
+}
+
 .homemade-apple-regular {
     font-family: "Homemade Apple", cursive;
     font-weight: 400;
@@ -67,10 +72,7 @@ h2:last-child {
     font-weight: 600;
     font-style: normal;
 }
-.stop-scrolling {
-    height: 100%;
-    overflow: hidden;
-}
+
 /* Header */
 #Header {
     text-align: center;
@@ -88,7 +90,6 @@ h2:last-child {
     width: 60%;
     margin: 0 auto auto;
     z-index: 4;
-    font-family: "Space Grotesk", sans-serif;
     overflow: hidden;
 }
 
@@ -142,7 +143,7 @@ nav ul .navButton {
     height: 85vh;
     width: 99vw;
     border-radius: 0;
-    border: solid rgba(0, 0, 0, 0.69) 1px;
+    /*border: solid rgba(0, 0, 0, 0.69) 0.5px;*/
     background: transparent;
     z-index: -2;
     margin: 3vh auto 8vh;
@@ -162,26 +163,25 @@ canvas {
 
 }
 #title-1{
-    font-size: 24vw;
-    margin: 45vh auto 45vh auto;
+    font-size: 19vw;
+    margin: 25vh auto 25vh auto;
     color: rgba(0, 0, 0, 0.92);
 
     position: absolute;
-    text-align: center;
 
 }
 #title-2{
     position: absolute;
 
     font-size: 5vw;
-    margin: 25vh auto 25vh 15vw;
-    color: rgba(0, 0, 0, 0.79);
+    margin: 16vh auto 16vh 16vw;
+    color: rgba(173, 216, 230, 0.66);
 }
 #avatar {
     position: absolute;
     max-width: 100%;
     max-height: 100%;
-    top: -10vh;
+    top: -15vh;
     left: 19vw;
     z-index: 2;
     image-rendering: smooth;
