@@ -74,11 +74,11 @@ animateCircles();
 
 // Scroll reveal animations
 const slideUp = {
-    origin: 'bottom',
-    distance: '4px',
+    origin: 'right',
+    distance: '100px',
     duration: 800,
     easing: 'ease-in-out',
-    delay: 1000,
+    delay: 100
 };
 
 
@@ -93,7 +93,7 @@ const slideUp3 = {
     origin: 'bottom',
     duration: 1000,
     easing: 'ease-in-out',
-    delay: 500,
+    delay: 1000,
 };
 
 // // GSAP animations for elements
@@ -106,7 +106,6 @@ gsap.to("#avatar", {
         markers: false,
         pin: true,
         pinSpacing: false,
-        scrub: 10,
     },
 });
 
@@ -340,17 +339,19 @@ $(window).on('beforeunload', function() {
 
 function removeLoader() {
     gsap.to("#preLoader", 0.5, {
-        height: "75vh",
-        width: "94vw",
-        borderRadius: "3vw",
-        border: "solid black 1px",
-        background: "transparent",
-        boxShadow: "0 8px 32px 0 rgba(171, 171, 171, 0.1)",
-        margin: "1vw auto",
-        y: '13vh',
-        x: 50,
+        background: "rgba(0, 0, 0, 0.12)",
+        boxShadow: "0 8px 32px 0 rgba(5, 5, 5, 0.1)",
+        backdropFilter: "blur(4px)",
+        webkitBackdropFilter: "blur(4px)",
+        borderRadius: "10px",
+        border: '1px solid rgba(255, 255, 255, 0.18)',
+        height: '6vh',
+        width: "60%",
+        margin: "0 auto auto",
+        y: 0,
+        x: "35%",
         display: "none",
-        ease: "power.inOut"
+        ease: "expo.inOut"
     });
 
     gsap.from("#hero-section", 1.1, {
@@ -360,7 +361,7 @@ function removeLoader() {
             backgroundColor: "transparent",
             opacity: 0,
         }, ScrollReveal().reveal('#avatar', slideUp),
-        ScrollReveal().reveal('#title', slideUp3));
+        ScrollReveal().reveal('#hero-title', slideUp3));
 
     gsap.from("#navigation", 1, {
         height: 0,
@@ -369,7 +370,7 @@ function removeLoader() {
         y: "2vh",
         ease: "power4.inOut",
         backgroundColor: "transparent",
-        delay:0.5
+
     });
 }
 
