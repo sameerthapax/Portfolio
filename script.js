@@ -198,33 +198,32 @@ gsap.to("#about-content", {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
+    const aboutTimeline=new gsap.timeline({scrollTrigger: {
+            trigger: '#page2',
+            start: "top top",
+            end: "90% top",
+            scrub: 1,
+            markers: true,
+        }})
     // Reveal timeline items on scroll
-    gsap.utils.toArray('.timeline-item').forEach(item => {
-        gsap.fromTo(item, {
+   document.querySelectorAll('.timeline-item').forEach(item => {
+        aboutTimeline.fromTo(item, {
             opacity: 0,
-            y: "05vh"
+            y: "05vh", ease:"expo.inOut"
         }, {
             opacity: 1,
             y: "-1vh",
-            scrollTrigger: {
-                trigger: item,
-                start: "top 80%",
-                end: "top 60%",
-                scrub: 1,
-                markers: true,
-            }
+            // scrollTrigger: {
+            //     trigger: item,
+            //     start: "top 80%",
+            //     end: "top 60%",
+            //     scrub: 1,
+            //     markers: true,
+            // }
         });
-        gsap.to(item, {
+        aboutTimeline.to(item, {
             borderRadius: 360,scale:0.5, height:0,yPercent:-100,
-            scrollTrigger: {
-                trigger: item,
-                start: "top 20%",
-                end: "top 10%",
-                scrub: 1,
-                markers: true,
-
-            },
-            ease: "sine.inOut",
+            ease: "expo.inOut", delay:1,
         });
     });
 });
