@@ -211,19 +211,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 start: "top 80%",
                 end: "top 60%",
                 scrub: 1,
-                markers: false,
+                markers: true,
             }
         });
         gsap.to(item, {
-            borderRadius: 360,
-            scaleY: 0,
-            scale: 0,
+            borderRadius: 360,scale:0.5, height:0,yPercent:-100,
             scrollTrigger: {
                 trigger: item,
                 start: "top 20%",
                 end: "top 10%",
                 scrub: 1,
-                markers: false,
+                markers: true,
+
             },
             ease: "sine.inOut",
         });
@@ -325,7 +324,9 @@ page2TitleBackgroundIntro.to("#title-background", {y: -700, duration: 2,delay:2,
 
 window.addEventListener("load", function () {
     lenis.stop();
-    removeLoader();
+    setTimeout(function() {
+        removeLoader();
+    }, 1000);
     setTimeout(function() {
         lenis.start();
     }, 2000);

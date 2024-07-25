@@ -192,21 +192,21 @@ canvas {
 }
 #sub-hero-section{
     height: 80vh;
-    width: 99vw;
+    width: 70vw;
     background: transparent;
-    margin: -5vh auto 8vh;
+    margin: -5vh 0.5vw;
+    overflow: hidden;
 
 }
 #sub-hero-section-content{
-    height: 80vh;
-    width: 80vw;
-    font-size: 9.1vw;
+    height: 100%;
+    width: 100%;
+    font-size: 8.1vw;
     color: rgba(0, 0, 0, 0.63);
     margin-left: 2vw;
-    margin-top: 2vh;
-    line-height: 12vh;
+    margin-top: 1vh;
+    line-height: 0.7;
     z-index: 1;
-    overflow: hidden;
 }
 #page2 {
     background: black;
@@ -214,7 +214,7 @@ canvas {
     margin: -3vh auto;
     border: 0;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     z-index: 2;
     overflow: hidden;
 }
@@ -240,13 +240,13 @@ canvas {
 }
 /* About Content */
 #about-content {
-    height: auto;
-    width: 99vw;
+    height: 100%;
+    width: 100%;
     position: relative;
     z-index: 3;
-    margin-top: -140vh;
     margin-left: 20%;
     margin-bottom: 0;
+    margin-top: 5vh;
     background-color: transparent;
     cursor: none;
 
@@ -254,8 +254,9 @@ canvas {
 
 .timeline-container {
     position: relative;
-    padding: 20px;
+    display: block;
     background-color: transparent;
+    overflow: hidden;
 }
 
 .timeline-item {
@@ -263,15 +264,15 @@ canvas {
     box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(2vh);
     -webkit-backdrop-filter: blur(2vh);
-    height: 10vh;
     width: 70%;
+    height: 12vh;
     display: inline-block;
     align-items: center;
     margin: 1rem 0;
-    padding: 1rem;
     border-radius: 0.5rem;
     opacity: 0;
     transform: translateY(50px);
+    overflow: hidden;
 }
 
 .timeline-item h2 {
@@ -280,13 +281,16 @@ canvas {
     font-weight: 300;
     margin-top: -9rem;
     margin-left: 0;
-    height: 10%;
+    height: 20%;
+
 }
 
 .timeline-item p {
-    margin-top: -1rem;
+    margin: -2vh auto;
     color: #4b5563;
-    text-align: center;
+    width: 100%;
+    padding-left: 2vw;
+    padding-right: 2vw;
 }
 
 
