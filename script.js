@@ -197,36 +197,9 @@ gsap.to("#about-content", {
     ease: "power4.inOut",
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-    const aboutTimeline=new gsap.timeline({scrollTrigger: {
-            trigger: '#page2',
-            start: "top top",
-            end: "90% top",
-            scrub: 1,
-            markers: true,
-        }})
-    // Reveal timeline items on scroll
-   document.querySelectorAll('.timeline-item').forEach(item => {
-        aboutTimeline.fromTo(item, {
-            opacity: 0,
-            y: "05vh", ease:"expo.inOut"
-        }, {
-            opacity: 1,
-            y: "-1vh",
-            // scrollTrigger: {
-            //     trigger: item,
-            //     start: "top 80%",
-            //     end: "top 60%",
-            //     scrub: 1,
-            //     markers: true,
-            // }
-        });
-        aboutTimeline.to(item, {
-            borderRadius: 360,scale:0.5, height:0,yPercent:-100,
-            ease: "expo.inOut", delay:1,
-        });
-    });
-});
+
+
+
 ScrollTrigger.refresh();
 let page3Animationin = new gsap.timeline({
     scrollTrigger: {
@@ -237,6 +210,8 @@ let page3Animationin = new gsap.timeline({
         scrub: 1,
     }
 })
+
+
 page3Animationin
     .set("#page3", {
         scale: 0.5, yPercent: 50, visibility: "visible"
