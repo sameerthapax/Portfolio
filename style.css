@@ -1,5 +1,4 @@
 
-@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
       /* General Styles */
 body, html {
     margin: 0;
@@ -217,7 +216,7 @@ canvas {
     border-radius: 0;
     margin: -3vh auto;
     border: 0;
-    height: 100vh;
+    height: 110vh;
     width: 100%;
     z-index: 2;
     overflow: hidden;
@@ -232,8 +231,9 @@ canvas {
     background: transparent;
     cursor: none;
     display: grid;
-    grid-template-columns: repeat(3,auto);
-    grid-template-rows: repeat(4,auto) ;
+    justify-content: center;
+    grid-template-columns: repeat(3,33%);
+    grid-template-rows: repeat(4,23%) ;
     grid-template-areas: "main main skill" "main main skill" "education undecided skill" "about about level"
 
 }
@@ -242,33 +242,59 @@ canvas {
     background: rgba(187, 187, 187, 0.55);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(12.3px);
-    -webkit-backdrop-filter: blur(12.3px);
+
 }
 #about1{
     grid-area: main;
     overflow: hidden;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3,33%);
+    grid-template-rows: repeat(3,33%) ;
+    grid-template-areas: "pp info info" "pp info info""other2 other2 other3";
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+
 }
 #image{
-    height: 35%;
-    width: 15%;
     overflow: hidden;
-    border-radius: 2vw;
-    box-shadow: 0 4px 30px rgba(12, 12, 12, 0.52);
     background: rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(10vh);
-    -webkit-backdrop-filter: blur(12.3px);
-    background-clip: content-box;
-    margin-left: 9%;
-    margin-top: 7%;
-    scale: 1.5;
+    grid-area: pp;
+    width: 70%;
+
 }
 #pp{
-    max-height: 150%;
-    max-width:  150%;
-    margin-left: -20%;
+    max-height: 100%;
+    max-width:  100%;
+    image-rendering: optimizeSpeed;
+    overflow: hidden;
+    scale: 1.2;
+    margin-top: 9%;
+    margin-left: 10%;
 
+}
+#undecided1{
+    grid-area: other2;
+}
+#undecided2{
+    grid-area: other3;
+}
+.inner-grid-item{
+    justify-content: center;
+    margin: 1vw;
+    border-radius: 1vw;
+    background: rgba(47, 47, 47, 0.3);
 
+}
+#main-content{
+    grid-area: info;
+    width: 105%;
+    margin-left: -8%;
+    font-size: 2vw;
+    font-weight: 400;
+
+}
+#main-content p{
+    margin-left: 2vw;
 }
 #about2{
     grid-area: skill;

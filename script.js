@@ -171,18 +171,18 @@ gsap.to("#ContactNevButton", {
 });
 //navigation-end
 
-gsap.to("#page2", {
-    scrollTrigger: {
-        trigger: '#page2',
-        start: 'top top',
-        end: 'bottom center',
-        markers: false,
-        pin: "#page2",
-        pinSpacing: true,
-        scrub: 0,
-    },
-    ease: "power4.inOut",
-});
+// gsap.to("#page2", {
+//     scrollTrigger: {
+//         trigger: '#page2',
+//         start: 'top top',
+//         end: 'bottom center',
+//         markers: false,
+//         pin: "#page2",
+//         pinSpacing: true,
+//         scrub: 0,
+//     },
+//     ease: "power4.inOut",
+// });
 
 gsap.to("#about-content", {
     scrollTrigger: {
@@ -199,6 +199,16 @@ gsap.to("#about-content", {
 
 
 
+gsap.set('#image',{opacity:0,yPercent:100})
+const page2Animations=new gsap.timeline({smoothChildTiming:true, scrollTrigger:{
+        trigger:"#page2",
+        start:'-50% top',
+        toggleActions:'play reverse play reverse',
+        end:'bottom top',
+        markers:false,}})
+document.querySelectorAll(".grid-item").forEach(item=> {
+    page2Animations.from(item,{yPercent:100, opacity:0,duration:1, ease:"back.inOut"},'<0.1')})
+page2Animations.to("#image",{opacity:1,yPercent:0, ease:"back.inOut"},'<')
 
 ScrollTrigger.refresh();
 let page3Animationin = new gsap.timeline({

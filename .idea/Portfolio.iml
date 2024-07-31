@@ -21,5 +21,6 @@
     <orderEntry type="library" name="gsap" level="application" />
     <orderEntry type="library" name="lenis" level="application" />
     <orderEntry type="library" name="split-type" level="application" />
+    <orderEntry type="library" name="sanfrancisco" level="application" />
   </component>
 </module>
