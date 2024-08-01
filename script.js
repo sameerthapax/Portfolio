@@ -208,7 +208,7 @@ const page2Animations=new gsap.timeline({smoothChildTiming:true, scrollTrigger:{
         markers:false,}})
 document.querySelectorAll(".grid-item").forEach(item=> {
     page2Animations.from(item,{yPercent:100, opacity:0,duration:1, ease:"back.inOut"},'<0.1')})
-page2Animations.to("#image",{opacity:1,yPercent:0, ease:"back.inOut"},'<')
+page2Animations.to("#image",{opacity:1,yPercent:0, ease:"back.inOut", onComplete:a},'<')
 
 ScrollTrigger.refresh();
 let page3Animationin = new gsap.timeline({
@@ -441,4 +441,12 @@ $(function() {
         $('.circle').css('opacity', '100');
     });
 })
+const date = new Date();
+$(function (){
+    $('#age').text(date.getFullYear()-2001)
+})
+$('#currentLocation').text('Murray, KY, USA')
 
+function a(){
+    $('#progress-value').addClass("progress-value");
+}
