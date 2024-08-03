@@ -131,7 +131,7 @@ gsap.to("#homeNevButton", {
         markers: false,
         toggleActions: "play reverse play reverse",
     },
-    backgroundColor: "rgba(173, 216, 230, 0.84)",
+    backgroundColor: "rgba(248,4,4,0.56)",
 });
 
 gsap.to("#aboutNevButton", {
@@ -143,7 +143,7 @@ gsap.to("#aboutNevButton", {
         markers: false,
         toggleActions: "play reverse play reverse",
     },
-    backgroundColor: "rgba(173, 216, 230, 0.84)",
+    backgroundColor: "rgba(248,4,4,0.56)",
 });
 
 gsap.to("#projectNevButton", {
@@ -155,7 +155,7 @@ gsap.to("#projectNevButton", {
         markers: false,
         toggleActions: "play reverse play reverse",
     },
-    backgroundColor: "rgba(173, 216, 230, 0.84)",
+    backgroundColor: "rgba(248,4,4,0.56)",
 });
 
 gsap.to("#ContactNevButton", {
@@ -167,7 +167,7 @@ gsap.to("#ContactNevButton", {
         markers: false,
         toggleActions: "play reverse play reverse",
     },
-    backgroundColor: "rgba(173, 216, 230, 0.84)",
+    backgroundColor: "rgba(248,4,4,0.56)",
 });
 //navigation-end
 
@@ -199,7 +199,7 @@ gsap.to("#about-content", {
 
 
 
-gsap.set('#image',{opacity:0,yPercent:100})
+
 const page2Animations=new gsap.timeline({smoothChildTiming:true, scrollTrigger:{
         trigger:"#page2",
         start:'-50% top',
@@ -208,7 +208,9 @@ const page2Animations=new gsap.timeline({smoothChildTiming:true, scrollTrigger:{
         markers:false,}})
 document.querySelectorAll(".grid-item").forEach(item=> {
     page2Animations.from(item,{yPercent:100, opacity:0,duration:1, ease:"back.inOut"},'<0.1')})
-page2Animations.to("#image",{opacity:1,yPercent:0, ease:"back.inOut", onComplete:a},'<')
+document.querySelectorAll('.inner-grid-item').forEach(item=>{
+    gsap.set(item,{opacity:0,yPercent:100})
+page2Animations.to(item,{opacity:1,yPercent:0, ease:"back.inOut",duration:0.6, onComplete:a},'<0.1')})
 
 ScrollTrigger.refresh();
 let page3Animationin = new gsap.timeline({
@@ -222,13 +224,13 @@ let page3Animationin = new gsap.timeline({
 })
 
 
-page3Animationin
-    .set("#page3", {
-        scale: 0.5, yPercent: 50, visibility: "visible"
-    })
-    .to("#page3", {
-        ease: "power2.inOut", scale: 1, yPercent: 0,
-    });
+// page3Animationin
+//     .set("#page3", {
+//         scale: 0.5, yPercent: 50, visibility: "visible"
+//     })
+//     .to("#page3", {
+//         ease: "power2.inOut", scale: 1, yPercent: 0,
+//     });
 
 gsap.to("#page3", {
     scrollTrigger: {
@@ -247,7 +249,7 @@ gsap.to("#page3", {
         end: 'top top',
         markers: false,
         scrub: 1,
-    }, borderRadius: 0, backgroundColor: "black", border: 0, margin:0, width:'100vw'
+    }, backgroundColor: "black"
 });
 const text = new SplitType("#page3Heading", {types: "chars"});
 gsap.set("#page3Heading", {autoAlpha: 1});
@@ -449,4 +451,6 @@ $('#currentLocation').text('Murray, KY, USA')
 
 function a(){
     $('#progress-value').addClass("progress-value");
+    $('.progress-value span').text(window.getComputedStyle(document.documentElement).getPropertyValue('--level-wigth'))
+
 }

@@ -1,10 +1,13 @@
+:root{
+    --level-wigth: 75%
+}
 
       /* General Styles */
 body, html {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    font-family: Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica,sans-serif;
     color: #e3e3e3;
     background: #f5f5f7;
     cursor: none;
@@ -120,7 +123,7 @@ nav ul {
 }
 
 .navButton:hover {
-    background-color: rgba(173, 216, 230, 0.84);
+    background-color: rgb(255, 0, 0);
 }
 
 
@@ -152,21 +155,11 @@ nav ul .navButton {
 
 
 }
-canvas {
-    position: absolute;
-    background: transparent;
 
-
-    width: 99vw;
-    height: 80vh;
-    align-content: center;
-    overflow: hidden;
-
-}
 #title-1{
     font-size: 19vw;
     margin: 25vh auto 25vh auto;
-    color: rgba(0, 0, 0, 0.92);
+    color: black;
 
     position: absolute;
 
@@ -176,7 +169,7 @@ canvas {
 
     font-size: 5vw;
     margin: 16vh auto 16vh 16vw;
-    color: rgba(173, 216, 230, 0.66);
+    color: rgba(183, 27, 27, 0.82);
 }
 #avatar {
     position: absolute;
@@ -251,7 +244,7 @@ canvas {
     justify-content: center;
     grid-template-columns: repeat(3,33%);
     grid-template-rows: repeat(3,33%) ;
-    grid-template-areas: "pp info other4" "pp info other4""level level other3";
+    grid-template-areas: "pp info education" "pp info education""level level current-title";
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 
 }
@@ -276,21 +269,22 @@ canvas {
           grid-area: info;
           width: 105%;
           margin-left: -11%;
-          font-weight: 400;
 
       }
       #main-content h1{
           margin-top: 5%;
-          margin-left: 2%;
+          margin-left: 5%;
           color: black;
+          font-weight: 400;
       }
       #main-content p{
-          margin-left: 4%;
+          margin-left: 7%;
           margin-top: -1%;
           font-size: large;
+          font-weight: 100;
       }
       #main-content p span{
-          color: rgba(248, 3, 3, 0.61);
+          color:black;
       }
 
 #level{
@@ -327,7 +321,6 @@ canvas {
           width: 75%;
       }
       .progress-value span{
-          color: rgba(248, 3, 3, 0.61);
           font-size: 150%;
           margin: 50%;
 
@@ -335,13 +328,39 @@ canvas {
 
       @keyframes load {
           0% { width: 0; background-color: black }
-          100% { width: 75%; background-color: black }
+          100% { width: var(--level-wigth); background-color: black }
       }
-#undecided2{
-    grid-area: other3;
+#current-title {
+    grid-area: current-title;
+    align-content: center;
+    text-align: center;
+    font-size: 250%;
+    font-weight: 200;
+
 }
-#undecided3{
-    grid-area: other4;
+#current-title span{
+    background: linear-gradient(-225deg, #483396 0%, #631dad 29%, #FF1361 67%, #FFF800 100%);
+    background-clip: text;
+    color: transparent;
+}
+#education{
+    grid-area: education;
+}
+#education h1{
+      margin-top: 5%;
+      margin-left: 5%;
+      color: black;
+    font-weight: 400;
+  }
+#education p{
+    font-size: 200%;
+    font-weight: 800;
+    margin-top: -7%;
+    margin-left: 10%;
+    color: transparent;
+    background-color: #2d3436;
+    background-image: linear-gradient(360deg, rgba(190, 7, 7, 0.67) 0%, #000000 74%);
+    background-clip: text;
 }
 .inner-grid-item{
     justify-content: center;
@@ -378,13 +397,8 @@ canvas {
     width: 100vw;
     z-index: 3;
     overflow: hidden;
-    border-radius: 25px;
-    background: rgba(0,0,0,0.38);
-    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(2vh);
-    -webkit-backdrop-filter: blur(2vh);
+    background: rgba(5, 0, 0, 0);
     text-align: center;
-    visibility: hidden;
     cursor: none;
 }
 #page3 h2{
@@ -393,7 +407,7 @@ canvas {
     margin-top: 40vh;
     font-size: 15vw;
     color: transparent;
-    -webkit-text-stroke: 1px lightblue;
+    -webkit-text-stroke: 1px black;
 }
 
 
