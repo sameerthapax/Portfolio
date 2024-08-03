@@ -334,7 +334,7 @@ nav ul .navButton {
     grid-area: current-title;
     align-content: center;
     text-align: center;
-    font-size: 250%;
+    font-size: 3vw;
     font-weight: 200;
 
 }
@@ -353,7 +353,7 @@ nav ul .navButton {
     font-weight: 400;
   }
 #education p{
-    font-size: 200%;
+    font-size: 2.7vw;
     font-weight: 800;
     margin-top: -7%;
     margin-left: 10%;
