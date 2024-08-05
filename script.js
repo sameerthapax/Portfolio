@@ -4,27 +4,35 @@ gsap.registerPlugin(ScrollTrigger, TextPlugin, ScrollToPlugin);
 
 // Initialize Lenis for smooth scrolling
 // Initialize Lenis for smooth scrolling
-const lenis = new Lenis({
-    smoothWheel: true,
-    smoothTouch: true, // Enable smooth touch for mobile
-    touchMultiplier: 2, // Increase touch scroll sensitivity
-    gestureSupport: true, // Enable gesture support
-    duration:3
-});
 
-// lenis.on('scroll', (e) => {
-//     console.log(e);
-// });
+    // Initialize Lenis
+    const lenis = new Lenis({
+        duration: 2.5,
+        easing: (t) => 1 - Math.pow(1 - t, 4), // Custom easing function for smooth scroll
+        direction: 'vertical',
+        gestureDirection: 'vertical',
+        smooth: true,
+        smoothTouch: false,
+        wheelMultiplier: 1,
+        touchMultiplier: 2,
+    });
 
+    // GSAP ScrollTrigger configuration
+    gsap.registerPlugin(ScrollTrigger);
 
-function raf(time) {
-    lenis.raf(time);
+    // Update ScrollTrigger on Lenis scroll
+    lenis.on('scroll', ScrollTrigger.update);
+
+    // Request animation frame for smooth scrolling
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+
     requestAnimationFrame(raf);
-}
 
-requestAnimationFrame(raf);
-
-lenis.on('scroll', ScrollTrigger.update);
+    // Refresh ScrollTrigger after setting up Lenis
+    ScrollTrigger.refresh();
 
 gsap.ticker.add((time) => {
     lenis.raf(time * 1000);
@@ -249,7 +257,7 @@ function createHover(){
     new HoverButton(btn3);
     const btn4 = document.querySelector('#ContactNevButton');
     new HoverButton(btn4);
-};
+}
 
 
 //navigation-end
@@ -287,7 +295,6 @@ const page2Animations=new gsap.timeline({smoothChildTiming:true, scrollTrigger:{
         trigger:"#page2",
         start:'-50% top',
         toggleActions:'play reverse play reverse',
-        end:'bottom top',
         markers:false,}})
 document.querySelectorAll(".grid-item").forEach(item=> {
     page2Animations.from(item,{yPercent:100, opacity:0,duration:1, ease:"back.inOut"},'<0.1')})

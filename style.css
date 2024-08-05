@@ -253,11 +253,11 @@ nav ul .navButton {
     grid-area: pp;
     width: 70%;
 
+
 }
 #pp{
     max-height: 100%;
     max-width:  100%;
-    image-rendering: optimizeSpeed;
     overflow: hidden;
     scale: 1.2;
     margin-top: 9%;
