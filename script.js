@@ -5,40 +5,7 @@ gsap.registerPlugin(ScrollTrigger, TextPlugin, ScrollToPlugin);
 // Initialize Lenis for smooth scrolling
 // Initialize Lenis for smooth scrolling
 
-    // Initialize Lenis
-    const lenis = new Lenis({
-        duration: 2.5,
-        easing: (t) => 1 - Math.pow(1 - t, 4), // Custom easing function for smooth scroll
-        direction: 'vertical',
-        gestureDirection: 'vertical',
-        smooth: true,
-        smoothTouch: false,
-        wheelMultiplier: 1,
-        touchMultiplier: 2,
-    });
 
-    // GSAP ScrollTrigger configuration
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Update ScrollTrigger on Lenis scroll
-    lenis.on('scroll', ScrollTrigger.update);
-
-    // Request animation frame for smooth scrolling
-    function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-
-    // Refresh ScrollTrigger after setting up Lenis
-    ScrollTrigger.refresh();
-
-gsap.ticker.add((time) => {
-    lenis.raf(time * 1000);
-});
-
-gsap.ticker.lagSmoothing(0);
 //mouse
 const coords = { x: 0, y: 0 };
 const circles = document.querySelectorAll(".circle");
@@ -287,10 +254,25 @@ function createHover(){
 //     },
 //     ease: "power4.inOut",
 // });
+function preloadImages(images, callback) {
+    let loadedCount = 0;
+    const totalImages = images.length;
+
+    images.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+        img.onload = () => {
+            loadedCount++;
+            if (loadedCount === totalImages) {
+                callback();
+            }
+        };
+    });
+}
+const imageSources = [...document.querySelectorAll('.inner-grid-item img')].map(img => img.src);
 
 
-
-
+preloadImages(imageSources, () => {
 const page2Animations=new gsap.timeline({smoothChildTiming:true, scrollTrigger:{
         trigger:"#page2",
         start:'-50% top',
@@ -299,10 +281,11 @@ const page2Animations=new gsap.timeline({smoothChildTiming:true, scrollTrigger:{
 document.querySelectorAll(".grid-item").forEach(item=> {
     page2Animations.from(item,{yPercent:100, opacity:0,duration:1, ease:"back.inOut"},'<0.1')})
 document.querySelectorAll('.inner-grid-item').forEach(item=>{
-    gsap.set(item,{opacity:0,yPercent:100})
+    gsap.set(item,{opacity:0,yPercent:100,willChange: 'opacity, transform'})
+    gsap.set('#pp',{opacity:0,yPercent:20,willChange: 'opacity, transform'})
 page2Animations.to(item,{opacity:1,yPercent:0, ease:"back.inOut",duration:0.6, onComplete:a},'<0.1')})
-
-ScrollTrigger.refresh();
+page2Animations.to('#pp',{opacity:1,yPercent:0, ease:"back.inOut",duration:0.6},'=')
+});
 let page3Animationin = new gsap.timeline({
     scrollTrigger: {
         trigger: '#page3',
@@ -399,6 +382,40 @@ page2TitleBackgroundIntro.from("#title-background",{y:700, duration:2,ease:'powe
 page2TitleBackgroundIntro.to("#title-background", {y: -700, duration: 2,delay:2, ease: 'power4.inOut'});
 
 window.addEventListener("load", function () {
+    // Initialize Lenis
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing:(t) => 1 - Math.pow(1 - t, 5),
+        direction: 'vertical',
+        gestureDirection: 'vertical',
+        smooth: true,
+        smoothTouch: false,
+        wheelMultiplier: 1,
+        touchMultiplier: 2,
+    });
+
+    // GSAP ScrollTrigger configuration
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Update ScrollTrigger on Lenis scroll
+    lenis.on('scroll', ScrollTrigger.update);
+
+    // Request animation frame for smooth scrolling
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    // Refresh ScrollTrigger after setting up Lenis
+    ScrollTrigger.refresh();
+
+    gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+    });
+
+    gsap.ticker.lagSmoothing(0);
     lenis.stop();
     setTimeout(function() {
         removeLoader();
