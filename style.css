@@ -118,6 +118,7 @@ nav ul {
     letter-spacing: 2px;
     cursor: none;
     text-transform: uppercase;
+    z-index: 5;
 
 }
 

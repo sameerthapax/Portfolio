@@ -5,7 +5,39 @@ gsap.registerPlugin(ScrollTrigger, TextPlugin, ScrollToPlugin);
 // Initialize Lenis for smooth scrolling
 // Initialize Lenis for smooth scrolling
 
+const lenis = new Lenis({
+    duration: 2,
+    easing:(t) => 1 - Math.pow(1 - t, 5),
+    direction: 'vertical',
+    gestureDirection: 'vertical',
+    smooth: true,
+    smoothTouch: false,
+    wheelMultiplier: 1,
+    touchMultiplier: 2,
+});
 
+// GSAP ScrollTrigger configuration
+gsap.registerPlugin(ScrollTrigger);
+
+// Update ScrollTrigger on Lenis scroll
+lenis.on('scroll', ScrollTrigger.update);
+
+// Request animation frame for smooth scrolling
+function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
+// Refresh ScrollTrigger after setting up Lenis
+ScrollTrigger.refresh();
+
+gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+});
+
+gsap.ticker.lagSmoothing(0);
 //mouse
 const coords = { x: 0, y: 0 };
 const circles = document.querySelectorAll(".circle");
@@ -198,7 +230,7 @@ class HoverButton {
             ease: 'power2.out',
             duration: 0.4
         });
-        this.el.style.zIndex = 100;
+
     }
     onLeave() {
         gsap.to(this.el, {
@@ -208,7 +240,7 @@ class HoverButton {
             ease: 'elastic.out(1.2, 0.4)',
             duration: 0.7
         });
-        this.el.style.zIndex = 1;
+
     }
 }
 
@@ -383,39 +415,7 @@ page2TitleBackgroundIntro.to("#title-background", {y: -700, duration: 2,delay:2,
 
 window.addEventListener("load", function () {
     // Initialize Lenis
-    const lenis = new Lenis({
-        duration: 1.2,
-        easing:(t) => 1 - Math.pow(1 - t, 5),
-        direction: 'vertical',
-        gestureDirection: 'vertical',
-        smooth: true,
-        smoothTouch: false,
-        wheelMultiplier: 1,
-        touchMultiplier: 2,
-    });
 
-    // GSAP ScrollTrigger configuration
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Update ScrollTrigger on Lenis scroll
-    lenis.on('scroll', ScrollTrigger.update);
-
-    // Request animation frame for smooth scrolling
-    function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-
-    // Refresh ScrollTrigger after setting up Lenis
-    ScrollTrigger.refresh();
-
-    gsap.ticker.add((time) => {
-        lenis.raf(time * 1000);
-    });
-
-    gsap.ticker.lagSmoothing(0);
     lenis.stop();
     setTimeout(function() {
         removeLoader();
@@ -528,10 +528,7 @@ gsap.to('#avatar', {xPercent:100,rotateZ:'90deg',transformOrigin:'bottom left',d
 
     },ease:'power1.inOut'})
 
-gsap.from('#page2',{xPercent:-60,borderRadius:'2vh',background: "rgba(0, 0, 0, 0.38)",
-    boxShadow: "0 4px 30px rgba(255, 255, 255, 0.1)",
-backdropFilter: "blur(2vh)",
-webkitBackdropFilter: "blur(2vh)",width:"99vw",border: "solid #e9e9e9 1px", ease:"expo.inOut", scrollTrigger:{
+gsap.from('#page2',{xPercent:-60,borderRadius:'2vh',background: "rgba(0, 0, 0, 0.38)",width:"99vw",border: "solid #e9e9e9 1px", ease:"expo.inOut", scrollTrigger:{
         trigger:'#sub-hero-section-content',
         start: '-85% top',
         end:'90% top',
