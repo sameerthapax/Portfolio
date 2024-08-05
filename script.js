@@ -219,7 +219,7 @@ class HoverButton {
         gsap.to(this.el,  {
             x: (x - this.x) * 0.4,
             y: (y - this.y) * 0.4,
-            scale: 1,
+            scale: 1.09,
             ease: 'power2.out',
             duration: 0.4
         });
@@ -237,16 +237,20 @@ class HoverButton {
     }
 }
 
-const btn1 = document.querySelector('#homeNevButton');
-new HoverButton(btn1);
 
-const btn2 = document.querySelector('#aboutNevButton');
-new HoverButton(btn2);
+function createHover(){
+    const btn1 = document.querySelector('#homeNevButton');
+    new HoverButton(btn1);
 
-const btn3 = document.querySelector('#projectNevButton');
-new HoverButton(btn3);
-const btn4 = document.querySelector('#ContactNevButton');
-new HoverButton(btn4);
+    const btn2 = document.querySelector('#aboutNevButton');
+    new HoverButton(btn2);
+
+    const btn3 = document.querySelector('#projectNevButton');
+    new HoverButton(btn3);
+    const btn4 = document.querySelector('#ContactNevButton');
+    new HoverButton(btn4);
+};
+
 
 //navigation-end
 
@@ -262,19 +266,19 @@ new HoverButton(btn4);
 //     },
 //     ease: "power4.inOut",
 // });
-
-gsap.to("#about-content", {
-    scrollTrigger: {
-        trigger: '#page2',
-        start: 'top top',
-        end: 'bottom top',
-        markers: false,
-        pin: false,
-        pinSpacing: false,
-        scrub: 2,
-    },
-    ease: "power4.inOut",
-});
+//
+// gsap.to("#about-content", {
+//     scrollTrigger: {
+//         trigger: '#page2',
+//         start: 'top top',
+//         end: 'bottom top',
+//         markers: false,
+//         pin: false,
+//         pinSpacing: false,
+//         scrub: 2,
+//     },
+//     ease: "power4.inOut",
+// });
 
 
 
@@ -408,7 +412,6 @@ function removeLoader() {
         background: "rgba(0, 0, 0, 0.12)",
         boxShadow: "0 8px 32px 0 rgba(5, 5, 5, 0.1)",
         backdropFilter: "blur(4px)",
-        webkitBackdropFilter: "blur(4px)",
         borderRadius: "10px",
         border: '1px solid rgba(255, 255, 255, 0.18)',
         height: '6vh',
@@ -429,13 +432,12 @@ function removeLoader() {
         }, ScrollReveal().reveal('#avatar', slideUp),
         ScrollReveal().reveal('#hero-title', slideUp3));
 
-    gsap.from("#navigation", 1, {
-        height: 0,
-        width: 0,
-        x: "32vw",
-        y: "2vh",
-        ease: "power4.inOut",
+    gsap.from("#navigation", 0.8, {
+        yPercent:-100,
+       scale:0,
+        ease: "elastic.inOut",
         backgroundColor: "transparent",
+        onComplete: createHover
 
     });
 }

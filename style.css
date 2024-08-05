@@ -84,14 +84,13 @@ h2:last-child {
 
 /* Navigation */
 .navigation {
-    background: rgba(0, 0, 0, 0.12);
+    background: transparent;
     box-shadow: 0 8px 32px 0 rgba(5, 5, 5, 0.1);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 5px;
     height: 6vh;
-    width: 60%;
+    width: 61%;
     margin: 0 auto auto;
     z-index: 4;
 }
@@ -112,6 +111,7 @@ nav ul {
     text-decoration: none;
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
     backdrop-filter: blur(30px);
     color: rgba(255, 255, 255, 0.8);
     font-size: 14px;
