@@ -506,7 +506,7 @@ const heroSectionOut= new gsap.timeline({scrollTrigger:{
 },})
 
 heroSectionOut.to('#title-2',{
-    yPercent:-100, scale:0, ease:"sine.inOut", duration:5
+    opacity:0, ease:"sine.inOut", duration:3
 
 })
 gsap.to("#title-1",{rotateZ:'-180deg',ease:"expo.inOut",transformOrigin:"bottom left", scrollTrigger:{
