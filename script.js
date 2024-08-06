@@ -401,17 +401,17 @@ const page2TitleIntro = new gsap.timeline({scrollTrigger:{
     }});
 page2TitleIntro.from("#page-title",{y:-700, duration:2,ease:'power1.inOut'})
 page2TitleIntro.to("#page-title", {y: 700, duration: 2,delay:2, ease: 'power4.inOut'});
-
-const page2TitleBackgroundIntro = new gsap.timeline({scrollTrigger:{
-        trigger: '#page-title',
-        start: '50% top',
-        endTrigger: '#page3',
-        end: 'top top',
-        scrub: 1,
-        markers: false,
-    }});
-page2TitleBackgroundIntro.from("#title-background",{y:700, duration:2,ease:'power1.inOut'})
-page2TitleBackgroundIntro.to("#title-background", {y: -700, duration: 2,delay:2, ease: 'power4.inOut'});
+//
+// const page2TitleBackgroundIntro = new gsap.timeline({scrollTrigger:{
+//         trigger: '#page-title',
+//         start: '50% top',
+//         endTrigger: '#page3',
+//         end: 'top top',
+//         scrub: 1,
+//         markers: false,
+//     }});
+// page2TitleBackgroundIntro.from("#title-background",{y:700, duration:2,ease:'power1.inOut'})
+// page2TitleBackgroundIntro.to("#title-background", {y: -700, duration: 2,delay:2, ease: 'power4.inOut'});
 
 window.addEventListener("load", function () {
     // Initialize Lenis
@@ -528,7 +528,7 @@ gsap.to('#avatar', {xPercent:100,rotateZ:'90deg',transformOrigin:'bottom left',d
 
     },ease:'power1.inOut'})
 
-gsap.from('#page2',{xPercent:-60,borderRadius:'2vh',background: "rgba(0, 0, 0, 0.38)",width:"99vw",border: "solid #e9e9e9 1px", ease:"expo.inOut", scrollTrigger:{
+gsap.from('#page2',{xPercent:-60,borderRadius:'2vh',background: "rgba(0, 0, 0, 0.38)",border: "solid #e9e9e9 1px", ease:"expo.inOut", scrollTrigger:{
         trigger:'#sub-hero-section-content',
         start: '-85% top',
         end:'90% top',

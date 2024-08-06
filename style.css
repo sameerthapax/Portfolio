@@ -185,29 +185,27 @@ nav ul .navButton {
 
 }
 #sub-hero-section{
-    height: 80vh;
+    height: 85vh;
     width: 70vw;
     background: transparent;
-    margin: -5vh 0.5vw;
     overflow: hidden;
 
 }
 #sub-hero-section-content{
     height: 100%;
     width: 100%;
-    font-size: 8.1vw;
+    font-size: calc(4.1vw + 6vh);
     color: rgba(0, 0, 0, 0.63);
     margin-left: 2vw;
-    margin-top: 1vh;
-    line-height: 0.7;
+    line-height: 85%;
     z-index: 1;
+    overflow: hidden;
 }
 #page2 {
     background: white;
     background-size: cover;
 
     border-radius: 0;
-    margin: -3vh auto;
     border: 0;
     height: 110vh;
     width: 100%;
