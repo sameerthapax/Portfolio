@@ -536,7 +536,18 @@ gsap.from('#page2',{xPercent:-60,borderRadius:'2vh',background: "rgba(0, 0, 0, 0
         scrub:true
 }
 })
+let map;
 
+async function initMap() {
+    const { Map } = await google.maps.importLibrary("maps");
+
+    map = new Map(document.getElementById("map"), {
+        center: { lat: 36.616821, lng: -88.319794 },
+        zoom: 10,
+    });
+}
+
+initMap();
 $(function() {
     $('.navButton').hover(function() {
         $('.circle').css('opacity','0.2');

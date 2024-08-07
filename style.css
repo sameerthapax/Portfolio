@@ -201,6 +201,9 @@ nav ul .navButton {
     z-index: 1;
     overflow: hidden;
 }
+#map {
+    height: 100%;
+}
 #page2 {
     background: white;
     background-size: cover;
@@ -378,6 +381,7 @@ nav ul .navButton {
 }
 #about4{
     grid-area: undecided;
+    overflow: hidden;
 
 }
 #about5{
