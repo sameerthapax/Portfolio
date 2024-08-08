@@ -611,9 +611,9 @@ function setProgress(easy, medium, hard) {
     const radius = 45;
     const circumference = 2 * Math.PI * radius;
 
-    const easyProgress = Math.min((easy / totalEasy) * circumference, circumference);
-    const mediumProgress = Math.min((medium / totalMedium) * circumference, circumference);
-    const hardProgress = Math.min((hard / totalHard) * circumference, circumference);
+    const easyProgress = Math.min(((easy+1) / totalEasy) * circumference, circumference);
+    const mediumProgress = Math.min(((medium+1) / totalMedium) * circumference, circumference);
+    const hardProgress = Math.min(((hard+1) / totalHard) * circumference, circumference);
 
     easyCircle.style.strokeDasharray = `${easyProgress} ${circumference - easyProgress}`;
     mediumCircle.style.strokeDasharray = `${mediumProgress} ${circumference - mediumProgress}`;
