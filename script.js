@@ -315,8 +315,9 @@ document.querySelectorAll(".grid-item").forEach(item=> {
 document.querySelectorAll('.inner-grid-item').forEach(item=>{
     gsap.set(item,{opacity:0,yPercent:100,willChange: 'opacity, transform'})
     gsap.set('#pp',{opacity:0,yPercent:20,willChange: 'opacity, transform'})
-page2Animations.to(item,{opacity:1,yPercent:0, ease:"back.inOut",duration:0.6, onComplete:a},'<0.1')})
-page2Animations.to('#pp',{opacity:1,yPercent:0, ease:"back.inOut",duration:0.6},'=')
+page2Animations.to(item,{opacity:1,yPercent:0, ease:"back.inOut",duration:0.6, onComplete:()=>{a();
+    setProgress(totalEasySubmissionSolved, totalMediumSubmissionSolved, totalHardSubmissionSolved);}},'<0.1')})
+page2Animations.to('#pp',{opacity:1,yPercent:0, ease:"back.inOut",duration:0.6,},'=')
 });
 let page3Animationin = new gsap.timeline({
     scrollTrigger: {
@@ -561,10 +562,10 @@ $(function (){
     $('#age').text(date.getFullYear()-2001)
 })
 $('#currentLocation').text('Murray, KY, USA')
-
+let x=false;
 function a(){
     $('#progress-value').addClass("progress-value");
-    $('.progress-value span').text(window.getComputedStyle(document.documentElement).getPropertyValue('--level-wigth'))
+    $('.progress-value span').text(window.getComputedStyle(document.documentElement).getPropertyValue('--level-wigth'));
 
 }
 const leetcodeApi='https://leetcode-api-faisalshohag.vercel.app/sameerthapa';
@@ -588,12 +589,9 @@ async function getLeetCodeData(){
     totalEasy1= await data.totalEasy;
     totalHard1= await data.totalHard;
     totalMedium1= await data.totalMedium;
-    setProgress(totalEasySubmissionSolved, totalMediumSubmissionSolved, totalHardSubmissionSolved);
-
 
 }
-getLeetCodeData()
-
+getLeetCodeData();
 function setProgress(easy, medium, hard) {
     const totalEasy = totalEasy1;
     const totalMedium = totalMedium1;
@@ -615,13 +613,26 @@ function setProgress(easy, medium, hard) {
     const mediumProgress = Math.min(((medium+1) / totalMedium) * circumference, circumference);
     const hardProgress = Math.min(((hard+1) / totalHard) * circumference, circumference);
 
+    easyCircle.style.strokeDasharray = ` ${circumference}`;
+    mediumCircle.style.strokeDasharray = ` ${circumference}`;
+    hardCircle.style.strokeDasharray = ` ${circumference}`;
+
+    setTimeout(()=>{
     easyCircle.style.strokeDasharray = `${easyProgress} ${circumference - easyProgress}`;
     mediumCircle.style.strokeDasharray = `${mediumProgress} ${circumference - mediumProgress}`;
     hardCircle.style.strokeDasharray = `${hardProgress} ${circumference - hardProgress}`;
+},1000)
 
     $(easyText).text(easy+"/"+totalEasy);
     $(mediumText).text(medium+"/"+totalMedium);
     $(hardText).text(hard+"/"+totalHard);
+
+
 }
 
+function b(){
+    $('#progress-ring-easy').addClass("progress-ring-easy");
+    $('#progress-ring-medium').addClass("progress-ring-medium");
+    $('#progress-ring-hard').addClass("progress-ring-hard");
+}
 

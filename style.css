@@ -420,15 +420,18 @@ nav ul .navButton {
 }
 .progress-ring-easy {
     stroke: #00bcd4;
-    transition: stroke-dasharray 0.35s;
+
+    transition: stroke-dasharray 1s ease-in-out;
 }
 .progress-ring-medium {
     stroke: #ffeb3b;
-    transition: stroke-dasharray 0.35s;
+
+    transition: stroke-dasharray 1s ease-in-out;
 }
 .progress-ring-hard {
     stroke: #f44336;
-    transition: stroke-dasharray 0.35s;
+
+    transition: stroke-dasharray 1s ease-in-out;
 }
 .progress-text {
     text-align: center;
