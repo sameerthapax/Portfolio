@@ -201,9 +201,6 @@ nav ul .navButton {
     z-index: 1;
     overflow: hidden;
 }
-#map {
-    height: 100%;
-}
 #page2 {
     background: white;
     background-size: cover;
@@ -378,10 +375,100 @@ nav ul .navButton {
 }
 #about3{
     grid-area: education;
+    overflow: hidden;
+}
+#about3 h1{
+    position: absolute;
+    margin: 2% 30% auto;
+    width: max-content;
+
+    color: white;
+    font-weight: 400;
+    font-size: 1.5vw;
+
+}
+
+.progress-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #333;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+
+}
+.progress-rings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    top:60%;
+    bottom: 50%;
+
+    position: absolute;
+}
+.progress-ring {
+    flex: 1 1 calc(33.33%);
+}
+.progress-ring circle {
+    fill: transparent;
+    stroke-width: 10;
+}
+.progress-ring-bg {
+    stroke: #444;
+}
+.progress-ring-easy {
+    stroke: #00bcd4;
+    transition: stroke-dasharray 0.35s;
+}
+.progress-ring-medium {
+    stroke: #ffeb3b;
+    transition: stroke-dasharray 0.35s;
+}
+.progress-ring-hard {
+    stroke: #f44336;
+    transition: stroke-dasharray 0.35s;
+}
+.progress-text {
+    text-align: center;
+}
+.progress-details {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    bottom: 50%;
+    top:50%;
+    position: absolute;
+
+}
+.progress-detail {
+    text-align: center;
+    flex: 1 1 calc(33.33%);
+}.progress-detail div{
+     display: block;
+     font-size: 1.1vw;
+ }
+.progress-detail span {
+    display: block;
+    font-size: 1vw;
 }
 #about4{
     grid-area: undecided;
     overflow: hidden;
+    cursor: none;
+
+}
+#about4 iframe{
+    cursor: none;
+    z-index: -1;
+    position: absolute;
+}
+#iframeGlass{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: transparent;
 
 }
 #about5{
@@ -914,6 +1001,32 @@ section {
 
     .lenis.lenis-smooth spline-viewer, .lenis.lenis-smooth body {
         pointer-events: visible;
+    }
+
+    .progress-ring {
+        width: 80px;
+        height: 80px;
+    }
+
+    .progress-text {
+        font-size: 18px;
+    }
+
+    .progress-container {
+        padding: 10px;
+    }
+
+    .progress-ring {
+        width: 60px;
+        height: 60px;
+    }
+
+    .progress-text {
+        font-size: 14px;
+    }
+
+    .progress-detail span {
+        font-size: 12px;
     }
 }
 

@@ -567,3 +567,61 @@ function a(){
     $('.progress-value span').text(window.getComputedStyle(document.documentElement).getPropertyValue('--level-wigth'))
 
 }
+const leetcodeApi='https://leetcode-api-faisalshohag.vercel.app/sameerthapa';
+let totalAttempt;
+let totalEasy1;
+let totalMedium1;
+let totalHard1;
+let totalSubmissionSolved;
+let totalEasySubmissionSolved;
+let totalMediumSubmissionSolved;
+let totalHardSubmissionSolved;
+
+async function getLeetCodeData(){
+    const res= await fetch(leetcodeApi)
+    const data= await res.json()
+    totalAttempt=await data.totalSubmissions[0].submissions
+    totalSubmissionSolved= await data.totalSubmissions[0].count;
+    totalEasySubmissionSolved= await data.totalSubmissions[1].count;
+    totalMediumSubmissionSolved= await data.totalSubmissions[2].count;
+    totalHardSubmissionSolved=await data.totalSubmissions[3].count;
+    totalEasy1= await data.totalEasy;
+    totalHard1= await data.totalHard;
+    totalMedium1= await data.totalMedium;
+    setProgress(totalEasySubmissionSolved, totalMediumSubmissionSolved, totalHardSubmissionSolved);
+
+
+}
+getLeetCodeData()
+
+function setProgress(easy, medium, hard) {
+    const totalEasy = totalEasy1;
+    const totalMedium = totalMedium1;
+    const totalHard = totalHard1;
+
+    const easyCircle = document.querySelector('.progress-ring-easy');
+    const mediumCircle = document.querySelector('.progress-ring-medium');
+    const hardCircle = document.querySelector('.progress-ring-hard');
+    const easyText=document.querySelector('#easy span');
+    const hardText=document.querySelector('#hard span');
+    const mediumText=document.querySelector('#medium span');
+
+
+
+    const radius = 45;
+    const circumference = 2 * Math.PI * radius;
+
+    const easyProgress = Math.min((easy / totalEasy) * circumference, circumference);
+    const mediumProgress = Math.min((medium / totalMedium) * circumference, circumference);
+    const hardProgress = Math.min((hard / totalHard) * circumference, circumference);
+
+    easyCircle.style.strokeDasharray = `${easyProgress} ${circumference - easyProgress}`;
+    mediumCircle.style.strokeDasharray = `${mediumProgress} ${circumference - mediumProgress}`;
+    hardCircle.style.strokeDasharray = `${hardProgress} ${circumference - hardProgress}`;
+
+    $(easyText).text(easy+"/"+totalEasy);
+    $(mediumText).text(medium+"/"+totalMedium);
+    $(hardText).text(hard+"/"+totalHard);
+}
+
+
